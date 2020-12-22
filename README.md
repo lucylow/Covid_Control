@@ -56,6 +56,7 @@ https://coronavirus.jhu.edu/map.html
 * [Text_Generation_Model](#Text_Generation_Model) 
 * [Text_Parameters](#Text_Parameters)
 * [Usage](#Usage)
+* [Predictions]
 * [Conclusion](#Conclusion)
 * [References](#References) 
 
@@ -150,7 +151,59 @@ Web application for artifical intelligence model training and text generation:
 
 The technical details that ensure the quality, safety, and efficiency 
 
-**Cognizant**
+------
+
+**Cognizant Evolutionary AI™**
+
+https://www.cognizant.com/pandemic-response
+
+https://www.cognizant.com/perspectives/covid-19-healthcare-can-step-up-digital-to-meet-demand
+
+Steering today’s $3.6-trillion healthcare economy in a bold new direction means rethinking business models and building new systems of engagement. Cognizant can help. We’re collaborating with healthcare’s leaders to enable a new model of health and improve people’s lives. Count on us to help you convert data into actionable insights, achieve higher levels of automation and efficiency, innovate new products and services, modernize infrastructure … and deliver better outcomes at sustainable cost.
+
+The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
+
+
+
+
+
+https://www.cognizant.com/us/en/ai/evolutionary-ai
+
+
+Evolutionary AI : Using AI to fight the pandemic
+
+
+https://www.cognizant.com/us/en/ai/evolutionary-ai
+
+
+Cognizant and XPRIZE are launching the Pandemic Response Challenge to help restart economies.
+Move from predictive insights to prescriptive actions and achieve optimal business outcomes
+
+Cognizant’s powerful, patented Learning Evolutionary Algorithm Framework (LEAF) uses advanced evolutionary algorithms and deep learning to produce actionable results from complicated, multivariate problems. In a very short period of time, potentially millions of variables can be evaluated against business goals, every option weighed for its benefit and the very best path to success identified.
+
+The Evolutionary Surrogate-Assisted Prescription (ESP) system learned to make recommendations about the spread of COVID-19. ESP’s two learning tasks include: learning to predict and using the predictor as a surrogate for the real world to prescribe actions that lead to desirable outcomes.
+The historical COVID-19 data comes from the publicly available COVID-19 data provided by Oxford University (Hale, Webster, Petherick, Phillips, Kira, 2020, Oxford COVID-19 Government Response Tracker, Blavatnik School of Government, Oxford University).
+
+This paper introduces a general such approach, called Evolutionary Surrogate-Assisted Prescription, or ESP. The surrogate is, for example, a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model. 
+Improve Predictions: Evolving deep network architectures means the LEAF can automatically arrive at solutions that are better than alternatives that require many Ph.D.-days of human labor.
+
+
+
+ The evolutionary algorithms process generations of variable combinations very quickly. The least-useful-candidates are discarded and new ones are generated from variants of the most-useful-candidates through recombination and mutation.
+
+This process is rapidly repeated, homing in on the prescriptive actions to take. In this manner, Evolutionary AI makes it possible to identify the best approaches to designs, products and processes.
+
+
+
+
+
+IMPROVING PEOPLE’S LIVES
+The healthcare industry requires a deep, structural shift to move beyond brick and mortar, toward anytime, anywhere care that’s continuous, integrated and extended over time.
+
+
+Where is AI in the fight against COVID-19?
+How Evolutionary AI can forecast and advise on the next-best-steps to help reduce its spread.
+
 
 **Amazon's AWS for configuring the training environment**
 - AWS has generously donated cloud credits to be used by eligible teams for model development and training during Phase 1 of the competition. Thank you Mr.Jeff Bezos!
@@ -255,11 +308,34 @@ You do not have to compute the MAE - the robojudge does it. See https://github.
 
 ---
 
-## Cognizant 
-
----
-
 ## Oxford Dataset
+
+The Oxford Covid-19 Government Response Tracker (OxCGRT) collects systematic information on which governments have taken which measures, and when. This can help decision-makers and citizens understand governmental responses in a consistent way, aiding efforts to fight the pandemic. The OxCGRT systematically collects information on several different common policy responses governments have taken, records these policies on a scale to reflect the extent of government action, and aggregates these scores into a suite of policy indices.
+
+OxCGRT collects publicly available information on 19 indicators of government response. This information is collected by a team of over 200 volunteers from the Oxford community and is updated continuously.
+
+We also include statistics on the number of reported Covid-19 cases and deaths in each country. These are taken from the JHU CSSE data repository for all countries and the US States.
+
+
+
+
+https://www.kaggle.com/paultimothymooney/oxford-covid19-government-response-tracker
+
+OXFORD COVID-19 GOVERNMENT RESPONSE TRACKER
+
+Data from https://www.bsg.ox.ac.uk/research/research-projects/oxford-covid-19-government-response-tracker
+
+Just in case anyone is looking:A description of the variables
+
+https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/codebook.md
+
+Governments are taking a wide range of measures in response to the COVID-19 outbreak. The Oxford COVID-19 Government Response Tracker (OxCGRT) aims to record these unfolding responses in a rigorous, consistent way across countries and across time.
+
+OxCGRT collects publicly available information on 11 indicators of government response, such as school closings, travel bans, or other measures. For a full description of the data and how they are collected, see this working paper.
+
+For more information see https://www.bsg.ox.ac.uk/research/publications/variation-government-responses-covid-19 and https://www.bsg.ox.ac.uk/research/publications/variation-government-responses-covid-19.
+
+There are currently > 9,000 entries.
 
 Due to the changing list of countries / regions in the Oxford dataset, and lack of data from some available regions, we have decided to set a final list of countries / regions that will be used for the competition. This list will not change after this announcement.  Please validate that your models work with this list as soon as possible.
 
@@ -283,8 +359,59 @@ https://data.xprize.org/Datasets
 These can range from huge amounts of missing data (that are not missing at random), or unmeasured confounding, to systematic errors in the dataset (e.g., incorrect coding of drug treatments), to data collection issues that cause the distribution of data to be different than what we originally thought.
  
 One such common issue with black box models in medical settings is data leakage, where some information about the label y sneaks into the variables x in a way that you might not suspect by looking at the titles and descriptions of the variables: sometimes you think you are predicting something in the future but you are only detecting something that happened in the past. In predicting medical outcomes, the machine might pick up on information within doctors’ notes that reveal the patients’ outcome before it is officially recorded and hence erroneously claim these as successful predictions.
+
+
+
+I added a dataset with number of hospital beds per 1000 people for each country:
+https://www.kaggle.com/hamzael1/hospital-beds-by-country
+https://www.kaggle.com/ikiulian/global-hospital-beds-capacity-for-covid19
+
+This dataset is intended to be used as a baseline for understanding the typical bed capacity and coverage globally. This information is critical for understanding the impact of a high utilization event, like COVID-19.
+
+Visualization:
+https://www.kaggle.com/ikiulian/simple-global-countries-visualization
+
+
+
+Hi all! I just compiled and released this dataset with socioeconomic data, health data, daily weather data, and COVID19 cases + fatalities for all 3142 counties in the United States.
+
+https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data
+
+
+The bulk of the data comes from the 2016 CDC Social Vulnerability data, and the 2020 Healthy County Rankings. Both are included as part of the UNCOVER COVID-19 Challenge dataset.
+
+
+Social Vulnerability data
+
+
+https://en.wikipedia.org/wiki/Blood_type_distribution_by_country
+https://population.un.org/wpp/Download/Standard/Population/
+
+
+
+##  compare with past pandemics
+
+SARS dataset
+https://www.kaggle.com/imdevskp/sars-outbreak-2003-complete-dataset
+
+Ebola dataset
+https://www.kaggle.com/imdevskp/ebola-outbreak-20142016-complete-dataset
+
+MERS dataset
+https://www.kaggle.com/imdevskp/mers-outbreak-dataset-20122019
+
+
+Twitter Covid Tweets Datasets
+http://www.lix.polytechnique.fr/dascim/software_datasets/projects/covid-twitter-analytics/
+http://www.lix.polytechnique.fr/dascim/software_datasets/projects/covid-twitter-analytics/
+
+Twitter is a microblogging platform that allows you to send and receive short posts called tweets. Users may interact with each other by commenting, liking and rebroadcasting a tweet. Rebroadcasting a tweet, which is called retweeting, shares the tweet with the users followers without any change. Retweeting can be seen as amplifying the spread of original content and thus retweet prediction is a crucial task when studying information spreading processes.
+
+Retweets allow one to track the flow of information on Twitter because they indicate situations where a user felt a tweet was important enough that he shared it with his followers. For this reason, to predict information spreading in Twitter, we wish to predict the number of retweets a tweet might get. Some applications that take advantage of the number of retweets include fake news spreading and tracking and mass emergency management.
  
- ## Predictor Model provided by Oxford University
+## Predictor Model provided by Oxford University
+ 
+ https://www.kaggle.com/sudalairajkumar/novel-corona-virus-2019-dataset global dataset WHO
 
 Definitions of the NPI data used in the experiments. The data consists of daily ’Closure
 and containment’ measures in the ’Coronavirus Government Response Tracker’ provided by Oxford
@@ -334,15 +461,15 @@ Top countries total cases
 5) France
 
 Focusing on the US which is currently #1 cases.
------
 
-## MAE
 
 --------
 
 
 
 ## optional input fields that affect covid19
+
+
 
  First, school and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. 
  
@@ -368,7 +495,28 @@ rates, ventilators needed, and other outputs.
 
 additional datasets (like weather or mobility) will not be available because there will be no internet connection.  That means that our model must make all its predictions based on just real NPIs and forecast case rates
 
+ADD WEATHER DATA
+
+impact of temperature and humidity on transmission rate:
+https://www.kaggle.com/noaa/gsod
+
+https://www.kaggle.com/davidbnn92/weather-data?scriptVersionId=30695168
+
+To each row in the training set I have associated the closest measurement from the closest station from the GSOD dataframe:
+
+https://www.kaggle.com/noaa/gsod
+
+
+
+joined each region in the Johns Hopkins University data to the nearest weather station
+
 Since weather seems to play a role, I wonder if inclusion of weather data, temperature, humidity, precipitation, etc, might improve predictions?  Also, cultural differences I hard, but one popular ML project is twitter sentiment analysis.  Could one include some measure of regional covid twitter sentiments, or government intervention twitter sentiments with the data to do some accounting for culturally divergent responses?  It would not be trivial, models would have to trained separately by region to account for language differences, or have some sort of translation in the preprocessing, but maybe...?
+
+
+
+In this notebook I add weather informations, such as temperature and precipitations, to the training set of the COVID-19 forecasting competition, in order to determine whether there is any correlation with the growth of confirmed cases. Weather data is imported from the NOAA GSOD dataset, continuously updated to include recent measurments.
+
+https://www.kaggle.com/davidbnn92/weather-data
 
 Seasonality will definitely affect the outcome. I included the monthly temperature, but this feature is used little. Perhaps a more detailed measure is required. There should be some twitter datasets, as I have seen other posts use such features.
 
@@ -394,6 +542,148 @@ non-pharmaceutical interventions (NPIs)
 
 For instance, since the pandemic affected China and other parts of Asia before the rest
 of the world, it would be possible to learn from their examples.
+
+
+
+I uploaded a new dataset from Opentable's state of the restaurant industry that contains year-over-year seated diners at restaurants per day since the end of February. This data should be helpful for forecasting since it should have prediction power in terms of activity in different cities/states/countries.
+https://www.kaggle.com/jaimeblasco/opentable-state-of-the-restaurant-industry
+
+COVID-19 containment and mitigation measures
+Using data from http://epidemicforecasting.org/containment
+https://www.kaggle.com/paultimothymooney/covid-19-containment-and-mitigation-measures/
+
+
+It pairs nicely with the Oxford Government Response Tracker.
+
+For Oxford Government Response Tracker we need to impute 'UNITED STATES' with 'US' for merging with train set, has any come completely merged the two data set I am at 50% data coverage with 8 countries with country and date(even month) level join!
+
+Few more:-
+'CONGO' => 'CONGO (BRAZZAVILLE)', 'CONGO (KINSHASA)'
+'TIMOR'=> 'TIMOR-LESTE'
+'TAIWAN'=>'TAIWAN*'
+
+
+I was able to find updated data on number of ICU beds per county/state:
+
+https://www.kaggle.com/jaimeblasco/icu-beds-by-county-in-the-us
+
+This is the original source:
+https://khn.org/news/as-coronavirus-spreads-widely-millions-of-older-americans-live-in-counties-with-no-icu-beds/
+
+It looks like this information (or a similar dataset) has already been put to good use: https://projects.propublica.org/graphics/covid-hospitals
+
+
+
+------------
+
+The World Bank's World Development Indicators is likely to contain some significant variables.
+For example:
+
+Link to dataset: https://www.kaggle.com/theworldbank/world-development-indicators
+
+I've created an R notebook which adds some of these indicators to 'test' & 'train': https://www.kaggle.com/sambitmukherjee/covid-19-data-adding-world-development-indicators
+
+We had a similar idea! I've created a dataset of the WDI 2.12 (Health systems) here:
+https://www.kaggle.com/danevans/world-bank-wdi-212-health-systems
+
+Here's a dataset of other WB metrics that I pulled here: https://www.kaggle.com/alexandrepoulin/covid19-confirmed-cases-march29
+
+"Air transport, passengers carried",
+"Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
+"Cause of death, by non-communicable diseases (% of total)",
+"Current health expenditure per capita, PPP (current international $)",
+"Death rate, crude (per 1,000 people)",
+"Diabetes prevalence (% of population ages 20 to 79)",
+"GDP per capita, PPP (current international $)",
+"Hospital beds (per 1,000 people)",
+"Incidence of tuberculosis (per 100,000 people)",
+"International migrant stock, total",
+"International tourism, number of arrivals",
+"International tourism, number of departures",
+"Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)",
+"Life expectancy at birth, total (years)",
+"Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)",
+"Mortality rate attributed to household and ambient air pollution, age-standardized (per 100,000 population)",
+"Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (per 100,000 population)",
+"Mortality rate, adult, female (per 1,000 female adults)",
+"Mortality rate, adult, male (per 1,000 male adults)",
+"Number of people spending more than 10% of household consumption or income on out-of-pocket health care expenditure",
+"Number of people spending more than 25% of household consumption or income on out-of-pocket health care expenditure",
+"Nurses and midwives (per 1,000 people)",
+"Out-of-pocket expenditure (% of current health expenditure)",
+"People using at least basic sanitation services (% of population)",
+"People using safely managed sanitation services (% of population)",
+"People with basic handwashing facilities including soap and water (% of population)",
+"Physicians (per 1,000 people)",
+"PM2.5 air pollution, population exposed to levels exceeding WHO guideline value (% of total)",
+"Population ages 15-64 (% of total)",
+"Population ages 65 and above (% of total)",
+"Population density (people per sq. km of land area)",
+"Population in the largest city (% of urban population)",
+"Population in urban agglomerations of more than 1 million (% of total population)",
+"Population, total",
+"Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population)",
+"Prevalence of HIV, total (% of population ages 15-49)",
+"Smoking prevalence, females (% of adults)",
+"Smoking prevalence, males (% of adults)",
+"Survival to age 65, female (% of cohort)",
+"Survival to age 65, male (% of cohort)",
+"Trade (% of GDP)",
+"Tuberculosis case detection rate (%, all forms)",
+"Tuberculosis treatment success rate (% of new cases)",
+"Urban population (% of total)".
+
+
+------------
+
+https://www.kaggle.com/koryto/countryinfo
+
+https://ourworldindata.org/covid-testing
+
+It currently contains: not seperated by date
+
+Population (2020)
+Density: The number of people who lives per square meter. (2020)
+Median age (2020)
+Urban population: the % of the population who lives in urban areas. (2020)
+Hospital beds per 1K people: I assume that the higher this number is, the lower the fatalities number would be. (2020, 2018)
+Forced quarantine policy initial date: I believe that a couple of weeks after this specific date, we can assume
+there would be a reduction of the infection rate. (updated on a daily basis)
+School closure policy initial date: Same as (6). (updated on a daily basis)
+Public places (bars, restaurants, movie theatres, etc.) closure policy initial date (4/3/2020)
+The maximum amount of people allowed in gatherings and the initial date of the policy (4/3/2020)
+Non-essential house leaving - initial date of the restriction (4/3/2020)
+Sex ratio grouped by age groups (amount of males per female). (2020)
+Lung disease death rate per 100k people, separated by sex. (2020)
+% of smokers within the population: The higher this number is, the higher the fatalities number would be. (2019)
+Amount of COVID detection test made per day: I collected this information for about 50 countries, missing 120
+more. (3/22/2020)
+GDP-nominal (2019)
+Health expenses in international USD (2019, 2017, 2015)
+Health expenses divided by population (2020 - population), (2019, 2017, 2015 - health expenses)
+Average amount of children per woman - I find it as an important feature when it comes in interaction with density and school restriction variables. (2017)
+First patient detection date
+Total confirmed cases (4/3/2020)
+Total active cases (4/3/2020)
+New confirmed cases (4/3/2020)
+Total deaths (4/3/2020)
+New deaths (4/3/2020)
+Total recovered (4/3/2020)
+Amount of patients in critical situation (4/3/2020)
+Total cases / 1 million population (4/3/2020)
+Total deaths / 1 million population (4/3/2020)
+Average temperature (Celsius) measured between January and April. (2020)
+Average percentage of humidity measured between January and April. (2020)
+
+
+
+
+
+
+
+
+
+
 ------------
 
 ## Predictor Model Design LSTM (NPI-LSTM) predictor
@@ -411,6 +701,15 @@ effect, resulting in more regular predictions.
 ----------
 
 ## ESP evolutionary surrogate-assisted prescription modelling (ESP),
+
+https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general,predictions%20of%20the%20surrogate%20model.
+
+Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription
+
+There is now significant historical data available on decision making in organizations, consisting of the decision problem, what decisions were made, and how desirable the outcomes were. Using this data, it is possible to learn a surrogate model, and with that model, evolve a decision strategy that optimizes the outcomes. This paper introduces a general such approach, called Evolutionary Surrogate-Assisted Prescription, or ESP. The surrogate is, for example, a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model. ESP is further extended in this paper to sequential decision-making tasks, which makes it possible to evaluate the framework in reinforcement learning (RL) benchmarks. Because the majority of evaluations are done on the surrogate, ESP is more sample efficient, has lower variance, and lower regret than standard RL approaches. Surprisingly, its solutions are also better because both the surrogate and the strategy network regularize the decision-making behavior. ESP thus forms a promising foundation to decision optimization in real-world problems.
+
+https://evolution.ml/esp/
+
 
 Any of the existing neuroevolution methods [61] could be used to construct the Prescriptor as
 long as it evolves the entire network including all of its weight parameters:
@@ -458,6 +757,22 @@ models (Figure 2):
 
 In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such that
 the number of cases and cost that would result in the next two weeks is optimized. The details of the Predictor and Prescriptor in this setup will be described next, after an overview of the data used to construct them.
+
+
+ESP and Augmenting Human Decision Making Optimizing COVID-19 Interventions
+
+https://evolution.ml/esp/npi/
+https://arxiv.org/abs/2005.13766
+
+From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic
+
+Several models have been developed to predict how the COVID-19 pandemic spreads, and how it could be contained with non-pharmaceutical interventions (NPIs) such as social distancing restrictions and school and business closures. This paper demonstrates how evolutionary AI could be used to facilitate the next step, i.e. determining most effective intervention strategies automatically. Through evolutionary surrogate-assisted prescription (ESP), it is possible to generate a large number of candidate strategies and evaluate them with predictive models. In principle, strategies can be customized for different countries and locales, and balance the need to contain the pandemic and the need to minimize their economic impact. While still limited by available data, early experiments suggest that workplace and school restrictions are the most important and need to be designed carefully. It also demonstrates that results of lifting restrictions can be unreliable, and suggests creative ways in which restrictions can be implemented softly, e.g. by alternating them over time. As more data becomes available, the approach can be increasingly useful in dealing with COVID-19 as well as possible future pandemics.
+
+
+
+The COVID-19 pandemic presents an important challenge: What non-pharmaceutical interventions can be taken to contain the spread while impacting the economy as little as possible? Based on available data, ESP can be used to make such recomendations and evaluate how well they would work.
+
+
 
 ---
 
@@ -528,6 +843,29 @@ You should evaluate it per 100000 population. The raw MSEs are not really inform
 ------
 
 **Testing: Scenario Generators**
+
+MAE == Mean Absolute Error metric:
+the students that rank higher will have a lower score on the metric, which means they incurred fewer errors 
+you should aim for the minimum Mean Absolute Error (MAE
+
+
+The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
+
+MAE=1N∑t=1N|pi−ai|
+where N is the number of tweets in the testing dataset, pi the predicted number of retweets for tweeti and ai the actual number of retweets for the same tweet
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Teams are highly encouraged to use the scenario generators found on the GitHub repository to try out different evaluation scenarios before submitting their models. Instructions on how to use these scenario generators to test models can be found within the sample models provided by Cognizant on the GitHub repository.
 
@@ -665,11 +1003,8 @@ interventions such as vaccinations and treatments become available. It will prov
 shared human and machine creativity and problem-solving, and ultimately a tool for future
 humanitarian crises.
 
-Join us in building a collaborative AI for Good ecosystem that fosters innovative, evidence-based decision-making to combat COVID-19 and future emergencies.
-
-Teams agree that their models (predictors and prescriptors) once submitted to the
-Competition Sites are deemed open source and can be made available publicly under XPRIZE’s
-purview for the benefit of the public. 
+Join us in building a collaborative AI for Good ecosystem that fosters innovative, evidence-based
+decision-making to combat COVID-19 and future emergencies.
 
 
 **Consistency**
@@ -857,6 +1192,23 @@ Dec 15 2020 is an updated list of 22 of the most-talked-about treatments for the
 https://www.nytimes.com/interactive/2020/science/coronavirus-drugs-treatments.html
 
 
+Government Measures to Combat COVID19
+Trying to flatten the curve!
+
+
+https://www.kaggle.com/barun2104/government-measures-to-combat-covid19
+
+The COVID19 Government Measures Dataset puts together all the measures implemented by governments worldwide in response to the Coronavirus pandemic. Data collection includes secondary data review. The researched information available falls into five categories:
+
+Social distancing
+Movement restrictions
+Public health measures
+Social and economic measures
+Lockdowns
+
+https://www.acaps.org/projects/covid19/data
+
+
 -------
 
 ## Technical Conclusion 
@@ -906,3 +1258,12 @@ https://www.technologyreview.com/2020/01/29/304857/why-asking-an-ai-to-explain-i
 https://arxiv.org/abs/2005.13766
 https://evolution.ml/esp/npi/
 
+https://www.worldometers.info/ - Population, Density, Median Age, Urban Population, Fertility Rate, Patient Zero Detection Date, Confirmed Cases, New Cases, Total Deaths, Total Recovered, Critical Cases.
+@benhamner 's link (see acknowledgements section below) - Restrictions Initial dates.
+https://worldpopulationreview.com/countries/smoking-rates-by-country/ - % of smokers by country.
+https://data.worldbank.org/indicator/SH.MED.BEDS.ZS - Hospital beds per 1000 citizens.
+https://en.wikipedia.org/wiki/List_of_countries_by_sex_ratio - Sex ratio by age.
+https://www.worldlifeexpectancy.com/cause-of-death/lung-disease/by-country/ - Lung diseases death rate.
+https://en.wikipedia.org/wiki/COVID-19_testing - COVID-19 Tests
+https://www.worldbank.org/ - GDP 2019, Health Expenses (Whatever was missing was filled with information from Wikipedia)
+https://en.climate-data.org/ - Temperature and Humidity raw data.
