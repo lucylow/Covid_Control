@@ -665,8 +665,11 @@ interventions such as vaccinations and treatments become available. It will prov
 shared human and machine creativity and problem-solving, and ultimately a tool for future
 humanitarian crises.
 
-Join us in building a collaborative AI for Good ecosystem that fosters innovative, evidence-based
-decision-making to combat COVID-19 and future emergencies.
+Join us in building a collaborative AI for Good ecosystem that fosters innovative, evidence-based decision-making to combat COVID-19 and future emergencies.
+
+Teams agree that their models (predictors and prescriptors) once submitted to the
+Competition Sites are deemed open source and can be made available publicly under XPRIZE’s
+purview for the benefit of the public. 
 
 
 **Consistency**
