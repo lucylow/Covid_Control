@@ -67,6 +67,12 @@ https://coronavirus.jhu.edu/map.html
 "The Pandemic Response Challenge is a $500K, four-month challenge that focuses on the development of data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies."
 
 
+  <a href="https://www.youtube-nocookie.com/embed/Kas0tIxDvrg
+" target="_blank"><img src="http://img.youtube.com/vi/Kas0tIxDvrg/0.jpg" 
+alt="Video" width="240" height="180" border="10" /></a>
+
+
+
 This pandemic requires access to localized, data-driven planning systems combined with cutting
 edge artificial intelligence tools to help decision-makers develop and implement intervention plans
 that reduce infection cases, minimize negative economic impacts, and reopen their economies and
