@@ -7,6 +7,9 @@ HUMANITY'S UNPRECEDENTED GLOBAL HEALTH EMERGENCY.
 
 Human innovation in the fight against the pandemic is saving lives
 
+From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic
+
+With further data and development, the approach may become a useful tool for policy makers, helping them to minimize impact of the current as well as future pandemics.
 
 
 <div>
@@ -62,6 +65,12 @@ https://coronavirus.jhu.edu/map.html
 
 "The Pandemic Response Challenge is a $500K, four-month challenge that focuses on the development of data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies."
 
+
+This pandemic requires access to localized, data-driven planning systems combined with cutting
+edge artificial intelligence tools to help decision-makers develop and implement intervention plans
+that reduce infection cases, minimize negative economic impacts, and reopen their economies and
+societies.
+
 https://www.xprize.org/challenge/pandemicresponse
 
 The goal is to develop prediction models:
@@ -71,6 +80,8 @@ develop and submit predictor models that estimate the number of future cases for
 
 - Phase 2) Produce the best prescription models for Intervention Plans.
 
+PHASE1: Predictor (can be many) - NST LSTM model 
+PHASE2: Prescriptor (one) - ESP prediction Model
 
 COMPEITION EVLAUIATION PHRASES
 
@@ -115,13 +126,16 @@ food shortages, price spikes, and disruption to markets.
  restaurant industry sustaining one of the heaviest blows.
  With the number of COVID-19 cases in the U.S. reaching 2,000 by mid-March, many state and city officials announced executive orders to shut down all onsite-dining at restaurants and bars. 
 
+
+An interactive demo illustrating the basic concepts of the competition, such as the predictor and
+prescriptor models and their interaction and performance, is available at
+https://evolution.ml/demos/npidashboard.
+
 ---
 
 ## Artifical Intelligence Solution: Covid Control
 
 How can AI support the research community in times of crisis?
-
-lowlucyy06875
 
 API KEYS PRIZE NAME: PRCX
 TEAM NAME: COVID CONTROL
@@ -192,11 +206,6 @@ speciality region for your model (1 = speciality region, 0 = not a speciality re
 A sample CSV output file can be found here on the GitHub
 https://github.com/leaf-ai/covid-xprize/blob/master/2020-08-01_2020-08-04_predictions_example.csv
 
-
-
-
-
-
 Installing and using R on your sandbox
 
 If you would like to use R on your sandbox, please add the following code snippet to your predict.py file:
@@ -212,6 +221,18 @@ else:
     print ('R is installed!')
 """
 (The first line is not required if you are embedding this code snippet in an existing script.)
+
+
+---
+
+## Predictive Machine Learning 
+
+All the models discussed so far are predictive: Based on knowledge of the populations and the
+epidemic, and the data so far about its progress in different populations and efforts to contain it, they estimate how the disease will progress in the future.
+
+ By themselves, these models do not make recommendations, or prescriptions, of what NPIs would be most effective. 
+
+
 
 
 ---
@@ -263,7 +284,40 @@ These can range from huge amounts of missing data (that are not missing at rando
  
 One such common issue with black box models in medical settings is data leakage, where some information about the label y sneaks into the variables x in a way that you might not suspect by looking at the titles and descriptions of the variables: sometimes you think you are predicting something in the future but you are only detecting something that happened in the past. In predicting medical outcomes, the machine might pick up on information within doctors’ notes that reveal the patients’ outcome before it is officially recorded and hence erroneously claim these as successful predictions.
  
------
+ ## Predictor Model provided by Oxford University
+
+Definitions of the NPI data used in the experiments. The data consists of daily ’Closure
+and containment’ measures in the ’Coronavirus Government Response Tracker’ provided by Oxford
+University [22, 56, 51]. There are eight kinds of NPIs, each ranging in stringency from 0 (no
+measures) to 2, 3, or 4 (full measures). Together with data on daily cases, this data is used to train the Predictor model.
+
+- schools closing
+- workplace closing
+- cancel public events
+- restrictions on gatherings
+- close public transport
+- stay at home requirements 
+- restrictions on internal movements travel between regions/cities
+- international travel controls
+
+A detailed explanation of the data is provided in a codebook [51].
+https://arxiv.org/pdf/2005.13766.pdf
+
+• There are other differences in how cases are reported in each country;
+• Some countries, like the US, do not have a uniform manner of reporting the cases;
+10
+• Cases were simply not detected for a while, and testing policy still widely differs from country
+to country.
+• Some countries, like China, US, and Italy, implemented NPIs at a state / regional level, and
+it is difficult to express them at the country level;
+• As usual with datasets, there are mistakes, missing days, double-counted days, etc
+
+It is also important to note that there is roughly a two-week delay between the time a person is
+infected and the time the case is detected. A similar delay can therefore be expected between the
+time an NPI is put in places and its effect on the number of cases
+
+
+
 
 ## Specialty Regions: United States 
 
@@ -280,10 +334,34 @@ Top countries total cases
 5) France
 
 Focusing on the US which is currently #1 cases.
+-----
 
-----
+## MAE
+
+--------
+
+
 
 ## optional input fields that affect covid19
+
+ First, school and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. 
+ 
+economic indicators, such as unemployment, consumer spending, and GNP.
+ 
+For instance in the case of HIV, mixing and contact depends on age groups
+  
+frequency, intensity, locality, and duration of contacts,
+
+China, Iran, and Italy
+
+use mobile phone data to support implementation of social distancing measures
+
+recorded movements of individuals (e.g. transportation networks [25] and dollar bill tacking [2]) have been investigated in the past to sample real networks with limited resources and data availability.
+
+Second, partial or alternating NPIs may be effective. Prescriptors repeatedly turn
+certain NPIs on and off over time, for example, schools opening and closing on a weekly basis
+seems to imply the need for restricting schools to be opened fewer days per week. This is a creative
+and surprising solution, given the limited variability of NPIs that is available to the Prescriptors.
 
 optional fields, such as confidence intervals, death rates, hospitalization
 rates, ventilators needed, and other outputs.
@@ -306,22 +384,122 @@ Coronavirus Retail Restrictions by State
 
 Curious how China published a study about air conditioning and covid spread: https://wwwnc.cdc.gov/eid/article/26/7/20-0764_article and Korea validates a similar study just recently: https://www.latimes.com/world-nation/story/2020-12-09/five-minutes-from-20-feet-away[…]south-korean-study-shows-perils-of-indoor-dining-for-covid-19 - i wonder when we will start to see raised floors in restaurants and data-center-like circulation ... (edited) 
 
-
 https://nrf.com/coronavirus-retail-restrictions-state
+
+non-pharmaceutical interventions (NPIs) 
+
+-social distancing restrictions and school and business closures
+
+
+
+For instance, since the pandemic affected China and other parts of Asia before the rest
+of the world, it would be possible to learn from their examples.
+------------
+
+## Predictor Model Design LSTM (NPI-LSTM) predictor
+
+ The Predictor Neural Network. This diagram shows the Keras representation of the
+learnable predictor model. The previous 21 days of Rn−t are fed into the context input; the
+previous 21 days of stringency values for the eight NPIs are fed into the action input. The Lambda
+layer combines the context branch h and the action branch g as specified in Equation 9 to produce
+a prediction Rˆ
+n. The effects of social distancing and endogenous growth rate of the pandemic
+are processed in separate pathways, making it possible to ensure that stringency has a monotonic
+effect, resulting in more regular predictions.
+
+
+----------
+
+## ESP evolutionary surrogate-assisted prescription modelling (ESP),
+
+Any of the existing neuroevolution methods [61] could be used to construct the Prescriptor as
+long as it evolves the entire network including all of its weight parameters:
+
+The Prescriptor Neural Network. Given 21 past days of case information (Rn−t
+in
+Equation 6) as input (context input), the network generates recommended stringency values for
+each of the eight NPIs. The network is fully connected with one hidden layer. Because there are no
+targets, i.e. the optimal NPIs are not known, gradient descent cannot be used; instead, all weights
+and biases are evolved based on how well the network’s NPI recommendations work along the cases
+and cost objectives, as predicted by the Predictor.
+
+
+Both measures are averaged over the next 180 days and over the 20 countries with the most deaths
+in the historical data, which at the time of the experiment were United States, United Kingdom,
+Italy, France, Spain, Brazil, Belgium, Germany, Iran, Canada, Netherlands, Mexico, China, Turkey,
+Sweden, India, Ecuador, Russia, Peru, Switzerland. Both objectives have to be minimized.
+
+
+Thus, in the early stages, the ESP approach may suggest how to “flatten the curve”, i.e. what
+NPIs should be implemented in order to slow down the spread of the disease. At later stages, it
+may recommend how the NPIs can be lifted and the economy restarted safely. A third role for
+the approach is to go back in time and evaluate counterfactuals, i.e. how well NPI strategies other
+than those actually implemented could have worked.
+
+
+
+
+The approach taken in this paper is based on evolutionary surrogate-assisted
+prescription [16], a technique that combines evolutionary search with surrogate modeling (Figure 1).
+
+ESP is a continuous black-box optimization process for adaptive decision-making [16]. In ESP, a
+model of the problem domain is used as a surrogate for the problem itself. This model, called the
+Predictor (Pd), takes a decision as its input, and predicts the outcomes of that decision. A decision
+consists of a context (i.e. a problem) and actions to be taken in that context.
+
+The ESP algorithm then operates as an outer loop that constructs the Predictor and Prescriptor
+models (Figure 2):
+1. Train a Predictor based on historical training data;
+2. Evolve Prescriptors with the Predictor as the surrogate;
+3. Apply the best Prescriptor in the real world;
+4. Collect the new data and add to the training set;
+5. Repeat.
+
+
+In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such that
+the number of cases and cost that would result in the next two weeks is optimized. The details of the Predictor and Prescriptor in this setup will be described next, after an overview of the data used to construct them.
+
 ---
 
 ## LSTM example 'data' directory
+
+
+An LSTM neural network model [23, 20] is trained with publicly available data on infections and NPIs [22]in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
+
+Even with current limited data, the predictions are surprisingly accurate and well-behaved. This
+result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper
+
+to extend the models from prediction to prescription.
+
+ Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
+in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and
+stringency of NPIs (representing economic impact). 
+
+---------
+
+## Training the model 
+
+These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters [54]. 
+
+The model was trained until validation MAE did not improve for 20 epochs, at
+which point the weights yielding the best validation MAE were restored. Since the model and
+dataset are relatively small compared to common deep learning datasets, the model is relatively
+inexpensive to train. On a 2018 MacBook Pro Laptop with six Intel i7 cores, the model takes
+276 ± 31 seconds to train (mean and std. err. computed over 10 independent training runs).
+
+Table 2: Performance comparison of proposed predictor (NPI-LSTM) with baselines. T
+
+...
+
+ NPI-LSTM outperforms the baselines on all metrics. 
+
+The simple linear model outperforms them substantially on the metrics that require forecasting beyond a single day, showing the difficulty that off-the-shelf nonlinear methods have in handling such forecasting.
+
 
 ----
 ## linear PCA
 
 i actually tried a polynomial kernel PCA and that was mistake. The model inflates exponentially (of course) so it runs out of memory fast. I remember a degree=3 kPCA needing around 32GB  .... it crashed on my laptop. didn't try it on our beefier hardware ....
-
-
-----
-
-## innovation, generality, collaboration, and other qualitative judging criteria
-
 
 
 ---
@@ -403,7 +581,12 @@ stringency will be averaged over the 180-day period to obtain the final objectiv
 Results with both the base case (with equal weights) and the general case (with random weights)
 will be presented to the judges as the outcome of the first quantitative evaluation.
 
+-----
 
+## Model Error Analysis
+
+An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method (Section 5.3) to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
+become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
 
 
 
@@ -423,6 +606,9 @@ JUDGING CRITERIA Equal weighting
 Teams who submit and use additional data, intervention plans (such as
 vaccination policies and treatments), or otherwise find innovative ways to extend the scope
 of the challenge will be ranked highly;
+
+ create
+new solutions that may have never existed before. 
 
 - How long does someone with COVID-19 typically stay on a ventilator? Some people may need to be on a ventilator for a few hours, while others may require one, two, or three weeks. If a person needs to be on a ventilator for a longer period of time, a tracheostomy may be required. During this procedure, a surgeon makes a hole in the front of the neck and inserts a tube into the trachea.
 
@@ -472,6 +658,15 @@ teams will be ranked highly;
 
 - Data and model is free, assiesbsle, and on open source platform github
 -Interested in the shared sucess of all teams 
+
+The Challenge’s open platform will enable increased and higher-quality data,
+accurate predictions, stronger regional intervention plans, and continual improvement as new
+interventions such as vaccinations and treatments become available. It will provide a platform for
+shared human and machine creativity and problem-solving, and ultimately a tool for future
+humanitarian crises.
+
+Join us in building a collaborative AI for Good ecosystem that fosters innovative, evidence-based
+decision-making to combat COVID-19 and future emergencies.
 
 
 **Consistency**
@@ -552,6 +747,32 @@ Models that are usable in a real world setting, that provide interactivity and a
 Website is LIVE at _________________
 Dashboard for UI/UX 
 
+
+Interactive Demo 
+
+To help understand the mechanisms and possibilities of ESP models, an interactive demo of the
+current state of the approach to NPI optimization is available at https://evolution.ml/esp/npi
+
+
+This demo will change as the models improve and new functionality is added
+
+The user can select a country by clicking on the map, and a Prescriptor from the Pareto front by clicking on the slider between Cases and NPIs. At the very left, the Presciptors prefer to minimize cases and therefore usually recommend establishing nearly all possible NPIs. At the very right, the Prescriptors prefer to minimize NPIs and therefore usually recommend lifting nearly all of them—usually resulting in an explosion of cases. The most interesting Prescriptors are therefore somewhere in the middle-left of this range. 
+
+With more and better data and further development, the demo may eventually develop into a tool that can be used to augment human decision making in the pandemic.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 **Inclusivity and fairness:**
 The degree to which the data, model, and approaches consider particularly vulnerable groups in designing and implementing their solution will be evaluated. Teams may also be judged on documented evidence of the diversity of perspectives they sought input from during the development of their solution; 
 
@@ -599,6 +820,12 @@ Take steps to avoid infection, such as washing your hands frequently and trying 
 
 
 TREATMENT
+
+Pharmaceutical interventions such as treatments and
+vaccines will take time to develop, so the focus has been on implementing non-pharmaceutical
+interventions, i.e. NPIs. The goal is to ”flatten the curve,” i.e. limit the spread, gain time, and
+prevent hospitals from being overwhelmed until a vaccine can be developed [14, 15].
+
 
 Current clinical management of COVID-19 includes infection prevention and control measures and supportive care, including supplemental oxygen and mechanical ventilatory support when indicated. The U.S. Food and Drug Administration (FDA) has approved one drug, remdesivir (Veklury), for the treatment of COVID-19 in certain situations.
 
@@ -649,6 +876,8 @@ actionable locally-based, customized, and least restrictive intervention recomme
 ---
 
 ## References 
+COVID19 Global Forecasting (Week 5) https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
+From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
 https://www.who.int/news/item/13-10-2020-impact-of-covid-19-on-people's-livelihoods-their-health-and-our-food-systems
 https://en.wikipedia.org/wiki/Economic_impact_of_the_COVID-19_pandemic#Economic_impact_by_region_and_country
 https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
@@ -671,4 +900,6 @@ https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09
 https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/6
 
 https://www.technologyreview.com/2020/01/29/304857/why-asking-an-ai-to-explain-itself-can-make-things-worse/
+https://arxiv.org/abs/2005.13766
+https://evolution.ml/esp/npi/
 
