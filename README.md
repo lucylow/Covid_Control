@@ -68,8 +68,8 @@ https://coronavirus.jhu.edu/map.html
 
 
 **When your kids ask "WHERE WILL WE USE MATH IN REAL LIFE?":
-1) Show them 3Blue1Brown's "Exponential growth and epidemics" video**
-**2) Remind them the of China's one-child policy to control exponentially increasing population size**
+1) Show them 3Blue1Brown's "Exponential growth and epidemics" Covid19 video
+2) Remind them the of China's one-child policy to control exponentially increasing population size**
 
   <a href="https://www.youtube-nocookie.com/embed/Kas0tIxDvrg
 " target="_blank"><img src="http://img.youtube.com/vi/Kas0tIxDvrg/0.jpg" 
