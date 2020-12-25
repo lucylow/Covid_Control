@@ -1078,39 +1078,30 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 ---
 
 ## References 
-COVID19 Global Forecasting (Week 5) https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
-From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
-https://www.who.int/news/item/13-10-2020-impact-of-covid-19-on-people's-livelihoods-their-health-and-our-food-systems
-https://en.wikipedia.org/wiki/Economic_impact_of_the_COVID-19_pandemic#Economic_impact_by_region_and_country
-https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
-https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.html
-
-
-Free to access  papers related to Covid19 thanks to 
-
-To support the research community, Springer Nature and many other publishers have already decided to make thousands of publications on coronavirus freely available to accommodate the need for access to essential research. 
-
-https://www.ncbi.nlm.nih.gov/research/coronavirus/
-https://www.sciencedirect.com/articlelist/covid
-https://novel-coronavirus.onlinelibrary.wiley.com/
-https://taylorandfrancis.com/coronavirus/
-https://www.springernature.com/gp/researchers/campaigns/coronavirus
-https://academic.oup.com/journals/pages/coronavirus
-https://coronavirus.1science.com/search
-https://en.wikipedia.org/wiki/Explainable_artificial_intelligence
-https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09d1
-https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/6
-
-https://www.technologyreview.com/2020/01/29/304857/why-asking-an-ai-to-explain-itself-can-make-things-worse/
-https://arxiv.org/abs/2005.13766
-https://evolution.ml/esp/npi/
-
-https://www.worldometers.info/ - Population, Density, Median Age, Urban Population, Fertility Rate, Patient Zero Detection Date, Confirmed Cases, New Cases, Total Deaths, Total Recovered, Critical Cases.
-@benhamner 's link (see acknowledgements section below) - Restrictions Initial dates.
-https://worldpopulationreview.com/countries/smoking-rates-by-country/ - % of smokers by country.
-https://data.worldbank.org/indicator/SH.MED.BEDS.ZS - Hospital beds per 1000 citizens.
-https://en.wikipedia.org/wiki/List_of_countries_by_sex_ratio - Sex ratio by age.
-https://www.worldlifeexpectancy.com/cause-of-death/lung-disease/by-country/ - Lung diseases death rate.
-https://en.wikipedia.org/wiki/COVID-19_testing - COVID-19 Tests
-https://www.worldbank.org/ - GDP 2019, Health Expenses (Whatever was missing was filled with information from Wikipedia)
-https://en.climate-data.org/ - Temperature and Humidity raw data.
+* COVID19 Global Forecasting (Week 5) https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
+* From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
+* https://www.who.int/news/item/13-10-2020-impact-of-covid-19-on-people's-livelihoods-their-health-and-our-food-systems
+* https://en.wikipedia.org/wiki/Economic_impact_of_the_COVID19_pandemic#Economic_impact_by_region_and_country
+* https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
+* https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.html
+* https://www.ncbi.nlm.nih.gov/research/coronavirus/
+* https://www.sciencedirect.com/articlelist/covid
+* https://novel-coronavirus.onlinelibrary.wiley.com/
+* https://taylorandfrancis.com/coronavirus/
+* https://www.springernature.com/gp/researchers/campaigns/coronavirus
+* https://academic.oup.com/journals/pages/coronavirus
+* https://coronavirus.1science.com/search
+* https://en.wikipedia.org/wiki/Explainable_artificial_intelligence
+* https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09d1
+* https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/6
+* https://www.technologyreview.com/2020/01/29/304857/why-asking-an-ai-to-explain-itself-can-make-things-worse/
+* https://arxiv.org/abs/2005.13766
+* https://evolution.ml/esp/npi/
+* https://www.worldometers.info/ - Population, Density, Median Age, Urban Population, Fertility Rate, Patient Zero Detection Date, Confirmed Cases, New Cases, Total Deaths, Total Recovered, Critical Cases.
+* https://worldpopulationreview.com/countries/smoking-rates-by-country/ - % of smokers by country.
+* https://data.worldbank.org/indicator/SH.MED.BEDS.ZS - Hospital beds per 1000 citizens.
+* https://en.wikipedia.org/wiki/List_of_countries_by_sex_ratio - Sex ratio by age.
+* https://www.worldlifeexpectancy.com/cause-of-death/lung-disease/by-country/ - Lung diseases death rate.
+* https://en.wikipedia.org/wiki/COVID-19_testing - COVID-19 Tests
+* https://www.worldbank.org/ - GDP 2019, Health Expenses (Whatever was missing was filled with information from Wikipedia)
+* https://en.climate-data.org/ - Temperature and Humidity raw data.
