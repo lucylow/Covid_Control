@@ -1,16 +1,4 @@
 # Covid Control
-Flatenning the Curve, Social Distancing
-
-Novel Coronavirus (COVID-19)
-HUMANITY'S UNPRECEDENTED GLOBAL HEALTH EMERGENCY.
-
-
-Human innovation in the fight against the pandemic is saving lives
-
-From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic
-
-With further data and development, the approach may become a useful tool for policy makers, helping them to minimize impact of the current as well as future pandemics.
-
 
 <div>
   
@@ -23,33 +11,14 @@ With further data and development, the approach may become a useful tool for pol
 
 ---
 
-XPRIZE Pandemic Response Challenge. AI prediction model to estimate daily COVID-19 cases with astronomically high accuracy and prescriptive models for Intervention Plans that minimize infection cases and economic costs.
-
-Python modeel application for machine learning training Next Character Predictions using Long Short Term Memory Model (LSTM) and Time Series Prediction. Train model to generate random text based on patterns in a given text corpus.
-
-This is the submission for Team Covid Control.
-
-POP Leaderboard
-https://pop.xprize.org/Prizes/PrizeDetails?codename=pandemic_response_challenge
-In order for your team’s model to show up on the leaderboard, you must activate your Evaluation Sandbox and upload your predictor model. 
-
-Submission Activities in POP
-
-Please refer to the Pandemic Response Challenge Guidelines for full details on submission criteria. Starting December 17, the following submission activities will be live in POP and you can begin uploading your documents:  
-
-Activity 1 (required): Qualitative Document upload (PDF format only, single document)
-Activity 2 (optional): Optional document uploads (any format, multiple document/file uploads)
-
-https://coronavirus.jhu.edu/map.html
-
- This belief stems from the historical use of machine learning in society: its modern techniques were born and bred for low-stakes decisions such as online advertising and web search where individual decisions do not deeply affect human lives.
+Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve.
 
 ---
 
 
 ## Table_of_Contents
 
-* [Motivation](#Motivation)
+* [Pandemic Response Motivation](#Pandemic_Response_Motivation)
 * [Covid_Control](#Covid_Control)
 * [Artifical_Neural_Network](#Artifical_Neural_Network)
 * [LSTM_Model](#LSTM_Model)
@@ -62,12 +31,18 @@ https://coronavirus.jhu.edu/map.html
 
 ---
 
-## Pandemic Response Motivation
+## Pandemic_Response_Motivation
 
-"The Pandemic Response Challenge is a $500K, four-month challenge that focuses on the development of data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies."
+"The Pandemic Response Challenge is a $500K, four-month challenge that focuses on the development of data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies." https://www.xprize.org/challenge/pandemicresponse
+https://www.cognizant.com/pandemic-response
 
 
-**When your kids ask "WHERE WILL WE USE MATH IN REAL LIFE?":**
+Impact of the Covid19 in Numbers
+* Cases 77.2M
+* Recovered 43.5M
+* Deaths 1.7M
+
+**When your kids ask "WHEN WILL WE USE MATH IN REAL LIFE?":**
 1) Show them 3Blue1Brown's "Exponential growth and epidemics" Covid19 video
 2) Remind them the of China's one-child policy to control exponentially increasing population size
 
@@ -76,169 +51,82 @@ https://coronavirus.jhu.edu/map.html
 alt="Video" width="480" height="360" border="10" /></a>
 
 
-
 This pandemic requires access to localized, data-driven planning systems combined with cutting
-edge artificial intelligence tools to help decision-makers develop and implement intervention plans
-that reduce infection cases, minimize negative economic impacts, and reopen their economies and
-societies.
+edge artificial intelligence tools to help decision-makers develop and implement intervention plans that reduce infection cases, minimize negative economic impacts, and reopen their economies and societies.
 
-https://www.xprize.org/challenge/pandemicresponse
+## Technical Motivation 
 
 The goal is to develop prediction models:
-- Phase 1 Predictor Development Estimate future numbers of daily COVID-19 cases with the greatest accuracy
+* 1) PHASE1: Predictor (can be many) - NST LSTM model 
 
-develop and submit predictor models that estimate the number of future cases for a given region(s)—considering the local intervention plans in effect based on live Oxford data—over a given time. The data (estimates) each model generates will be evaluated by a Cognizant-designed “Robo Judge”—a tool that compares teams’ prediction data against real time data and the other teams’ results. T
+Phase 1 Predictor Development Estimate future numbers of daily COVID-19 cases with the greatest accuracy develop and submit predictor models that estimate the number of future cases for a given region(s)—considering the local intervention plans in effect based on live Oxford data—over a given time. The data (estimates) each model generates will be evaluated by a Cognizant-designed “Robo Judge”—a tool that compares teams’ prediction data against real time data and the other teams’ results.
 
-- Phase 2) Produce the best prescription models for Intervention Plans.
+* 2) PHASE2: Prescriptor (one) - ESP prediction Model
 
-PHASE1: Predictor (can be many) - NST LSTM model 
-PHASE2: Prescriptor (one) - ESP prediction Model
+Produce the best prescription models for Intervention Plans. Implementation of the paper "From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic".
 
-COMPEITION EVLAUIATION PHRASES
-
-PHASE ONE—PREDICTOR DEVELOPMENT OVERVIEW
-PHASE ONE—PREDICTOR SUBMISSION REQUIREMENTS
-PHASE ONE LIVE MODEL TESTING
-PHASE ONE— PREDICTOR JUDGING
-PHASE TWO—PRESCRIPTOR SUBMISSION REQUIREMENTS
-PHASE TWO—FINAL PREDICTOR AND PRESCRIPTOR JUDGING
-
-Impact of the Covid19 Crisis
-PEOPLE
-Cases
-77.2M
-Recovered
-43.5M
-Deaths
-1.7M
+An interactive demo illustrating the basic concepts of the competition, such as the predictor and prescriptor models and their interaction and performance, is available at
+https://evolution.ml/demos/npidashboard.
 
 https://data.xprize.org/covid19
 https://public.tableau.com/shared/2H3XFDHWW?:display_count=y&:origin=viz_share_link&:embed=y
 
-people's livelihoods, their health and our food systems
-loss of human life worldwide
-social disruption
-number of undernourished people, currently estimated at nearly 690 million, could increase by up to 132 million by the end of the year.
-Particular attention must be paid to the situation of women, who are over-represented in low-paid jobs and care roles.
-global conferences and events across technology, fashion, and sports are being cancelled or postponed
-
-MONEY
-caused the largest global recession in history, with more than a third of the global population at the time being placed on lockdown.
-economic disruption
-panic buying of toliet paper
-food shortages, price spikes, and disruption to markets.
- Nearly half of the world’s 3.3 billion global workforce are at risk of losing their livelihoods
- 
- many are unable to feed themselves and their families
- no income means no food
- Border closures, trade restrictions and confinement measures have been preventing farmers from accessing markets, including for buying inputs and selling their produce, and agricultural workers from harvesting crops, thus disrupting domestic and international food supply chains and reducing access to healthy, safe and diverse diets.
- financial relief for businesses, including micro, small and medium-sized enterprises.
- 
- restaurant industry sustaining one of the heaviest blows.
- With the number of COVID-19 cases in the U.S. reaching 2,000 by mid-March, many state and city officials announced executive orders to shut down all onsite-dining at restaurants and bars. 
-
-
-An interactive demo illustrating the basic concepts of the competition, such as the predictor and
-prescriptor models and their interaction and performance, is available at
-https://evolution.ml/demos/npidashboard.
-
 ---
 
-## Artifical Intelligence Solution: Covid Control
-
-How can AI support the research community in times of crisis?
-
-API KEYS PRIZE NAME: PRCX
-TEAM NAME: COVID CONTROL
-
-Web application for artifical intelligence model training and text generation:
-
-*Image. Screenshot of the web demo at https://lucylow.github.io/Covid_Control*
-
----
-
-## Technology
-
+## Technical Architecture 
 The technical details that ensure the quality, safety, and efficiency 
 
-------
+### Cognizant Evolutionary AI
 
-**Cognizant Evolutionary AI™**
-
-https://www.cognizant.com/pandemic-response
-
+https://www.cognizant.com/us/en/ai/evolutionary-ai
 https://www.cognizant.com/perspectives/covid-19-healthcare-can-step-up-digital-to-meet-demand
 
 Steering today’s $3.6-trillion healthcare economy in a bold new direction means rethinking business models and building new systems of engagement. Cognizant can help. We’re collaborating with healthcare’s leaders to enable a new model of health and improve people’s lives. Count on us to help you convert data into actionable insights, achieve higher levels of automation and efficiency, innovate new products and services, modernize infrastructure … and deliver better outcomes at sustainable cost.
 
 The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
 
-
-
-
-
-https://www.cognizant.com/us/en/ai/evolutionary-ai
-
-
-Evolutionary AI : Using AI to fight the pandemic
-
-
-https://www.cognizant.com/us/en/ai/evolutionary-ai
-
-
-Cognizant and XPRIZE are launching the Pandemic Response Challenge to help restart economies.
 Move from predictive insights to prescriptive actions and achieve optimal business outcomes
 
 Cognizant’s powerful, patented Learning Evolutionary Algorithm Framework (LEAF) uses advanced evolutionary algorithms and deep learning to produce actionable results from complicated, multivariate problems. In a very short period of time, potentially millions of variables can be evaluated against business goals, every option weighed for its benefit and the very best path to success identified.
 
 The Evolutionary Surrogate-Assisted Prescription (ESP) system learned to make recommendations about the spread of COVID-19. ESP’s two learning tasks include: learning to predict and using the predictor as a surrogate for the real world to prescribe actions that lead to desirable outcomes.
+
 The historical COVID-19 data comes from the publicly available COVID-19 data provided by Oxford University (Hale, Webster, Petherick, Phillips, Kira, 2020, Oxford COVID-19 Government Response Tracker, Blavatnik School of Government, Oxford University).
 
 This paper introduces a general such approach, called Evolutionary Surrogate-Assisted Prescription, or ESP. The surrogate is, for example, a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model. 
-Improve Predictions: Evolving deep network architectures means the LEAF can automatically arrive at solutions that are better than alternatives that require many Ph.D.-days of human labor.
 
-
-
- The evolutionary algorithms process generations of variable combinations very quickly. The least-useful-candidates are discarded and new ones are generated from variants of the most-useful-candidates through recombination and mutation.
+The evolutionary algorithms process generations of variable combinations very quickly. The least-useful-candidates are discarded and new ones are generated from variants of the most-useful-candidates through recombination and mutation.
 
 This process is rapidly repeated, homing in on the prescriptive actions to take. In this manner, Evolutionary AI makes it possible to identify the best approaches to designs, products and processes.
 
-
-
-
-
-IMPROVING PEOPLE’S LIVES
-The healthcare industry requires a deep, structural shift to move beyond brick and mortar, toward anytime, anywhere care that’s continuous, integrated and extended over time.
-
-
-Where is AI in the fight against COVID-19?
-How Evolutionary AI can forecast and advise on the next-best-steps to help reduce its spread.
+Improve Predictions: Evolving deep network architectures means the LEAF can automatically arrive at solutions that are better than alternatives that require many Ph.D. days of human labor.
 
 
 **Amazon's AWS for configuring the training environment**
-- AWS has generously donated cloud credits to be used by eligible teams for model development and training during Phase 1 of the competition. Thank you Mr.Jeff Bezos!
-- WS has generously donated cloud credits to be used by eligible teams for model development and training during Phase 1 of the competition.
-- Only fully registered teams (as indicated on POP) are eligible to receive the $250 in credits. Teams must use the credits only for the stated purpose of developing/training models for the Pandemic Response Challenge 
+* AWS has generously donated cloud credits to be used by eligible teams for model development and training during Phase 1 of the competition. Thank you Mr. Jeff Bezos!
+* WS has generously donated cloud credits to be used by eligible teams for model development and training during Phase 1 of the competition.
+* Only fully registered teams (as indicated on POP) are eligible to receive the $250 in credits. Teams must use the credits only for the stated purpose of developing/training models for the Pandemic Response Challenge 
 
-**Evaluation Sandbox***
-- upload predictor models 
-- Teams must activate their Evaluation Sandboxes as soon as possible and upload their predictor models well ahead of the December 22 deadline so we can work out any technical issues that arise. We will be unable to assist after the December 22 deadline since the environments will be locked. 
+**Evaluation Sandbox**
+* Upload predictor models 
+* Teams must activate their Evaluation Sandboxes as soon as possible and upload their predictor models well ahead of the December 22 deadline so we can work out any technical issues that arise. We will be unable to assist after the December 22 deadline since the environments will be locked. 
 
-the only way for your team to verify that your model works correctly and can be properly evaluated by the Robo Judge is to see if your model’s results show up on the Leaderboard on the Pandemic Response POP website. 
+The only way for your team to verify that your model works correctly and can be properly evaluated by the Robo Judge is to see if your model’s results show up on the Leaderboard on the Pandemic Response POP website. 
 
 Evaluation Sandbox Request Instructions
 https://docs.google.com/document/d/1rTSyuA5HFkpyH-jn9Z-bAtHIMyflKzvLilwA_xNwNxc/edit
 
- the purpose of this sandbox is to evaluate your model (through the automated Robo Judge every 9AM UTC) and is not suited for training models. 
+The purpose of this sandbox is to evaluate your model (through the automated Robo Judge every 9AM UTC) and is not suited for training models. 
  
  
  TEAM COVID CONTROL'S SANDBOX
  https://prcx-covidcontrol4479.xprizenotebooks.org/?token=ocmebh7t33kzocpyjbvkbbwjdkomn5efwg35wna5bjt446v
 
-Following are the specifications of each evaluation sandbox.  Teams should remember that their predictor must return a prediction in less than 1 hour for up to 180-days of prediction for up to 300 regions when it is called.
-OS: Ubuntu Bionic 18.04
-CPU: 2
-RAM: 8 Gb
+Following are the specifications of each evaluation sandbox.  Teams should remember that their predictor must return a prediction in less than 1 hour for up to 180-days of prediction for up to 300 regions when it is called:
+
+* OS: Ubuntu Bionic 18.04
+* CPU: 2
+* RAM: 8 Gb
 
 You can also find the token when you are logged into the sandbox by entering “jupyter notebook list” in the terminal.  This provides the token, however you will need to combine it with your sandbox domain name in order to construct the full URL + Token, such as:
 
@@ -253,18 +141,18 @@ with a single command with the following exact syntax and arguments:
 
 This call should write a CSV file to path_to_output_file containing the predictions for the daily cases between start_date and end_date, included, for each country and region for which path_to_ip_file contains an intervention plan. The CSV file should contain:
 
-● One row per day per region for which an intervention plan was supplied;
-● Required Columns: Date, CountryName, RegionName, PredictedDailyNewCases; and
-● Optional Columns: Teams may produce additional columns as output of their predictor
+* One row per day per region for which an intervention plan was supplied;
+* Required Columns: Date, CountryName, RegionName, PredictedDailyNewCases; and
+* Optional Columns: Teams may produce additional columns as output of their predictor
 models in the CSV file. These columns will be noted by the judges but not evaluated by the
 Robo Judge. Example optional columns could be:
-○ A column labeled IsSpecialty to indicate whether a region is to be considered a
+* A column labeled IsSpecialty to indicate whether a region is to be considered a
 speciality region for your model (1 = speciality region, 0 = not a speciality region)
-○ A 95% confidence interval and standard deviation for predicted number of cases
-○ Predicted number of deaths and related 95% confidence intervals
-○ Predicted number of hospitalization rates and related 95% confidence intervals
-○ Predicted number of ventilators needed and related 95% confidence internals
-○ Other columns chosen by the team
+* A 95% confidence interval and standard deviation for predicted number of cases
+* Predicted number of deaths and related 95% confidence intervals
+* Predicted number of hospitalization rates and related 95% confidence intervals
+* Predicted number of ventilators needed and related 95% confidence internals
+* Other columns chosen by the team
 
 A sample CSV output file can be found here on the GitHub
 https://github.com/leaf-ai/covid-xprize/blob/master/2020-08-01_2020-08-04_predictions_example.csv
@@ -301,17 +189,7 @@ epidemic, and the data so far about its progress in different populations and ef
 ---
 **Robo Judge**
 
-the Robo Judge process runs daily at 1AM PST, but we have 
-
-scheduled some additional runs leading up to the deadline to allow for more testing of your models and the results:
-
-Monday, December 21st at 1am PST
-
-Monday, December 21st at 3pm PST
-
-Tuesday, December 22nd at 1am PST
-
-Tuesday, December 22nd at 3pm PST
+the Robo Judge process runs daily at 1AM PST
 
 You do not have to compute the MAE - the robojudge does it. See https://github.com/leaf-ai/covid-xprize/blob/master/predictor_robojudge.ipynb for an example of what robojudge does. (edited) 
 
@@ -383,7 +261,6 @@ https://www.kaggle.com/ikiulian/simple-global-countries-visualization
 
 
 
-Hi all! I just compiled and released this dataset with socioeconomic data, health data, daily weather data, and COVID19 cases + fatalities for all 3142 counties in the United States.
 
 https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data
 
@@ -398,26 +275,6 @@ https://en.wikipedia.org/wiki/Blood_type_distribution_by_country
 https://population.un.org/wpp/Download/Standard/Population/
 
 
-
-##  compare with past pandemics
-
-SARS dataset
-https://www.kaggle.com/imdevskp/sars-outbreak-2003-complete-dataset
-
-Ebola dataset
-https://www.kaggle.com/imdevskp/ebola-outbreak-20142016-complete-dataset
-
-MERS dataset
-https://www.kaggle.com/imdevskp/mers-outbreak-dataset-20122019
-
-
-Twitter Covid Tweets Datasets
-http://www.lix.polytechnique.fr/dascim/software_datasets/projects/covid-twitter-analytics/
-http://www.lix.polytechnique.fr/dascim/software_datasets/projects/covid-twitter-analytics/
-
-Twitter is a microblogging platform that allows you to send and receive short posts called tweets. Users may interact with each other by commenting, liking and rebroadcasting a tweet. Rebroadcasting a tweet, which is called retweeting, shares the tweet with the users followers without any change. Retweeting can be seen as amplifying the spread of original content and thus retweet prediction is a crucial task when studying information spreading processes.
-
-Retweets allow one to track the flow of information on Twitter because they indicate situations where a user felt a tweet was important enough that he shared it with his followers. For this reason, to predict information spreading in Twitter, we wish to predict the number of retweets a tweet might get. Some applications that take advantage of the number of retweets include fake news spreading and tracking and mass emergency management.
  
 ## Predictor Model provided by Oxford University
  
@@ -477,9 +334,28 @@ Focusing on the US which is currently #1 cases.
 
 
 
-## optional input fields that affect covid19
+## Optional parameters that affect covid19
+
+####  Compare with past pandemics
+
+SARS dataset
+https://www.kaggle.com/imdevskp/sars-outbreak-2003-complete-dataset
+
+Ebola dataset
+https://www.kaggle.com/imdevskp/ebola-outbreak-20142016-complete-dataset
+
+MERS dataset
+https://www.kaggle.com/imdevskp/mers-outbreak-dataset-20122019
 
 
+####  Twitter Covid Tweets Datasets
+
+http://www.lix.polytechnique.fr/dascim/software_datasets/projects/covid-twitter-analytics/
+http://www.lix.polytechnique.fr/dascim/software_datasets/projects/covid-twitter-analytics/
+
+Twitter is a microblogging platform that allows you to send and receive short posts called tweets. Users may interact with each other by commenting, liking and rebroadcasting a tweet. Rebroadcasting a tweet, which is called retweeting, shares the tweet with the users followers without any change. Retweeting can be seen as amplifying the spread of original content and thus retweet prediction is a crucial task when studying information spreading processes.
+
+Retweets allow one to track the flow of information on Twitter because they indicate situations where a user felt a tweet was important enough that he shared it with his followers. For this reason, to predict information spreading in Twitter, we wish to predict the number of retweets a tweet might get. Some applications that take advantage of the number of retweets include fake news spreading and tracking and mass emergency management.
 
  First, school and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. 
  
@@ -710,7 +586,7 @@ effect, resulting in more regular predictions.
 
 ----------
 
-## ESP evolutionary surrogate-assisted prescription modelling (ESP),
+## ESP Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription  (ESP)
 
 https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general,predictions%20of%20the%20surrogate%20model.
 
@@ -792,19 +668,16 @@ The COVID-19 pandemic presents an important challenge: What non-pharmaceutical i
 An LSTM neural network model [23, 20] is trained with publicly available data on infections and NPIs [22]in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
 
 Even with current limited data, the predictions are surprisingly accurate and well-behaved. This
-result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper
+result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper to extend the models from prediction to prescription.
 
-to extend the models from prediction to prescription.
-
- Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
-in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and
-stringency of NPIs (representing economic impact). 
+Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
+in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and stringency of NPIs (representing economic impact). 
 
 ---------
 
 ## Training the model 
 
-These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters [54]. 
+These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters. 
 
 The model was trained until validation MAE did not improve for 20 epochs, at
 which point the weights yielding the best validation MAE were restored. Since the model and
@@ -821,14 +694,9 @@ Table 2: Performance comparison of proposed predictor (NPI-LSTM) with baselines.
 The simple linear model outperforms them substantially on the metrics that require forecasting beyond a single day, showing the difficulty that off-the-shelf nonlinear methods have in handling such forecasting.
 
 
-----
-## linear PCA
-
-i actually tried a polynomial kernel PCA and that was mistake. The model inflates exponentially (of course) so it runs out of memory fast. I remember a degree=3 kPCA needing around 32GB  .... it crashed on my laptop. didn't try it on our beefier hardware ....
-
 
 ---
-**Tool for validation of submission**
+## Tool for validation of submission
 
 Teams are highly encouraged to run this notebook to validate their submissions: https://github.com/leaf-ai/covid-xprize/blob/master/predictor_robojudge.ipynb 
 
@@ -852,11 +720,15 @@ You should evaluate it per 100000 population. The raw MSEs are not really inform
 
 ------
 
-**Testing: Scenario Generators**
+
+## Model Error Analysis
+
+An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method (Section 5.3) to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
+become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
+
 
 MAE == Mean Absolute Error metric:
-the students that rank higher will have a lower score on the metric, which means they incurred fewer errors 
-you should aim for the minimum Mean Absolute Error (MAE
+the students that rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum Mean Absolute Error (MAE)
 
 
 The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
@@ -864,60 +736,36 @@ The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE
 MAE=1N∑t=1N|pi−ai|
 where N is the number of tweets in the testing dataset, pi the predicted number of retweets for tweeti and ai the actual number of retweets for the same tweet
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 Teams are highly encouraged to use the scenario generators found on the GitHub repository to try out different evaluation scenarios before submitting their models. Instructions on how to use these scenario generators to test models can be found within the sample models provided by Cognizant on the GitHub repository.
 
 
- Note: the historical cases are not explicitly an input to the predictor. The predictor can, however,
-save and access the historical case data up to the starting point of the evaluation in the evaluation
-sandbox work folder. It can then use its own predictions in lieu of actual cases for the active
-evaluation period. In this manner, its predictions can be based on parallel time series of case history
-and intervention plan history up to the current point in time.
+Note: the historical cases are not explicitly an input to the predictor. The predictor can,however, save and access the historical case data up to the starting point of the evaluation in the evaluation sandbox work folder. It can then use its own predictions in lieu of actual cases for the active evaluation period. In this manner, its predictions can be based on parallel time series of case history and intervention plan history up to the current point in time.
 
 
-the data from submissions will be ranked
-in each region according to the cumulative error in the 7-day moving average for the number of
-cases per 100,000 people.
+The data from submissions will be ranked in each region according to the cumulative error in the 7-day moving average for the number of cases per 100,000 people.
 
-two overall performance measures will be formed. These
-are the:
-● Mean ranking of teams across all regions
-● Mean ranking of teams across the specialty regions, if selected
+Two overall performance measures will be formed:
+* Mean ranking of teams across all regions
+* Mean ranking of teams across the specialty regions, if selected
 
 
-my understanding is that there will be 3 types of tests:
-
-
+Three types of tests:
 * Tests on historic data to see the performance of the model
 * Tests on data from Dec 22nd to Jan 11th -- to see the performance in the 'near future' and be able to validate it with the real data
 * Tests of hypothetical future scenarios (beyond Jan 11th) where they will create different NPIs scenarios and they want to see how the models perform
 
 
-Teams will have their work subject to the following sanity checks:
-● Ranking on retrospective runs on historical intervals, representing a broader range of
+Sanity checks:
+* Ranking on retrospective runs on historical intervals, representing a broader range of
 situations than encountered in live testing
-● Other predictor sanity check pass/fail results (e.g., negative predictions, maximal and
+* Other predictor sanity check pass/fail results (e.g., negative predictions, maximal and
 minimal stringency predictions, and predictions exceeding population size)
 
 
 
-For each day in the 180-day evaluation period, the prescriptor is called with the date and weights
-as specified above, obtaining prescriptions for each region. They are evaluated along the two
-objectives:
-● The standard predictor is called to estimate the number of cases for each region; and
-● The total intervention plan stringency is calculated for each region using the Oxford
+For each day in the 180-day evaluation period, the prescriptor is called with the date and weights as specified above, obtaining prescriptions for each region. They are evaluated along the two objectives:
+* The standard predictor is called to estimate the number of cases for each region; and
+* The total intervention plan stringency is calculated for each region using the Oxford
 University Blavatnik School of Government’s COVID-19 Government Response Tracker
 Stringency Index formula, with the specified weights for the region.
 
@@ -926,26 +774,12 @@ averaged. The same three sets of weights are used to evaluate all prescriptors. 
 stringency will be averaged over the 180-day period to obtain the final objective values (i.e., cases and stringency) for the prescriptor for each region.
 
 
-Results with both the base case (with equal weights) and the general case (with random weights)
-will be presented to the judges as the outcome of the first quantitative evaluation.
-
------
-
-## Model Error Analysis
-
-An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method (Section 5.3) to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
-become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
-
-
-
-
+Results with both the base case (with equal weights) and the general case (with random weights)will be presented to the judges as the outcome of the first quantitative evaluation.
 
 ---
 ## Model Evaluation Results
 
 In their predictions, teams are encouraged to produce interesting results and show them.
-
-"what is going to happen from Dec 22 to Jan 13"
 
 
 JUDGING CRITERIA Equal weighting
@@ -1236,6 +1070,9 @@ compatible innovations to achieve better performance than would otherwise be pos
 
 machine-generated prescriptions may provide policymakers and public health officials with
 actionable locally-based, customized, and least restrictive intervention recommendations, such as mandatory masks and reduced restaurant capacity.
+
+This is the submission for Team Covid Control for the XPRIZE Pandemic Response Challenge. AI prediction model to estimate daily COVID-19 cases with astronomically high accuracy and prescriptive models for Intervention Plans that minimize infection cases and economic costs.
+
 
 
 ---
