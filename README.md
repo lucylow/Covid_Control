@@ -13,6 +13,9 @@
 
 Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve.
 
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-29%20at%201.53.08%20PM.png)
+
 ---
 
 
