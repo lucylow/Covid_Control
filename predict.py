@@ -1,8 +1,6 @@
 # Copyright 2020 (c) Cognizant Digital Business, Evolutionary AI. All rights reserved. Issued under the Apache 2.0 License.
 
 import argparse
-
-
 def predict(start_date: str,
             end_date: str,
             path_to_ips_file: str,
@@ -18,11 +16,8 @@ def predict(start_date: str,
     :return: Nothing. Saves the generated predictions to an output_file_path CSV file
     with columns "CountryName,RegionName,Date,PredictedDailyNewCases"
     """
-    # !!! YOUR CODE HERE !!!
     raise NotImplementedError
 
-
-# !!! PLEASE DO NOT EDIT. THIS IS THE OFFICIAL COMPETITION API !!!
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--start_date",
