@@ -1,5 +1,9 @@
 # Covid Control
 
+Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve.
+
+
+Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
 <div>
   
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
@@ -11,38 +15,13 @@
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/covid-cases-final-04-06.gif)
 
----
 
-
-## Table_of_Contents
-
-* [Pandemic Response Motivation](#Pandemic_Response_Motivation)
-* [Covid_Control](#Covid_Control)
-* [Artifical_Neural_Network](#Artifical_Neural_Network)
-* [LSTM_Model](#LSTM_Model)
-* [Text_Generation_Model](#Text_Generation_Model) 
-* [Text_Parameters](#Text_Parameters)
-* [Usage](#Usage)
-* [Predictions]
-* [Conclusion](#Conclusion)
-* [References](#References) 
-
----
-
-## Pandemic Response Motivation
-
-Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve.
-
-
-Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
+## Covid19 Pandemic Response Motivation
 
 This pandemic requires access to localized, data-driven planning systems combined with cutting
 edge artificial intelligence tools to help decision-makers develop and implement intervention plans that reduce infection cases, minimize negative economic impacts, and reopen their economies and societies.
 
 Impact of the Covid19 in Numbers
-* Cases 77.2M
-* Recovered 43.5M
-* Deaths 1.7M
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-21%20at%208.19.43%20PM.png)
 
@@ -52,7 +31,7 @@ Steering today’s $3.6-trillion healthcare economy in a bold new direction mean
 The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
 
 
-**When your kids ask "WHEN WILL WE USE MATH IN REAL LIFE?":**
+**When your kids ask "When will we use math in real life?":**
 1) Show them 3Blue1Brown's "Exponential growth and epidemics" Covid19 video
 2) Remind them the of China's one-child policy to control exponentially increasing population size
 
@@ -62,14 +41,14 @@ alt="Video" width="480" height="360" border="10" /></a>
 
 ------
 
-## Technical Motivation 
+## Machine Learning Solution 
 
-The goal is to develop a machine learning model to predict the future number of Covid Cases:
-* PHASE1 Predictor: LSTM (NPI-LSTM) Predictor Model
+The goal is to develop a machine learning model to predict the future number of Covid Cases worldwide:
+PHASE1 Predictor: LSTM (NPI-LSTM) Predictor Model
 
   * Phase 1 Predictor Development Estimate future numbers of daily COVID-19 cases with the greatest accuracy develop and submit predictor models that estimate the number of future cases for a given region(s)—considering the local intervention plans in effect based on live Oxford data—over a given time. 
 
-* PHASE2 Prescriptor: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
+PHASE2 Prescriptor: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
 
   * Produce the best prescription models for Intervention Plans. Implementation of the paper "From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic".
   * An interactive demo illustrating the basic concepts of the competition, such as the predictor and prescriptor models and their interaction and performance
@@ -78,7 +57,7 @@ https://public.tableau.com/shared/2H3XFDHWW?:display_count=y&:origin=viz_share_l
 
 ---
 
-## Technical Predictive Machine Learning  Architecture 
+## Technical Predictive Machine Learning Architecture 
 
 Based on knowledge of the populations and the epidemic, and the data so far about its progress in different populations and efforts to contain it, Covid Control can estimate how the disease will progress in the future.
 
@@ -99,28 +78,12 @@ https://www.cognizant.com/us/en/ai/evolutionary-ai
 
 * Improve Predictions: Evolving deep network architectures means the LEAF can automatically arrive at solutions
 
-**Evaluation Sandbox**
-* Upload predictor models to evaluate models through an automated robojudge where predictor must return a prediction in less than 1 hour for up to 180-days of prediction for up to 300 regions when it is called:
-  * OS: Ubuntu Bionic 18.04
-  * CPU: 2
-  * RAM: 8 Gb
-* Evaluation Sandbox Request Instructions 
-https://docs.google.com/document/d/1rTSyuA5HFkpyH-jn9Z-bAtHIMyflKzvLilwA_xNwNxc/edit
-* TEAM COVID CONTROL'S SANDBOX https://prcx-covidcontrol4479.xprizenotebooks.org/?token=ocmebh7t33kzocpyjbvkbbwjdkomn5efwg35wna5bjt446v
-* Sandbox token for jupyter notebook 
-  * https://cvat-xptatxxxxx.xprizenotebooks.org/?token=<token>
-* A predictor is accessed through a script in the evaluation sandbox. The predictor must be called
-with a single command with the following exact syntax and arguments:
-
-> python predict.py -s start_date -e end_date -ip path_to_ip_file -o path_to_output_file
-
 ---
 
 ## Oxford Dataset
 
 * The Oxford Covid-19 Government Response Tracker (OxCGRT) collects publicly available information on 19 indicators of government response and includes statistics on the number of reported Covid-19 cases and deaths in each country. There are 11 indicators of government response, such as school closings, travel bans, or other measures. For a full description of the data and how they are collected, see https://www.bsg.ox.ac.uk/research/publications/variation-government-responses-covid-19 
 
-![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_worldmap_govresponse.png)
 
 * Only a subset of the NPIs will be used: those that have a direct impact on the spread of the virus (i.e. on the daily new cases number). Oxford uses them in its "Containment and health index". See https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md for the list. Basically C1 to C8, H1, H2, H3 and H6.
 
@@ -271,12 +234,37 @@ https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general
 * Decision optimization in real-world problems
 * Weight parameters 
 
-![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_indices_vs_time.png)
 
+-------
+## Setting Up the Training Environment
+
+**Amazon Web Services Training** 
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%205.06.57%20PM.png)
+
+<img src="https://github.com/lucylow/Covid_Control/blob/main/images/AWS%20training%20cost.png" alt="alt text" width ="" height="">
+
+**Evaluation Sandbox**
+* Upload predictor models to evaluate models through an automated robojudge where predictor must return a prediction in less than 1 hour for up to 180-days of prediction for up to 300 regions when it is called:
+  * OS: Ubuntu Bionic 18.04
+  * CPU: 2
+  * RAM: 8 Gb
+* Evaluation Sandbox Request Instructions 
+https://docs.google.com/document/d/1rTSyuA5HFkpyH-jn9Z-bAtHIMyflKzvLilwA_xNwNxc/edit
+* TEAM COVID CONTROL'S SANDBOX https://prcx-covidcontrol4479.xprizenotebooks.org/?token=ocmebh7t33kzocpyjbvkbbwjdkomn5efwg35wna5bjt446v
+* Sandbox token for jupyter notebook 
+  * https://cvat-xptatxxxxx.xprizenotebooks.org/?token=<token>
+* A predictor is accessed through a script in the evaluation sandbox. The predictor must be called
+with a single command with the following exact syntax and arguments:
+
+> python predict.py -s start_date -e end_date -ip path_to_ip_file -o path_to_output_file
 
 ---------
 
 ## Training Predictor and Prescriptor models 
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.45%20AM.png)
+
 
 The ESP algorithm then operates as an outer loop that constructs the Predictor and Prescriptor models:
 
@@ -291,12 +279,6 @@ The data from submissions will be ranked in each region according to the cumulat
 Two overall performance measures will be formed:
 * Mean ranking of teams across all regions
 * Mean ranking of teams across the specialty regions, if selected
-
-* Amazon Web Services Training Costs
-
-![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%205.06.57%20PM.png)
-
-<img src="https://github.com/lucylow/Covid_Control/blob/main/images/AWS%20training%20cost.png" alt="alt text" width ="" height="">
 
 * These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters. 
 * The model was trained until validation MAE did not improve for 20 epochs, at
@@ -321,24 +303,20 @@ stringency will be averaged over the 180-day period to obtain the final objectiv
 
 Results with both the base case (with equal weights) and the general case (with random weights)will be presented to the judges as the outcome of the first quantitative evaluation.
 
-![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.45%20AM.png)
+
+
 
 ------
 
 
-## Model Error Analysis
+## Model Results and Analysis
 
 An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method (Section 5.3) to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
 become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.56%20AM.png)
-* Mean Absolute Error
-  * the students that rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum Mean Absolute Error (MAE)
-  * The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
-  * MAE=1N∑t=1N|pi−ai|
-where N is the number of tweets in the testing dataset, pi the predicted number of retweets for tweeti and ai the actual number of retweets for the same tweet
 
-Note: the historical cases are not explicitly an input to the predictor. The predictor can,however, save and access the historical case data up to the starting point of the evaluation in the evaluation sandbox work folder. It can then use its own predictions in lieu of actual cases for the active evaluation period. In this manner, its predictions can be based on parallel time series of case history and intervention plan history up to the current point in time.
+The historical cases are not explicitly an input to the predictor. The predictor can save and access the historical case data up to the starting point of the evaluation in the evaluation sandbox work folder. It can then use its own predictions in lieu of actual cases for the active evaluation period. In this manner, its predictions can be based on parallel time series of case history and intervention plan history up to the current point in time.
 
 Three types of tests:
 * Tests on historic data to see the performance of the model
@@ -352,6 +330,12 @@ situations than encountered in live testing
 * Other predictor sanity check pass/fail results (e.g., negative predictions, maximal and
 minimal stringency predictions, and predictions exceeding population size)
 
+
+Mean Absolute Error
+  * the students that rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum Mean Absolute Error (MAE)
+  * The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
+  * MAE=1N∑t=1N|pi−ai|
+where N is the number of tweets in the testing dataset, pi the predicted number of retweets for tweeti and ai the actual number of retweets for the same tweet
 
 
 ---
@@ -600,6 +584,9 @@ Businesses are spending more than US$300B dealing with regulatory change and inc
 
 
 As COVID-19 creates further economic uncertainty and loss, maximizing returns, managing risk and ensuring the continued health of your business demands a deep understanding of changing market conditions and government policy. Timely, in-depth political and economic scenario analysis for the outbreak and the potential path(s) to recovery for individual economies is increasingly critical to business planning and commercial decisions. 
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_indices_vs_time.png)
+
 
 
 -------
