@@ -111,38 +111,6 @@ with a single command with the following exact syntax and arguments:
 
 > python predict.py -s start_date -e end_date -ip path_to_ip_file -o path_to_output_file
 
-* This call should write a CSV file to path_to_output_file containing the predictions for the daily cases between start_date and end_date, included, for each country and region for which path_to_ip_file contains an intervention plan. The CSV file should contain:
-
-  * One row per day per region for which an intervention plan was supplied;
-  * Required Columns: Date, CountryName, RegionName, PredictedDailyNewCases; and
-  * Optional Columns: Teams may produce additional columns as output of their predictor
-  models in the CSV file. These columns will be noted by the judges but not evaluated by the
-  Robo Judge. Example optional columns could be:
-  * A column labeled IsSpecialty to indicate whether a region is to be considered a
-  speciality region for your model (1 = speciality region, 0 = not a speciality region)
-  * A 95% confidence interval and standard deviation for predicted number of cases
-  * Predicted number of deaths and related 95% confidence intervals
-  * Predicted number of hospitalization rates and related 95% confidence intervals
-  * Predicted number of ventilators needed and related 95% confidence internals
-  * Other columns chosen by the team
-
-
-* Installing and using R on your sandbox
-
-  If you would like to use R on your sandbox, please add the following code snippet to your predict.py file:
-  """
-  #!/usr/bin/env python
-  from subprocess import check_call, CalledProcessError
-  import conda.cli
-  try:
-      check_call(['which', 'R'])
-  except CalledProcessError:
-      conda.cli.main('conda', 'install',  '-c', 'r', 'r-irkernel', '-y')
-  else:
-      print ('R is installed!')
-  """
-
-
 ---
 
 ## Oxford Dataset
@@ -158,7 +126,7 @@ One such common issue with black box models in medical settings is data leakage,
 
 --------
  
-## Predictor Model provided by Oxford University
+## Predictor Model Provided by Oxford University
  There are eight kinds of NPIs used to train the Predictor model. Each ranging in stringency from 0 (no measures) to 2, 3, or 4 (full measures). 
 
 * Schools closing
@@ -182,9 +150,9 @@ School and workplace closings turn out to be the two most important NPIs in the 
 
 
 
-## Optional data parameters that affect covid19
+## Optional Data Parameters that Affect Covid19
 
-The frequency, intensity, locality, and duration of contacts is important. Here are other factors that can have a measurable impact on the spread of the virus.
+The frequency, intensity, locality, and duration of contacts is important but here are other factors that can have a measurable impact on the spread of the virus that I did not have time to implement in the model:
 
 * Number of hospital beds per 1000 people for each country: https://www.kaggle.com/hamzael1/hospital-beds-by-country or https://www.kaggle.com/ikiulian/global-hospital-beds-capacity-for-covid19
   * Number of ICU beds per county/state: https://www.kaggle.com/jaimeblasco/icu-beds-by-county-in-the-us
