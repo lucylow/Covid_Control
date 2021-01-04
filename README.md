@@ -211,10 +211,6 @@ The frequency, intensity, locality, and duration of contacts is important. Here 
   * China https://wwwnc.cdc.gov/eid/article/26/7/20-0764_article 
   * Korea  https://www.latimes.com/world-nation/story/2020-12-09/five-minutes-from-20-feet-away[…]south-korean-study-shows-perils-of-indoor-dining-for-covid-19
 * Number of seated resturant diners at restaurants per day since the end of February https://www.kaggle.com/jaimeblasco/opentable-state-of-the-restaurant-industry
- 
- 
-Here's a dataset of other WB metrics that I pulled here: https://www.kaggle.com/alexandrepoulin/covid19-confirmed-cases-march29
-
 * "Air transport, passengers carried",
 * "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
 * "Cause of death, by non-communicable diseases (% of total)",
@@ -265,7 +261,7 @@ Here's a dataset of other WB metrics that I pulled here: https://www.kaggle.com/
 
 ## Phase1 : Predictor Model Design LSTM (NPI-LSTM) Predictor
 
-* Keras representation of the learnable predictor model. 
+* Keras representation of the learnable predictor model 
 * The previous 21 days of Rn−t are fed into the context input; the previous 21 days of stringency values for the eight NPIs are fed into the action input. 
 * The Lambda layer combines the context branch h and the action branch g  to produce a prediction Rˆn. 
 * The effects of social distancing and endogenous growth rate of the pandemic are processed in separate pathways, making it possible to ensure that stringency has a monotonic effect, resulting in more regular predictions.
@@ -275,133 +271,55 @@ Here's a dataset of other WB metrics that I pulled here: https://www.kaggle.com/
 
 ## Phase 2: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
 
+* ESP is a continuous black-box optimization process for adaptive decision-making where the predictor (Pd) takes a decision as its input, and predicts the outcomes of that decision. A decision consists of a context and actions to be taken in that context
+* a technique that combines evolutionary search with surrogate modeling 
 https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general,predictions%20of%20the%20surrogate%20model.
 
-There is now significant historical data available on decision making in organizations, consisting of the decision problem, what decisions were made, and how desirable the outcomes were. Using this data, it is possible to learn a surrogate model, and with that model, evolve a decision strategy that optimizes the outcomes. This paper introduces a general such approach, called Evolutionary Surrogate-Assisted Prescription, or ESP. The surrogate is, for example, a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model. ESP is further extended in this paper to sequential decision-making tasks, which makes it possible to evaluate the framework in reinforcement learning (RL) benchmarks. Because the majority of evaluations are done on the surrogate, ESP is more sample efficient, has lower variance, and lower regret than standard RL approaches. Surprisingly, its solutions are also better because both the surrogate and the strategy network regularize the decision-making behavior. ESP thus forms a promising foundation to decision optimization in real-world problems.
+* Use historical data available on decision making in organizations, consisting of the decision problem, what decisions were made, and how desirable the outcomes were
+* In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such thatthe number of cases and cost that would result in the next two weeks is optimized. 
+* Learn a surrogate model
+  * Evolve a decision strategy that optimizes the outcomes
+  * Example surrogate == a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model.
+   * Majority of evaluations are done on the surrogate, ESP is more sample efficient, has lower variance, and lower regret than standard RL approaches
+* Sequential decision-making tasks
+* Reinforcement learning (RL)
+* Decision optimization in real-world problems
+* Weight parameters 
 
-https://evolution.ml/esp/
+----
 
+## Predictor and Prescriptor models together 
 
-Any of the existing neuroevolution methods [61] could be used to construct the Prescriptor as
-long as it evolves the entire network including all of its weight parameters:
+The ESP algorithm then operates as an outer loop that constructs the Predictor and Prescriptor models:
 
-The Prescriptor Neural Network. Given 21 past days of case information (Rn−t
-in
-Equation 6) as input (context input), the network generates recommended stringency values for
-each of the eight NPIs. The network is fully connected with one hidden layer. Because there are no
-targets, i.e. the optimal NPIs are not known, gradient descent cannot be used; instead, all weights
-and biases are evolved based on how well the network’s NPI recommendations work along the cases
-and cost objectives, as predicted by the Predictor.
-
-
-Both measures are averaged over the next 180 days and over the 20 countries with the most deaths
-in the historical data, which at the time of the experiment were United States, United Kingdom,
-Italy, France, Spain, Brazil, Belgium, Germany, Iran, Canada, Netherlands, Mexico, China, Turkey,
-Sweden, India, Ecuador, Russia, Peru, Switzerland. Both objectives have to be minimized.
-
-
-Thus, in the early stages, the ESP approach may suggest how to “flatten the curve”, i.e. what
-NPIs should be implemented in order to slow down the spread of the disease. At later stages, it
-may recommend how the NPIs can be lifted and the economy restarted safely. A third role for
-the approach is to go back in time and evaluate counterfactuals, i.e. how well NPI strategies other
-than those actually implemented could have worked.
-
-
-
-
-The approach taken in this paper is based on evolutionary surrogate-assisted
-prescription [16], a technique that combines evolutionary search with surrogate modeling (Figure 1).
-
-ESP is a continuous black-box optimization process for adaptive decision-making [16]. In ESP, a
-model of the problem domain is used as a surrogate for the problem itself. This model, called the
-Predictor (Pd), takes a decision as its input, and predicts the outcomes of that decision. A decision
-consists of a context (i.e. a problem) and actions to be taken in that context.
-
-The ESP algorithm then operates as an outer loop that constructs the Predictor and Prescriptor
-models (Figure 2):
 1. Train a Predictor based on historical training data;
 2. Evolve Prescriptors with the Predictor as the surrogate;
 3. Apply the best Prescriptor in the real world;
 4. Collect the new data and add to the training set;
 5. Repeat.
 
-
-In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such that
-the number of cases and cost that would result in the next two weeks is optimized. The details of the Predictor and Prescriptor in this setup will be described next, after an overview of the data used to construct them.
-
-
-ESP and Augmenting Human Decision Making Optimizing COVID-19 Interventions
-
-https://evolution.ml/esp/npi/
-https://arxiv.org/abs/2005.13766
-
-From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic
-
-Several models have been developed to predict how the COVID-19 pandemic spreads, and how it could be contained with non-pharmaceutical interventions (NPIs) such as social distancing restrictions and school and business closures. This paper demonstrates how evolutionary AI could be used to facilitate the next step, i.e. determining most effective intervention strategies automatically. Through evolutionary surrogate-assisted prescription (ESP), it is possible to generate a large number of candidate strategies and evaluate them with predictive models. In principle, strategies can be customized for different countries and locales, and balance the need to contain the pandemic and the need to minimize their economic impact. While still limited by available data, early experiments suggest that workplace and school restrictions are the most important and need to be designed carefully. It also demonstrates that results of lifting restrictions can be unreliable, and suggests creative ways in which restrictions can be implemented softly, e.g. by alternating them over time. As more data becomes available, the approach can be increasingly useful in dealing with COVID-19 as well as possible future pandemics.
-
-
-
-The COVID-19 pandemic presents an important challenge: What non-pharmaceutical interventions can be taken to contain the spread while impacting the economy as little as possible? Based on available data, ESP can be used to make such recomendations and evaluate how well they would work.
-
-
-
 ---
 
 ## LSTM example 'data' directory
 
+* An LSTM neural network model  is trained with publicly available data on infections and NPIs in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
 
-An LSTM neural network model [23, 20] is trained with publicly available data on infections and NPIs [22]in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
+* Even with current limited data, the predictions are surprisingly accurate and well-behaved. This result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper to extend the models from prediction to prescription.
 
-Even with current limited data, the predictions are surprisingly accurate and well-behaved. This
-result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper to extend the models from prediction to prescription.
-
-Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
+* Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
 in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and stringency of NPIs (representing economic impact). 
 
 ---------
 
 ## Training the model 
 
-These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters. 
-
-The model was trained until validation MAE did not improve for 20 epochs, at
+* These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters. 
+* The model was trained until validation MAE did not improve for 20 epochs, at
 which point the weights yielding the best validation MAE were restored. Since the model and
 dataset are relatively small compared to common deep learning datasets, the model is relatively
 inexpensive to train. On a 2018 MacBook Pro Laptop with six Intel i7 cores, the model takes
 276 ± 31 seconds to train (mean and std. err. computed over 10 independent training runs).
-
-Table 2: Performance comparison of proposed predictor (NPI-LSTM) with baselines. T
-
-...
-
- NPI-LSTM outperforms the baselines on all metrics. 
-
-The simple linear model outperforms them substantially on the metrics that require forecasting beyond a single day, showing the difficulty that off-the-shelf nonlinear methods have in handling such forecasting.
-
-
-
----
-## Tool for validation of submission
-
-Teams are highly encouraged to run this notebook to validate their submissions: https://github.com/leaf-ai/covid-xprize/blob/master/predictor_robojudge.ipynb 
-
-Additionally, you can manually run a prediction by using the .schedule/run.sh from your home directory. You should then be able to see the results by viewing ~/work/predictions/.  Any issues encountered while running your model will be reported to ~/work/predictions/logs/, so please check this if you do not see your results on the leaderboard.
-
-
-Have you evaluated your results against any other published models, like the 30 or so on the CDC website? I was planning to evaluate this as well to see if I can glean anything from the better models from Universities.
-
-https://www.cdc.gov/coronavirus/2019-ncov/covid-data/forecasting-us.html
-
-Yep. If you follow the links-- each model has a GIT repo or a website explaining the model. You can see that their aggregate model hasn't been very good at predicting in the past. But they let anyone contribute and don't weigh the aggregate by past performance so I think some of them are probably good and some pretty bad- leading to chaos in the aggregate. I was planning to identify the better predictors and see what they did and potentially incorporate some ideas. https://covid.cdc.gov/covid-data-tracker/?fbclid=IwAR2Ky2Oo4EGumW0t9Of_GRVX5YKiH1XiXIgoW_sF5sZPvyQ2QCGjqg5vOMQ#forecasting_weeklycases (edited) 
-
-
-i've been working on validating my data against the xprize-github's linear predictor as a smoke test
-
-so far I've beat it with 2x accuracy 2x accuracy (half the error)
-
-You should evaluate it per 100000 population. The raw MSEs are not really informative.
-
-
+* NPI-LSTM outperforms the baselines on all metrics. The simple linear model outperforms them substantially on the metrics that require forecasting beyond a single day, showing the difficulty that off-the-shelf nonlinear methods have in handling such forecasting.
 
 ------
 
@@ -412,16 +330,11 @@ An important aspect of any decision system is to make it trustworthy, i.e. estim
 become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
 
 
-MAE == Mean Absolute Error metric:
-the students that rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum Mean Absolute Error (MAE)
-
-
-The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
-
-MAE=1N∑t=1N|pi−ai|
+* Mean Absolute Error
+  * the students that rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum Mean Absolute Error (MAE)
+  * The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
+  * MAE=1N∑t=1N|pi−ai|
 where N is the number of tweets in the testing dataset, pi the predicted number of retweets for tweeti and ai the actual number of retweets for the same tweet
-
-Teams are highly encouraged to use the scenario generators found on the GitHub repository to try out different evaluation scenarios before submitting their models. Instructions on how to use these scenario generators to test models can be found within the sample models provided by Cognizant on the GitHub repository.
 
 
 Note: the historical cases are not explicitly an input to the predictor. The predictor can,however, save and access the historical case data up to the starting point of the evaluation in the evaluation sandbox work folder. It can then use its own predictions in lieu of actual cases for the active evaluation period. In this manner, its predictions can be based on parallel time series of case history and intervention plan history up to the current point in time.
@@ -464,49 +377,39 @@ Results with both the base case (with equal weights) and the general case (with 
 ---
 ## Model Evaluation Results
 
-In their predictions, teams are encouraged to produce interesting results and show them.
 
 
 JUDGING CRITERIA Equal weighting
 
 **Innovation to extend scope of challenge ** 
 Teams who submit and use additional data, intervention plans (such as
-vaccination policies and treatments), or otherwise find innovative ways to extend the scope
-of the challenge will be ranked highly;
+vaccination policies and treatments), or otherwise find innovative ways to extend the scopeof the challenge will be ranked highly;
 
- create
-new solutions that may have never existed before. 
+* How long does someone with COVID-19 typically stay on a ventilator? Some people may need to be on a ventilator for a few hours, while others may require one, two, or three weeks. If a person needs to be on a ventilator for a longer period of time, a tracheostomy may be required. During this procedure, a surgeon makes a hole in the front of the neck and inserts a tube into the trachea.
 
-- How long does someone with COVID-19 typically stay on a ventilator? Some people may need to be on a ventilator for a few hours, while others may require one, two, or three weeks. If a person needs to be on a ventilator for a longer period of time, a tracheostomy may be required. During this procedure, a surgeon makes a hole in the front of the neck and inserts a tube into the trachea.
+* N95 masks can be rotated every 3–4 days, heated for 60 min, steamed or boiled for 5 min, and then air-dried. These methods retain 92.4–98.5% filtering efficiency (FE). Using soap and water or medical grade alcohol significantly decreases the FE of the masks (54% and 67%, respectively).
 
-- N95 masks can be rotated every 3–4 days, heated for 60 min, steamed or boiled for 5 min, and then air-dried. These methods retain 92.4–98.5% filtering efficiency (FE). Using soap and water or medical grade alcohol significantly decreases the FE of the masks (54% and 67%, respectively).
-
-- Can a person become re-infected with COVID-19 within 3 months of recovery?
+* Can a person become re-infected with COVID-19 within 3 months of recovery?
 Review of currently available evidence suggests that most individuals do not become re-infected within 3 months of resolution of SARS-CoV-2 infection.
 
-- 14 day self-quarantine.  You should still self-quarantine for 14 days since your last exposure. It can take up to 14 days after exposure to the virus for a person to develop COVID-19 symptoms. A negative result before end of the 14-day quarantine period does not rule out possible infection. By self-quarantining for 14 days, you lower the chance of possibly exposing others to COVID-19.
+* 14 day self-quarantine.  You should still self-quarantine for 14 days since your last exposure. It can take up to 14 days after exposure to the virus for a person to develop COVID-19 symptoms. A negative result before end of the 14-day quarantine period does not rule out possible infection. By self-quarantining for 14 days, you lower the chance of possibly exposing others to COVID-19.
 
-- Contact Tracing Apps. Contact tracing is an effective disease control strategy that involves identifying cases and their contacts then working with them to interrupt disease transmission. This includes asking cases to isolate and contacts to quarantine at home voluntarily. Contact tracing is a key strategy to prevent the further spread of COVID-19.
+* Contact Tracing Apps. Contact tracing is an effective disease control strategy that involves identifying cases and their contacts then working with them to interrupt disease transmission. This includes asking cases to isolate and contacts to quarantine at home voluntarily. Contact tracing is a key strategy to prevent the further spread of COVID-19.
 
-- Incubation Time Period- Typically, a person develops symptoms 5 days after being infected, but symptoms can appear as early as 2 days after infection or as late as 14 days after infection, and the time range can vary.
+* Incubation Time Period- Typically, a person develops symptoms 5 days after being infected, but symptoms can appear as early as 2 days after infection or as late as 14 days after infection, and the time range can vary.
 
-- It typically takes a few weeks for the body to build immunity after vaccination. That means it's possible a person could be infected with the virus that causes COVID-19 just before or just after vaccination and get sick. This is because the vaccine has not had enough time to provide protection.
+* It typically takes a few weeks for the body to build immunity after vaccination. That means it's possible a person could be infected with the virus that causes COVID-19 just before or just after vaccination and get sick. This is because the vaccine has not had enough time to provide protection.
 
-- Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking care for someone who has or may have COVID-19.
+* Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking care for someone who has or may have COVID-19.
 
-- # of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
+* # of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
 
-- Early vs Late stage covid19 trials 
+* Early vs Late stage covid19 trials 
 
-- how it spreads, infects, and sickens 
-
-Genetics, other health conditions, sex hormones, 
-
-VACCINATION 
-
-- Tracking COVID-19 vaccination rates:https://ourworldindata.org/covid-vaccinations
-- Vaccine development: vaccines approved for use and in clinical trials
-- Vacine canidates, trial deadlines, vacine diswtrubution, vacine implementation 
+* Vaccinations
+  * Tracking COVID-19 vaccination rates:https://ourworldindata.org/covid-vaccinations
+  * Vaccine development: vaccines approved for use and in clinical trials
+  * Vacine canidates, trial deadlines, vacine diswtrubution, vacine implementation 
 
 
 **Generality**
@@ -671,22 +574,7 @@ XAI techniques can be used to reveal whether attributes such as race or gender, 
 -------
 
 
-## Non Technical Conclusion 
-ACTIONS 
-What can I do to keep my immune system strong during the COVID-19 pandemic?
-Don't smoke or vape.
-Eat a diet high in fruits, vegetables, and whole grains.
-Take a multivitamin if you suspect that you may not be getting all the nutrients you need through your diet.
-Exercise regularly.
-Maintain a healthy weight.
-Control your stress level.
-Control your blood pressure.
-If you drink alcohol, drink only in moderation (no more than one to two drinks a day for men, no more than one a day for women).
-Get enough sleep.
-Take steps to avoid infection, such as washing your hands frequently and trying not to touch your hands to your face, since harmful germs can enter through your eyes, nose, and mouth.
-
-
-TREATMENT
+## Conclusion 
 
 Pharmaceutical interventions such as treatments and
 vaccines will take time to develop, so the focus has been on implementing non-pharmaceutical
@@ -700,9 +588,6 @@ Right now, CDC recommends COVID-19 vaccine be offered to healthcare personnel an
 
 There is currently a limited supply of COVID-19 vaccine in the United States, but supply will increase in the weeks and months to come.
 
-Cost is not an obstacle to getting vaccinated against COVID-19.
-
-https://www.cdc.gov/coronavirus/2019-ncov/vaccines/8-things.html
 
 Coronavirus Treatment Acceleration Program (CTAP)
 590+ drug development programs 
@@ -721,40 +606,24 @@ Dec 15 2020 is an updated list of 22 of the most-talked-about treatments for the
 https://www.nytimes.com/interactive/2020/science/coronavirus-drugs-treatments.html
 
 
-Government Measures to Combat COVID19
-Trying to flatten the curve!
-
-
-https://www.kaggle.com/barun2104/government-measures-to-combat-covid19
-
-The COVID19 Government Measures Dataset puts together all the measures implemented by governments worldwide in response to the Coronavirus pandemic. Data collection includes secondary data review. The researched information available falls into five categories:
-
-Social distancing
-Movement restrictions
-Public health measures
-Social and economic measures
-Lockdowns
-
-https://www.acaps.org/projects/covid19/data
+Government Measures to Combat COVID19 Trying to flatten the curve!
+* The COVID19 Government Measures Dataset puts together all the measures implemented by governments worldwide in response to the Coronavirus pandemic.  https://www.kaggle.com/barun2104/government-measures-to-combat-covid19
+* Data collection includes secondary data review. The researched information available falls into five categories:
+  * Social distancing (reduced resturant capacity)
+  * Movement restrictions
+  * Public health measures (mandatory masks)
+  * Social and economic measures
+  * Lockdowns
 
 
 -------
 
-## Technical Conclusion 
+##  Conclusion 
 
-"THIS CHALLENGE COULD BE A GAME CHANGER WHEN IT COMES TO USING DATA AND AI TO CREATE A ROUTE TO RECOVERY."
-
-Ai and humans need to work together
-
-Cooperation between agents, in this case algorithms and humans, depends on trust. If humans are to accept algorithmic prescriptions, they need to trust them. 
-
-Thus, the second quantitative evaluation addresses an important and novel aspect of the
+AI and humans need to work together. Cooperation between agents, in this case algorithms and humans, depends on trust. If humans are to accept algorithmic prescriptions, they need to trust them.  The second quantitative evaluation addresses an important and novel aspect of the
 competition: it is a community effort. Team contributions are brought together into a common
 population, and a modern machine learning discovery method is used to find synergies and
 compatible innovations to achieve better performance than would otherwise be possible.
-
-machine-generated prescriptions may provide policymakers and public health officials with
-actionable locally-based, customized, and least restrictive intervention recommendations, such as mandatory masks and reduced restaurant capacity.
 
 This is the submission for Team Covid Control for the XPRIZE Pandemic Response Challenge. AI prediction model to estimate daily COVID-19 cases with astronomically high accuracy and prescriptive models for Intervention Plans that minimize infection cases and economic costs.
 
@@ -766,13 +635,11 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 * COVID19 Global Forecasting (Week 5) https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
 * From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
 * https://www.who.int/news/item/13-10-2020-impact-of-covid-19-on-people's-livelihoods-their-health-and-our-food-systems
-* https://en.wikipedia.org/wiki/Economic_impact_of_the_COVID19_pandemic#Economic_impact_by_region_and_country
 * https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
 * https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.html
 * https://www.ncbi.nlm.nih.gov/research/coronavirus/
 * https://www.sciencedirect.com/articlelist/covid
 * https://novel-coronavirus.onlinelibrary.wiley.com/
-* https://taylorandfrancis.com/coronavirus/
 * https://www.springernature.com/gp/researchers/campaigns/coronavirus
 * https://academic.oup.com/journals/pages/coronavirus
 * https://coronavirus.1science.com/search
@@ -782,11 +649,6 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 * https://www.technologyreview.com/2020/01/29/304857/why-asking-an-ai-to-explain-itself-can-make-things-worse/
 * https://arxiv.org/abs/2005.13766
 * https://evolution.ml/esp/npi/
-* https://www.worldometers.info/ - Population, Density, Median Age, Urban Population, Fertility Rate, Patient Zero Detection Date, Confirmed Cases, New Cases, Total Deaths, Total Recovered, Critical Cases.
-* https://worldpopulationreview.com/countries/smoking-rates-by-country/ - % of smokers by country.
-* https://data.worldbank.org/indicator/SH.MED.BEDS.ZS - Hospital beds per 1000 citizens.
-* https://en.wikipedia.org/wiki/List_of_countries_by_sex_ratio - Sex ratio by age.
 * https://www.worldlifeexpectancy.com/cause-of-death/lung-disease/by-country/ - Lung diseases death rate.
 * https://en.wikipedia.org/wiki/COVID-19_testing - COVID-19 Tests
-* https://www.worldbank.org/ - GDP 2019, Health Expenses (Whatever was missing was filled with information from Wikipedia)
-* https://en.climate-data.org/ - Temperature and Humidity raw data.
+
