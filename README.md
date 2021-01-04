@@ -1,5 +1,6 @@
 # Covid Control
-Pandemic Response Challenge. Machine learning model to predict the future number of Covid19 Cases with LSTM and RL
+Pandemic Response Challenge. Machine learning model to predict the future number of Covid19 Cases with LSTM and RL. Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve. Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
+
 <div>
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
@@ -10,7 +11,6 @@ Pandemic Response Challenge. Machine learning model to predict the future number
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/covid-cases-final-04-06.gif)
 
-Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve. Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
 
 </div>
 
@@ -38,6 +38,7 @@ The pandemic is driving consumers toward digital healthcare channels. Healthcare
 ## Machine Learning Solution 
 
 The goal is to develop a machine learning model to predict the future number of Covid Cases worldwide:
+
 **PHASE1 Predictor: LSTM Predictor Model**
 
   * Phase 1 Predictor Development Estimate future numbers of daily COVID-19 cases with the greatest accuracy develop and submit predictor models that estimate the number of future cases for a given region(s)—considering the local intervention plans in effect based on live Oxford data—over a given time. 
@@ -55,10 +56,7 @@ The goal is to develop a machine learning model to predict the future number of 
 
 ## Technical Predictive Machine Learning Architecture 
 
-Based on knowledge of the populations and the epidemic, and the data so far about its progress in different populations and efforts to contain it, Covid Control can estimate how the disease will progress in the future.
-
-
-**Cognizant Evolutionary AI**
+Based on knowledge of the populations and the epidemic, and the data so far about its progress in different populations and efforts to contain it, Covid Control can estimate how the disease will progress in the future using Cognizant's Evolutionary AI.
 
 * Cognizant’s Learning Evolutionary Algorithm Framework (LEAF) uses advanced evolutionary algorithms and deep learning to produce actionable results from complicated, multivariate problems.
 
@@ -118,16 +116,16 @@ The frequency, intensity, locality, and duration of contacts is important but he
   * China https://wwwnc.cdc.gov/eid/article/26/7/20-0764_article 
   * Korea  https://www.latimes.com/world-nation/story/2020-12-09/five-minutes-from-20-feet-away[…]south-korean-study-shows-perils-of-indoor-dining-for-covid-19
 * Number of seated resturant diners at restaurants per day since the end of February https://www.kaggle.com/jaimeblasco/opentable-state-of-the-restaurant-industry
-* "Air transport, passengers carried",
-* "GDP per capita, PPP (current international $)",
-* "International migrant stock, total", "International tourism, number of arrivals", "International tourism, number of departures"
-* "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
-* "Mortality rate attributed to household and ambient air pollution, age-standardized (per 100,000 population)", and "Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (per 100,000 population)",
-* Number of "Nurses and midwives (per 1,000 people)",
-* "People using at least basic sanitation services (% of population)", "People using safely managed sanitation services (% of population)", and "People with basic handwashing facilities including soap and water (% of population)"
-* "Physicians (per 1,000 people)",
-* "PM2.5 air pollution, population exposed to levels exceeding WHO guideline value (% of total)",
-* "Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population)",
+* Air transport, passengers carried
+* GDP per capita, PPP (current international $)
+* International migrant stock, total, International tourism, number of arrivals, International tourism, number of departures
+* Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)
+* Mortality rate attributed to household and ambient air pollution, age-standardized (per 100,000 population), and Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (per 100,000 population)
+* Number of Nurses and midwives (per 1,000 people)
+* People using at least basic sanitation services (% of population), People using safely managed sanitation services (% of population), and People with basic handwashing facilities including soap and water (% of population)
+* Number of Physicians (per 1,000 people)
+* PM parts million 2.5 air pollution, population expoled to levels exceeding WHO guideline value (% of total)
+* Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population)
 
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_govresponse_vs_cases.png)
@@ -302,7 +300,7 @@ where N is the number of tweets in the testing dataset, pi the predicted number 
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_six_countries.png)
 
-#### Innovation to extend scope of challenge** 
+## Innovation
 Teams who submit and use additional data, intervention plans (such as
 vaccination policies and treatments), or otherwise find innovative ways to extend the scopeof the challenge will be ranked highly;
 
