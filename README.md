@@ -1,4 +1,5 @@
 # Covid Control
+Pandemic Response Challenge. Machine learning model to predict the future number of Covid19 Cases with LSTM and RL
 <div>
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
@@ -31,10 +32,6 @@ Steering today’s $3.6-trillion healthcare economy in a bold new direction mean
 
 The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
 
-Impact of the Covid19 in Numbers
-
-![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-21%20at%208.19.43%20PM.png)
-
 
 ------
 
@@ -53,8 +50,6 @@ The goal is to develop a machine learning model to predict the future number of 
 
   * Produce the best prescription models for Intervention Plans. Implementation of the paper "From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic".
   * An interactive demo illustrating the basic concepts of the competition, such as the predictor and prescriptor models and their interaction and performance
-  * https://data.xprize.org/covid19
-https://public.tableau.com/shared/2H3XFDHWW?:display_count=y&:origin=viz_share_link&:embed=y
 
 ---
 
@@ -65,17 +60,17 @@ Based on knowledge of the populations and the epidemic, and the data so far abou
 
 **Cognizant Evolutionary AI**
 
-* Cognizant’s powerful, patented Learning Evolutionary Algorithm Framework (LEAF) uses advanced evolutionary algorithms and deep learning to produce actionable results from complicated, multivariate problems. In a very short period of time, potentially millions of variables can be evaluated against business goals, every option weighed for its benefit and the very best path to success identified.
+* Cognizant’s Learning Evolutionary Algorithm Framework (LEAF) uses advanced evolutionary algorithms and deep learning to produce actionable results from complicated, multivariate problems.
 
-* The Evolutionary Surrogate-Assisted Prescription (ESP) system learned to make recommendations about the spread of COVID-19. ESP’s two learning tasks include: learning to predict and using the predictor as a surrogate for the real world to prescribe actions that lead to desirable outcomes.
+* The Evolutionary Surrogate-Assisted Prescription (ESP) system learned to make recommendations about the spread of COVID-19. ESP’s two learning tasks include: 
+  * Learning to predict
+  * Using the predictor as a surrogate for the real world to prescribe actions that lead to desirable outcomes.
 
-* The historical COVID-19 data comes from the publicly available COVID-19 data provided by Oxford University (Hale, Webster, Petherick, Phillips, Kira, 2020, Oxford COVID-19 Government Response Tracker, Blavatnik School of Government, Oxford University).
-
-* This paper introduces a general such approach, called Evolutionary Surrogate-Assisted Prescription, or ESP. The surrogate is, for example, a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model. 
-
-* The evolutionary algorithms process generations of variable combinations very quickly. The least-useful-candidates are discarded and new ones are generated from variants of the most-useful-candidates through recombination and mutation.
-
-* Improve Predictions: Evolving deep network architectures means the LEAF can automatically arrive at solutions
+* Evolutionary Surrogate-Assisted Prescription (ESP). 
+  * Surrogate is for example, a random forest or a neural network trained with gradient descent
+  * Neural network that is evolved to maximize the predictions of the surrogate model. 
+  * The evolutionary algorithms process generations of variable combinations very quickly. 
+  * The least-useful-candidates are discarded and new ones are generated from variants of the most-useful-candidates through recombination and mutation.
 
 ---
 
@@ -86,9 +81,9 @@ Based on knowledge of the populations and the epidemic, and the data so far abou
 
 * Only a subset of the NPIs will be used: those that have a direct impact on the spread of the virus (i.e. on the daily new cases number). Oxford uses them in its "Containment and health index". See https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md for the list. Basically C1 to C8, H1, H2, H3 and H6.
 
-These can range from huge amounts of missing data (that are not missing at random), or unmeasured confounding, to systematic errors in the dataset (e.g., incorrect coding of drug treatments), to data collection issues that cause the distribution of data to be different than what we originally thought.
+* These can range from huge amounts of missing data (that are not missing at random), or unmeasured confounding, to systematic errors in the dataset (e.g., incorrect coding of drug treatments), to data collection issues that cause the distribution of data to be different than what we originally thought.
  
-One such common issue with black box models in medical settings is data leakage, where some information about the label y sneaks into the variables x in a way that you might not suspect by looking at the titles and descriptions of the variables: sometimes you think you are predicting something in the future but you are only detecting something that happened in the past. In predicting medical outcomes, the machine might pick up on information within doctors’ notes that reveal the patients’ outcome before it is officially recorded and hence erroneously claim these as successful predictions.
+* One such common issue with black box models in medical settings is data leakage, where some information about the label y sneaks into the variables x in a way that you might not suspect by looking at the titles and descriptions of the variables: sometimes you think you are predicting something in the future but you are only detecting something that happened in the past. In predicting medical outcomes, the machine might pick up on information within doctors’ notes that reveal the patients’ outcome before it is officially recorded and hence erroneously claim these as successful predictions.
 
 --------
 
@@ -124,49 +119,15 @@ The frequency, intensity, locality, and duration of contacts is important but he
   * Korea  https://www.latimes.com/world-nation/story/2020-12-09/five-minutes-from-20-feet-away[…]south-korean-study-shows-perils-of-indoor-dining-for-covid-19
 * Number of seated resturant diners at restaurants per day since the end of February https://www.kaggle.com/jaimeblasco/opentable-state-of-the-restaurant-industry
 * "Air transport, passengers carried",
-* "Cause of death, by communicable diseases and maternal, prenatal and nutrition conditions (% of total)",
-* "Cause of death, by non-communicable diseases (% of total)",
-* "Current health expenditure per capita, PPP (current international $)",
-* "Death rate, crude (per 1,000 people)",
-* "Diabetes prevalence (% of population ages 20 to 79)",
 * "GDP per capita, PPP (current international $)",
-* "Hospital beds (per 1,000 people)",
-* "Incidence of tuberculosis (per 100,000 people)",
-* "International migrant stock, total",
-* "International tourism, number of arrivals",
-* "International tourism, number of departures",
-* "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)",
-* "Life expectancy at birth, total (years)",
-* "Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)",
-* "Mortality rate attributed to household and ambient air pollution, age-standardized (per 100,000 population)",
-* "Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (per 100,000 population)",
-* "Mortality rate, adult, female (per 1,000 female adults)",
-* "Mortality rate, adult, male (per 1,000 male adults)",
-* "Number of people spending more than 10% of household consumption or income on out-of-pocket health care expenditure",
-* "Number of people spending more than 25% of household consumption or income on out-of-pocket health care expenditure",
-* "Nurses and midwives (per 1,000 people)",
-* "Out-of-pocket expenditure (% of current health expenditure)",
-* "People using at least basic sanitation services (% of population)",
-* "People using safely managed sanitation services (% of population)",
-* "People with basic handwashing facilities including soap and water (% of population)",
+* "International migrant stock, total", "International tourism, number of arrivals", "International tourism, number of departures"
+* "Labor force participation rate, total (% of total population ages 15+) (modeled ILO estimate)"
+* "Mortality rate attributed to household and ambient air pollution, age-standardized (per 100,000 population)", and "Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (per 100,000 population)",
+* Number of "Nurses and midwives (per 1,000 people)",
+* "People using at least basic sanitation services (% of population)", "People using safely managed sanitation services (% of population)", and "People with basic handwashing facilities including soap and water (% of population)"
 * "Physicians (per 1,000 people)",
 * "PM2.5 air pollution, population exposed to levels exceeding WHO guideline value (% of total)",
-* "Population ages 15-64 (% of total)",
-* "Population ages 65 and above (% of total)",
-* "Population density (people per sq. km of land area)",
-* "Population in the largest city (% of urban population)",
-* "Population in urban agglomerations of more than 1 million (% of total population)",
-* "Population, total",
 * "Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population)",
-* "Prevalence of HIV, total (% of population ages 15-49)",
-* "Smoking prevalence, females (% of adults)",
-* "Smoking prevalence, males (% of adults)",
-* "Survival to age 65, female (% of cohort)",
-* "Survival to age 65, male (% of cohort)",
-* "Trade (% of GDP)",
-* "Tuberculosis case detection rate (%, all forms)",
-* "Tuberculosis treatment success rate (% of new cases)",
-* "Urban population (% of total)".
 
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_govresponse_vs_cases.png)
@@ -213,13 +174,13 @@ School and workplace closings turn out to be the two most important NPIs in the 
 
 ## Phase 2: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
 
-https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general,predictions%20of%20the%20surrogate%20model.
+Implementation of the paper https://arxiv.org/pdf/2002.05368.pdf
 
 
 * ESP is a continuous black-box optimization process for adaptive decision-making where the predictor (Pd) takes a decision as its input, and predicts the outcomes of that decision. A decision consists of a context and actions to be taken in that context
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.37%20AM.png)
-* a technique that combines evolutionary search with surrogate modeling 
+* Technique that combines evolutionary search with surrogate modeling 
 
 * Use historical data available on decision making in organizations, consisting of the decision problem, what decisions were made, and how desirable the outcomes were
 * In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such thatthe number of cases and cost that would result in the next two weeks is optimized. 
@@ -249,9 +210,9 @@ https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general
   * RAM: 8 Gb
 * Evaluation Sandbox Request Instructions 
 https://docs.google.com/document/d/1rTSyuA5HFkpyH-jn9Z-bAtHIMyflKzvLilwA_xNwNxc/edit
-* TEAM COVID CONTROL'S SANDBOX https://prcx-covidcontrol4479.xprizenotebooks.org/?token=ocmebh7t33kzocpyjbvkbbwjdkomn5efwg35wna5bjt446v
-* Sandbox token for jupyter notebook 
-  * https://cvat-xptatxxxxx.xprizenotebooks.org/?token=<token>
+* Team Covid Control's Sandbox 
+  * https://prcx-covidcontrol4479.xprizenotebooks.org/?token=ocmebh7t33kzocpyjbvkbbwjdkomn5efwg35wna5bjt446v
+  * Sandbox token for jupyter notebook https://cvat-xptatxxxxx.xprizenotebooks.org/?token=<token>
 * A predictor is accessed through a script in the evaluation sandbox. The predictor must be called
 with a single command with the following exact syntax and arguments:
 
@@ -341,7 +302,7 @@ where N is the number of tweets in the testing dataset, pi the predicted number 
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_six_countries.png)
 
-**Innovation to extend scope of challenge ** 
+#### Innovation to extend scope of challenge** 
 Teams who submit and use additional data, intervention plans (such as
 vaccination policies and treatments), or otherwise find innovative ways to extend the scopeof the challenge will be ranked highly;
 
@@ -372,7 +333,7 @@ Review of currently available evidence suggests that most individuals do not bec
   * Vacine canidates, trial deadlines, vacine diswtrubution, vacine implementation 
 
 
-**Generality**
+#### Generality
 Teams will first be evaluated on how well their models perform across all
 regions. Subsequently, teams will be awarded bonus points for how well their models do in
 specialty regions;
@@ -381,7 +342,7 @@ All regions score == ________
 Specialty region score (bonus) == _________
 
 
-**Collaborative contributions**
+####  Collaborative contributions
 Teams that take an open-source approach to the data or
 models that they use, and who contribute data and models to the shared success of all
 teams will be ranked highly;
@@ -399,7 +360,7 @@ Join us in building a collaborative AI for Good ecosystem that fosters innovativ
 decision-making to combat COVID-19 and future emergencies.
 
 
-**Consistency**
+#### Consistency
 Approaches that stay within an acceptable range of accuracy in the short
 and long term, and that perform as expected in any scenario analyses run by the Judging
 Panel, are preferred;
@@ -413,11 +374,11 @@ scenerio2:
 scenerio3:
 
 
-**Speed and resource use**
+#### Speed and resource use
 Model that are faster and more efficient in their approach are preferred;
 
 
-**Addressing the challenge**
+#### Addressing the challenge
 Teams must avoid taking shortcuts or finding loopholes to
 improve their quantitative performance at the expense of real-world performance.
 Additionally, teams may be awarded bonus points for predicting additional, relevant public
@@ -428,7 +389,7 @@ Bonus points for predicting additional health metrics
 - predict # ventilators [points]
 
 
-**Explanation**
+#### Explanation
 Submissions should include a narrative description of how the model works,
 the data it uses, and its sources as well as any relevant points related to these themes.
 Furthermore, models that emphasize interpretability by being able to explain why the model
@@ -471,7 +432,7 @@ Explainable AI (XAI) is the class of systems that provide visibility into how an
 
 
 
-**Actionability and usability**
+#### Actionability and usability
 Models that are usable in a real world setting, that provide interactivity and actionability
 
 Website is LIVE at _________________
@@ -503,7 +464,7 @@ With more and better data and further development, the demo may eventually devel
 
 
 
-**Inclusivity and fairness:**
+#### Inclusivity and fairness:
 The degree to which the data, model, and approaches consider particularly vulnerable groups in designing and implementing their solution will be evaluated. Teams may also be judged on documented evidence of the diversity of perspectives they sought input from during the development of their solution; 
 
 Vulnerable groups may include the unemployed, working poor, unhoused individuals, children,
@@ -513,7 +474,7 @@ the elderly, people with disabilities, ethnic minorities, and other marginalized
 
 
 
-**Transparency and trust:**
+#### Transparency and trust:
 The extent to which their solution enables and facilitates
 user-facing transparency, including the ease with which a layperson can access and
 understand information related to how the solution functions, what data is collected and
