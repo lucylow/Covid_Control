@@ -567,6 +567,8 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 
 ## References 
 * Evolutionary Surrogate-assisted Prescription https://www.youtube.com/watch?v=w-QzHIArrFg&ab_channel=USCISI
+* Modeling COVID-19 scenarios for the United States https://www.nature.com/articles/s41591-020-1132-9
+* Amazon's AWS COVID-19 Knowledge Graph (CKG) and CORD-19 ranking and recommendation system https://www.amazon.science/blog/using-knowledge-graphs-to-streamline-covid-19-research
 * COVID19 Global Forecasting https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
 * Paper. From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
 * Evolutionary Neural AutoML for Deep Learning https://arxiv.org/pdf/1902.06827.pdf
