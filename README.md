@@ -282,6 +282,9 @@ Two overall performance measures will be formed:
 * Mean ranking of teams across all regions
 * Mean ranking of teams across the specialty regions, if selected
 
+* Amazon Web Services Training Costs
+
+<img src="https://github.com/lucylow/Covid_Control/blob/main/images/AWS%20training%20cost.png" alt="alt text" width ="" height="">
 
 * These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters. 
 * The model was trained until validation MAE did not improve for 20 epochs, at
