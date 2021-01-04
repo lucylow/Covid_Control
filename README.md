@@ -331,9 +331,9 @@ Review of currently available evidence suggests that most individuals do not bec
   * Tracking COVID-19 vaccination rates:https://ourworldindata.org/covid-vaccinations
   * Vaccine development: vaccines approved for use and in clinical trials
   * Vacine canidates, trial deadlines, vacine diswtrubution, vacine implementation 
+---
 
-
-#### Generality
+## Generality
 Teams will first be evaluated on how well their models perform across all
 regions. Subsequently, teams will be awarded bonus points for how well their models do in
 specialty regions;
@@ -341,8 +341,8 @@ specialty regions;
 All regions score == ________
 Specialty region score (bonus) == _________
 
-
-####  Collaborative contributions
+---
+## Collaborative contributions
 Teams that take an open-source approach to the data or
 models that they use, and who contribute data and models to the shared success of all
 teams will be ranked highly;
@@ -359,8 +359,8 @@ humanitarian crises.
 Join us in building a collaborative AI for Good ecosystem that fosters innovative, evidence-based
 decision-making to combat COVID-19 and future emergencies.
 
-
-#### Consistency
+---
+## Consistency
 Approaches that stay within an acceptable range of accuracy in the short
 and long term, and that perform as expected in any scenario analyses run by the Judging
 Panel, are preferred;
@@ -373,12 +373,12 @@ scenerio1:
 scenerio2:
 scenerio3:
 
-
-#### Speed and resource use
+---
+## Speed and resource use
 Model that are faster and more efficient in their approach are preferred;
 
-
-#### Addressing the challenge
+---
+## Addressing the challenge
 Teams must avoid taking shortcuts or finding loopholes to
 improve their quantitative performance at the expense of real-world performance.
 Additionally, teams may be awarded bonus points for predicting additional, relevant public
@@ -387,7 +387,7 @@ health metrics such as required hospital beds and ventilators
 Bonus points for predicting additional health metrics
 - predict # of hospital beds [points]
 - predict # ventilators [points]
-
+----
 
 #### Explanation
 Submissions should include a narrative description of how the model works,
@@ -430,9 +430,9 @@ Explainable AI (XAI) is the class of systems that provide visibility into how an
   
   (in which they show that people’s ability to understand an interactive or static visualization depends on their education levels.) Think of a cancer-diagnosing AI, . You’d want the explanation it gives to an oncologist to be very different from the explanation it gives to the patient.
 
+----
 
-
-#### Actionability and usability
+## Actionability and usability
 Models that are usable in a real world setting, that provide interactivity and actionability
 
 Website is LIVE at _________________
@@ -462,9 +462,9 @@ With more and better data and further development, the demo may eventually devel
 
 
 
+----
 
-
-#### Inclusivity and fairness:
+## Inclusivity and fairness:
 The degree to which the data, model, and approaches consider particularly vulnerable groups in designing and implementing their solution will be evaluated. Teams may also be judged on documented evidence of the diversity of perspectives they sought input from during the development of their solution; 
 
 Vulnerable groups may include the unemployed, working poor, unhoused individuals, children,
@@ -472,9 +472,9 @@ the elderly, people with disabilities, ethnic minorities, and other marginalized
 
 - Who is considered high risk for Covid19? We do know that older adults and people who have severe underlying medical conditions like obesity, diabetes, or heart or lung disease are at higher risk for developing more serious complications when they have COVID-19.
 
+---
 
-
-#### Transparency and trust:
+## Transparency and trust:
 The extent to which their solution enables and facilitates
 user-facing transparency, including the ease with which a layperson can access and
 understand information related to how the solution functions, what data is collected and
