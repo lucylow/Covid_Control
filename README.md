@@ -1,20 +1,19 @@
 # Covid Control
-
-Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve.
-
-
-Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
 <div>
-  
+
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
   [![GitHub Issues](https://img.shields.io/github/issues/lucylow/Covid_Control.svg)](https://github.com/lucylow/Covid_Control/issues)
   [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/lucylow/Covid_Control.svg)](https://github.com/lucylow/Covid_Control/pulls)
   [![License](https://img.shields.io/aur/license/android-studio.svg)]()
-
-</div>
+  
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/covid-cases-final-04-06.gif)
 
+Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve. Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
+
+</div>
+
+-------
 
 ## Covid19 Pandemic Response Motivation
 
@@ -31,7 +30,7 @@ Steering today’s $3.6-trillion healthcare economy in a bold new direction mean
 The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
 
 
-**When your kids ask "When will we use math in real life?":**
+**"When will we use math in real life?":**
 1) Show them 3Blue1Brown's "Exponential growth and epidemics" Covid19 video
 2) Remind them the of China's one-child policy to control exponentially increasing population size
 
@@ -609,14 +608,17 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 ---
 
 ## References 
+* Evolutionary Surrogate-assisted Prescription https://www.youtube.com/watch?v=w-QzHIArrFg&ab_channel=USCISI
 * COVID19 Global Forecasting https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
 * Paper. From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
+* Evolutionary Neural AutoML for Deep Learning https://arxiv.org/pdf/1902.06827.pdf
 * Addressing the business challenges presented by the coronavirus. https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
 * Preparing first responders, healthcare providers, and health systems
  https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.htmlhttps://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.html
 * scientific information about the 2019 novel Coronavirus https://www.ncbi.nlm.nih.gov/research/coronavirus/
 * Novel Coronavirus Outbreak https://novel-coronavirus.onlinelibrary.wiley.com/
 * Coronavirus (COVID-19) Research Highlights https://www.springernature.com/gp/researchers/campaigns/coronavirus
+* Evolutionary AI: Go Beyond Prediction with LEAF https://www.cognizant.com/aicom/documents/cognizant-sentient-leaf-offering-overview.pdf
 * Access to OUP resources on COVID-19 https://academic.oup.com/journals/pages/coronavirus
 * Elsevier Coronavirus Research Repository https://coronavirus.1science.com/search
 * Explainable artificial intelligence
