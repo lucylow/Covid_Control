@@ -15,39 +15,41 @@ Innovation in the fight against the pandemic. Using machine learning to save liv
 
 -------
 
-## Covid19 Pandemic Response Motivation
+## Motivation: Covid19 Pandemic Response 
+
+3Blue1Brown's "Exponential growth and epidemics" Covid19 video
+
+  <a href="https://www.youtube-nocookie.com/embed/Kas0tIxDvrg
+" target="_blank"><img src="http://img.youtube.com/vi/Kas0tIxDvrg/0.jpg" 
+alt="Video" width="480" height="360" border="10" /></a>
 
 This pandemic requires access to localized, data-driven planning systems combined with cutting
 edge artificial intelligence tools to help decision-makers develop and implement intervention plans that reduce infection cases, minimize negative economic impacts, and reopen their economies and societies.
-
-Impact of the Covid19 in Numbers
-
-![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-21%20at%208.19.43%20PM.png)
 
 
 Steering today’s $3.6-trillion healthcare economy in a bold new direction means rethinking business models and building new systems of engagement. Cognizant can help. We’re collaborating with healthcare’s leaders to enable a new model of health and improve people’s lives. Count on us to help you convert data into actionable insights, achieve higher levels of automation and efficiency, innovate new products and services, modernize infrastructure … and deliver better outcomes at sustainable cost.
 
 The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
 
+Impact of the Covid19 in Numbers
 
-**"When will we use math in real life?":**
-1) Show them 3Blue1Brown's "Exponential growth and epidemics" Covid19 video
-2) Remind them the of China's one-child policy to control exponentially increasing population size
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-21%20at%208.19.43%20PM.png)
 
-  <a href="https://www.youtube-nocookie.com/embed/Kas0tIxDvrg
-" target="_blank"><img src="http://img.youtube.com/vi/Kas0tIxDvrg/0.jpg" 
-alt="Video" width="480" height="360" border="10" /></a>
 
 ------
 
 ## Machine Learning Solution 
 
 The goal is to develop a machine learning model to predict the future number of Covid Cases worldwide:
-PHASE1 Predictor: LSTM (NPI-LSTM) Predictor Model
+**PHASE1 Predictor: LSTM Predictor Model**
 
   * Phase 1 Predictor Development Estimate future numbers of daily COVID-19 cases with the greatest accuracy develop and submit predictor models that estimate the number of future cases for a given region(s)—considering the local intervention plans in effect based on live Oxford data—over a given time. 
+  * Quantifying Non-Pharmaceutical Interventions (NPIs) using LSTM layers
+    * Examples of NPIs include measures such as lockdowns, social distancing, and the mandatory use of face masks and careful hand hygiene whereas vaccine or antiviral are not NPIs.
 
-PHASE2 Prescriptor: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
+
+
+**PHASE2 Prescriptor: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)**
 
   * Produce the best prescription models for Intervention Plans. Implementation of the paper "From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic".
   * An interactive demo illustrating the basic concepts of the competition, such as the predictor and prescriptor models and their interaction and performance
@@ -62,8 +64,6 @@ Based on knowledge of the populations and the epidemic, and the data so far abou
 
 
 **Cognizant Evolutionary AI**
-
-https://www.cognizant.com/us/en/ai/evolutionary-ai
 
 * Cognizant’s powerful, patented Learning Evolutionary Algorithm Framework (LEAF) uses advanced evolutionary algorithms and deep learning to produce actionable results from complicated, multivariate problems. In a very short period of time, potentially millions of variables can be evaluated against business goals, every option weighed for its benefit and the very best path to success identified.
 
@@ -89,28 +89,6 @@ https://www.cognizant.com/us/en/ai/evolutionary-ai
 These can range from huge amounts of missing data (that are not missing at random), or unmeasured confounding, to systematic errors in the dataset (e.g., incorrect coding of drug treatments), to data collection issues that cause the distribution of data to be different than what we originally thought.
  
 One such common issue with black box models in medical settings is data leakage, where some information about the label y sneaks into the variables x in a way that you might not suspect by looking at the titles and descriptions of the variables: sometimes you think you are predicting something in the future but you are only detecting something that happened in the past. In predicting medical outcomes, the machine might pick up on information within doctors’ notes that reveal the patients’ outcome before it is officially recorded and hence erroneously claim these as successful predictions.
-
---------
- 
-## Predictor Model Provided by Oxford University
- There are eight kinds of NPIs used to train the Predictor model. Each ranging in stringency from 0 (no measures) to 2, 3, or 4 (full measures). 
-
-* Schools closing
-* Workplace closing
-* Cancel public events
-* Restrictions on gatherings
-* Close public transport
-* Stay at home requirements 
-* Restrictions on internal movements travel between regions/cities
-* International travel controls
-
-
-It is also important to note that there is roughly a two-week delay between the time a person is
-infected and the time the case is detected. A similar delay can therefore be expected between the
-time an NPI is put in places and its effect on the number of cases.
-
-School and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. Second, partial or alternating NPIs may be effective. Prescriptors repeatedly turn certain NPIs on and off over time, for example, schools opening and closing on a weekly basis seems to imply the need for restricting schools to be opened fewer days per week. This is a creative and surprising solution, given the limited variability of NPIs that is available to the Prescriptors.
-
 
 --------
 
@@ -212,15 +190,36 @@ The frequency, intensity, locality, and duration of contacts is important but he
 * Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
 in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and stringency of NPIs (representing economic impact). 
 
+ There are eight kinds of NPIs used to train the Predictor model. Each ranging in stringency from 0 (no measures) to 2, 3, or 4 (full measures). 
+
+* Schools closing
+* Workplace closing
+* Cancel public events
+* Restrictions on gatherings
+* Close public transport
+* Stay at home requirements 
+* Restrictions on internal movements travel between regions/cities
+* International travel controls
+
+
+It is also important to note that there is roughly a two-week delay between the time a person is
+infected and the time the case is detected. A similar delay can therefore be expected between the
+time an NPI is put in places and its effect on the number of cases.
+
+School and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. Second, partial or alternating NPIs may be effective. Prescriptors repeatedly turn certain NPIs on and off over time, for example, schools opening and closing on a weekly basis seems to imply the need for restricting schools to be opened fewer days per week. This is a creative and surprising solution, given the limited variability of NPIs that is available to the Prescriptors.
+
+
 ----------
 
 ## Phase 2: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
+
+https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general,predictions%20of%20the%20surrogate%20model.
+
 
 * ESP is a continuous black-box optimization process for adaptive decision-making where the predictor (Pd) takes a decision as its input, and predicts the outcomes of that decision. A decision consists of a context and actions to be taken in that context
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.37%20AM.png)
 * a technique that combines evolutionary search with surrogate modeling 
-https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general,predictions%20of%20the%20surrogate%20model.
 
 * Use historical data available on decision making in organizations, consisting of the decision problem, what decisions were made, and how desirable the outcomes were
 * In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such thatthe number of cases and cost that would result in the next two weeks is optimized. 
@@ -310,10 +309,10 @@ Results with both the base case (with equal weights) and the general case (with 
 
 ## Model Results and Analysis
 
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.56%20AM.png)
+
 An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method (Section 5.3) to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
 become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
-
-![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.56%20AM.png)
 
 The historical cases are not explicitly an input to the predictor. The predictor can save and access the historical case data up to the starting point of the evaluation in the evaluation sandbox work folder. It can then use its own predictions in lieu of actual cases for the active evaluation period. In this manner, its predictions can be based on parallel time series of case history and intervention plan history up to the current point in time.
 
