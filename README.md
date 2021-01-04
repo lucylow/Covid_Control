@@ -62,11 +62,11 @@ alt="Video" width="480" height="360" border="10" /></a>
 ## Technical Motivation 
 
 The goal is to develop a machine learning model to predict the future number of Covid Cases:
-* PHASE1: Predictor (can be many) - NST LSTM model 
+* PHASE1 Predictor: LSTM (NPI-LSTM) Predictor Model
 
   * Phase 1 Predictor Development Estimate future numbers of daily COVID-19 cases with the greatest accuracy develop and submit predictor models that estimate the number of future cases for a given region(s)—considering the local intervention plans in effect based on live Oxford data—over a given time. 
 
-* PHASE2: Prescriptor (one) - ESP prediction Model
+* PHASE2 Prescriptor: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
 
   * Produce the best prescription models for Intervention Plans. Implementation of the paper "From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic".
   * An interactive demo illustrating the basic concepts of the competition, such as the predictor and prescriptor models and their interaction and performance
@@ -234,6 +234,14 @@ The frequency, intensity, locality, and duration of contacts is important but he
 * The Lambda layer combines the context branch h and the action branch g  to produce a prediction Rˆn. 
 * The effects of social distancing and endogenous growth rate of the pandemic are processed in separate pathways, making it possible to ensure that stringency has a monotonic effect, resulting in more regular predictions.
 
+* LSTM example 'data' directory
+
+* An LSTM neural network model  is trained with publicly available data on infections and NPIs in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
+
+* Even with current limited data, the predictions are surprisingly accurate and well-behaved. This result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper to extend the models from prediction to prescription.
+
+* Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
+in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and stringency of NPIs (representing economic impact). 
 
 ----------
 
@@ -254,9 +262,11 @@ https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general
 * Decision optimization in real-world problems
 * Weight parameters 
 
-----
 
-## Predictor and Prescriptor models together 
+
+---------
+
+## Training Predictor and Prescriptor models 
 
 The ESP algorithm then operates as an outer loop that constructs the Predictor and Prescriptor models:
 
@@ -266,20 +276,12 @@ The ESP algorithm then operates as an outer loop that constructs the Predictor a
 4. Collect the new data and add to the training set;
 5. Repeat.
 
----
+The data from submissions will be ranked in each region according to the cumulative error in the 7-day moving average for the number of cases per 100,000 people.
 
-## LSTM example 'data' directory
+Two overall performance measures will be formed:
+* Mean ranking of teams across all regions
+* Mean ranking of teams across the specialty regions, if selected
 
-* An LSTM neural network model  is trained with publicly available data on infections and NPIs in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
-
-* Even with current limited data, the predictions are surprisingly accurate and well-behaved. This result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper to extend the models from prediction to prescription.
-
-* Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
-in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and stringency of NPIs (representing economic impact). 
-
----------
-
-## Training the model 
 
 * These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters. 
 * The model was trained until validation MAE did not improve for 20 epochs, at
@@ -288,6 +290,20 @@ dataset are relatively small compared to common deep learning datasets, the mode
 inexpensive to train. On a 2018 MacBook Pro Laptop with six Intel i7 cores, the model takes
 276 ± 31 seconds to train (mean and std. err. computed over 10 independent training runs).
 * NPI-LSTM outperforms the baselines on all metrics. The simple linear model outperforms them substantially on the metrics that require forecasting beyond a single day, showing the difficulty that off-the-shelf nonlinear methods have in handling such forecasting.
+
+
+For each day in the 180-day evaluation period, the prescriptor is called with the date and weights as specified above, obtaining prescriptions for each region. They are evaluated along the two objectives:
+* The standard predictor is called to estimate the number of cases for each region; and
+* The total intervention plan stringency is calculated for each region using the Oxford
+University Blavatnik School of Government’s COVID-19 Government Response Tracker
+Stringency Index formula, with the specified weights for the region.
+
+The weights for each region are drawn from a uniform distribution within [0..1] and normalized to sum up to one. The process is repeated three times with different weights and the results are
+averaged. The same three sets of weights are used to evaluate all prescriptors. Additionally, a case where all weights are equal is used as a separate base-case evaluation. The predictions and
+stringency will be averaged over the 180-day period to obtain the final objective values (i.e., cases and stringency) for the prescriptor for each region.
+
+
+Results with both the base case (with equal weights) and the general case (with random weights)will be presented to the judges as the outcome of the first quantitative evaluation.
 
 ------
 
@@ -304,16 +320,7 @@ become more reliable. As a further step, the estimated uncertainty can be used b
   * MAE=1N∑t=1N|pi−ai|
 where N is the number of tweets in the testing dataset, pi the predicted number of retweets for tweeti and ai the actual number of retweets for the same tweet
 
-
 Note: the historical cases are not explicitly an input to the predictor. The predictor can,however, save and access the historical case data up to the starting point of the evaluation in the evaluation sandbox work folder. It can then use its own predictions in lieu of actual cases for the active evaluation period. In this manner, its predictions can be based on parallel time series of case history and intervention plan history up to the current point in time.
-
-
-The data from submissions will be ranked in each region according to the cumulative error in the 7-day moving average for the number of cases per 100,000 people.
-
-Two overall performance measures will be formed:
-* Mean ranking of teams across all regions
-* Mean ranking of teams across the specialty regions, if selected
-
 
 Three types of tests:
 * Tests on historic data to see the performance of the model
@@ -329,25 +336,8 @@ minimal stringency predictions, and predictions exceeding population size)
 
 
 
-For each day in the 180-day evaluation period, the prescriptor is called with the date and weights as specified above, obtaining prescriptions for each region. They are evaluated along the two objectives:
-* The standard predictor is called to estimate the number of cases for each region; and
-* The total intervention plan stringency is calculated for each region using the Oxford
-University Blavatnik School of Government’s COVID-19 Government Response Tracker
-Stringency Index formula, with the specified weights for the region.
-
-The weights for each region are drawn from a uniform distribution within [0..1] and normalized to sum up to one. The process is repeated three times with different weights and the results are
-averaged. The same three sets of weights are used to evaluate all prescriptors. Additionally, a case where all weights are equal is used as a separate base-case evaluation. The predictions and
-stringency will be averaged over the 180-day period to obtain the final objective values (i.e., cases and stringency) for the prescriptor for each region.
-
-
-Results with both the base case (with equal weights) and the general case (with random weights)will be presented to the judges as the outcome of the first quantitative evaluation.
-
 ---
 ## Model Evaluation Results
-
-
-
-JUDGING CRITERIA Equal weighting
 
 **Innovation to extend scope of challenge ** 
 Teams who submit and use additional data, intervention plans (such as
@@ -370,7 +360,7 @@ Review of currently available evidence suggests that most individuals do not bec
 
 * Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking care for someone who has or may have COVID-19.
 
-* # of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
+* Number of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
 
 * Early vs Late stage covid19 trials 
 
@@ -584,9 +574,19 @@ Government Measures to Combat COVID19 Trying to flatten the curve!
   * Lockdowns
 
 
+Businesses are spending more than US$300B dealing with regulatory change and increasing amounts of time and effort are devoted to control, risk and compliance functions. With constant changes in regulation threatening to hamper growth and innovation, leaders are using automation to transform their operations, processes and even business models to drive resilience and agility.
+
+
+As COVID-19 creates further economic uncertainty and loss, maximizing returns, managing risk and ensuring the continued health of your business demands a deep understanding of changing market conditions and government policy. Timely, in-depth political and economic scenario analysis for the outbreak and the potential path(s) to recovery for individual economies is increasingly critical to business planning and commercial decisions. 
+
+
 -------
 
 ##  Conclusion 
+
+The impact of the coronavirus (COVID-19) is being felt by all businesses around the world. Leaders are navigating a broad range of interrelated issues that span from keeping their employees and customer safe, shoring-up cash and liquidity, reorienting operations and navigating complicated government support programs.
+
+To help you understand the implications of COVID-19 and, more importantly, best position your business to be resilient in the future, review the latest thinking and insights from our professionals from around the world.
 
 AI and humans need to work together. Cooperation between agents, in this case algorithms and humans, depends on trust. If humans are to accept algorithmic prescriptions, they need to trust them.  The second quantitative evaluation addresses an important and novel aspect of the
 competition: it is a community effort. Team contributions are brought together into a common
@@ -600,23 +600,23 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 ---
 
 ## References 
-* COVID19 Global Forecasting (Week 5) https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
-* From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
-* https://www.who.int/news/item/13-10-2020-impact-of-covid-19-on-people's-livelihoods-their-health-and-our-food-systems
-* https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
-* https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.html
-* https://www.ncbi.nlm.nih.gov/research/coronavirus/
-* https://www.sciencedirect.com/articlelist/covid
-* https://novel-coronavirus.onlinelibrary.wiley.com/
-* https://www.springernature.com/gp/researchers/campaigns/coronavirus
-* https://academic.oup.com/journals/pages/coronavirus
-* https://coronavirus.1science.com/search
-* https://en.wikipedia.org/wiki/Explainable_artificial_intelligence
-* https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09d1
-* https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/6
-* https://www.technologyreview.com/2020/01/29/304857/why-asking-an-ai-to-explain-itself-can-make-things-worse/
-* https://arxiv.org/abs/2005.13766
-* https://evolution.ml/esp/npi/
-* https://www.worldlifeexpectancy.com/cause-of-death/lung-disease/by-country/ - Lung diseases death rate.
-* https://en.wikipedia.org/wiki/COVID-19_testing - COVID-19 Tests
+* COVID19 Global Forecasting https://www.kaggle.com/c/covid19-global-forecasting-week-5/data
+* Paper. From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic https://arxiv.org/pdf/2005.13766.pdf
+* Addressing the business challenges presented by the coronavirus. https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
+* Preparing first responders, healthcare providers, and health systems
+ https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.htmlhttps://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.html
+* scientific information about the 2019 novel Coronavirus https://www.ncbi.nlm.nih.gov/research/coronavirus/
+* Novel Coronavirus Outbreak https://novel-coronavirus.onlinelibrary.wiley.com/
+* Coronavirus (COVID-19) Research Highlights https://www.springernature.com/gp/researchers/campaigns/coronavirus
+* Access to OUP resources on COVID-19 https://academic.oup.com/journals/pages/coronavirus
+* Elsevier Coronavirus Research Repository https://coronavirus.1science.com/search
+* Explainable artificial intelligence
+ https://en.wikipedia.org/wiki/Explainable_artificial_intelligence
+* Glass-Box Models: A Gentle Introduction
+ https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09d1
+* Why Are We Using Black Box Models in AI When We Don’t Need To? A Lesson From An Explainable AI Competition
+https://hdsr.mitpress.mit.edu/pub/f9kuryi8/release/6
+* Why asking an AI to explain itself can make things worse
+ https://www.technologyreview.com/2020/01/29/304857/why-asking-an-ai-to-explain-itself-can-make-things-worse/
+* Augmenting Human Decision Making Optimizing COVID-19 Interventions https://evolution.ml/esp/npi/
 
