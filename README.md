@@ -9,7 +9,7 @@
 
 </div>
 
-![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-29%20at%201.53.08%20PM.png)
+![](https://github.com/lucylow/Covid_Control/blob/main/images/covid-cases-final-04-06.gif)
 
 ---
 
@@ -43,6 +43,9 @@ Impact of the Covid19 in Numbers
 * Cases 77.2M
 * Recovered 43.5M
 * Deaths 1.7M
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-21%20at%208.19.43%20PM.png)
+
 
 Steering today’s $3.6-trillion healthcare economy in a bold new direction means rethinking business models and building new systems of engagement. Cognizant can help. We’re collaborating with healthcare’s leaders to enable a new model of health and improve people’s lives. Count on us to help you convert data into actionable insights, achieve higher levels of automation and efficiency, innovate new products and services, modernize infrastructure … and deliver better outcomes at sustainable cost.
 
@@ -117,8 +120,9 @@ with a single command with the following exact syntax and arguments:
 
 * The Oxford Covid-19 Government Response Tracker (OxCGRT) collects publicly available information on 19 indicators of government response and includes statistics on the number of reported Covid-19 cases and deaths in each country. There are 11 indicators of government response, such as school closings, travel bans, or other measures. For a full description of the data and how they are collected, see https://www.bsg.ox.ac.uk/research/publications/variation-government-responses-covid-19 
 
-* Only a subset of the NPIs will be used: those that have a direct impact on the spread of the virus (i.e. on the daily new cases number). Oxford uses them in its "Containment and health index". See https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md for the list. Basically C1 to C8, H1, H2, H3 and H6.
+![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_worldmap_govresponse.png)
 
+* Only a subset of the NPIs will be used: those that have a direct impact on the spread of the virus (i.e. on the daily new cases number). Oxford uses them in its "Containment and health index". See https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md for the list. Basically C1 to C8, H1, H2, H3 and H6.
 
 These can range from huge amounts of missing data (that are not missing at random), or unmeasured confounding, to systematic errors in the dataset (e.g., incorrect coding of drug treatments), to data collection issues that cause the distribution of data to be different than what we originally thought.
  
@@ -225,6 +229,9 @@ The frequency, intensity, locality, and duration of contacts is important but he
 * "Urban population (% of total)".
 
 
+![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_govresponse_vs_cases.png)
+
+
 ------------
 
 ## Phase1 : Predictor Model Design LSTM (NPI-LSTM) Predictor
@@ -248,6 +255,8 @@ in a multi-objective setting to minimize the number of COVID-19 cases, as well a
 ## Phase 2: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
 
 * ESP is a continuous black-box optimization process for adaptive decision-making where the predictor (Pd) takes a decision as its input, and predicts the outcomes of that decision. A decision consists of a context and actions to be taken in that context
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.37%20AM.png)
 * a technique that combines evolutionary search with surrogate modeling 
 https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general,predictions%20of%20the%20surrogate%20model.
 
@@ -262,6 +271,7 @@ https://arxiv.org/abs/2002.05368#:~:text=This%20paper%20introduces%20a%20general
 * Decision optimization in real-world problems
 * Weight parameters 
 
+![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_indices_vs_time.png)
 
 
 ---------
@@ -284,6 +294,8 @@ Two overall performance measures will be formed:
 
 * Amazon Web Services Training Costs
 
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%205.06.57%20PM.png)
+
 <img src="https://github.com/lucylow/Covid_Control/blob/main/images/AWS%20training%20cost.png" alt="alt text" width ="" height="">
 
 * These baselines included linear regression, random forest regression (RF), support vector regression (SVR) with an RBF kernel, and feed-forward neural network regression (MLP). Each baseline was implemented with sci-kit learn, using their default parameters. 
@@ -294,6 +306,7 @@ inexpensive to train. On a 2018 MacBook Pro Laptop with six Intel i7 cores, the 
 276 ± 31 seconds to train (mean and std. err. computed over 10 independent training runs).
 * NPI-LSTM outperforms the baselines on all metrics. The simple linear model outperforms them substantially on the metrics that require forecasting beyond a single day, showing the difficulty that off-the-shelf nonlinear methods have in handling such forecasting.
 
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.15.02%20AM.png)
 
 For each day in the 180-day evaluation period, the prescriptor is called with the date and weights as specified above, obtaining prescriptions for each region. They are evaluated along the two objectives:
 * The standard predictor is called to estimate the number of cases for each region; and
@@ -308,6 +321,8 @@ stringency will be averaged over the 180-day period to obtain the final objectiv
 
 Results with both the base case (with equal weights) and the general case (with random weights)will be presented to the judges as the outcome of the first quantitative evaluation.
 
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.45%20AM.png)
+
 ------
 
 
@@ -316,7 +331,7 @@ Results with both the base case (with equal weights) and the general case (with 
 An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method (Section 5.3) to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
 become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
 
-
+![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.56%20AM.png)
 * Mean Absolute Error
   * the students that rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum Mean Absolute Error (MAE)
   * The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
@@ -341,6 +356,8 @@ minimal stringency predictions, and predictions exceeding population size)
 
 ---
 ## Model Evaluation Results
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_six_countries.png)
 
 **Innovation to extend scope of challenge ** 
 Teams who submit and use additional data, intervention plans (such as
@@ -575,6 +592,8 @@ Government Measures to Combat COVID19 Trying to flatten the curve!
   * Public health measures (mandatory masks)
   * Social and economic measures
   * Lockdowns
+  
+![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_worldmap_schools.png)
 
 
 Businesses are spending more than US$300B dealing with regulatory change and increasing amounts of time and effort are devoted to control, risk and compliance functions. With constant changes in regulation threatening to hamper growth and innovation, leaders are using automation to transform their operations, processes and even business models to drive resilience and agility.
