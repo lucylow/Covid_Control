@@ -1,6 +1,13 @@
 # Covid Control
 Pandemic Response Challenge. Machine learning model to predict the future number of Covid19 Cases with LSTM and RL. Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve. Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
 
+Data and model is free, assessible, and code avaliable on open source platform Github allowing for increased and higher quality data,
+accurate predictions, stronger regional intervention plans, and continual improvement as new
+interventions such as vaccinations and treatments become available. 
+
+Join us in building a collaborative AI that fosters innovative, evidence-based
+decision-making to combat COVID-19 and future emergencies.
+
 <div>
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
@@ -127,6 +134,29 @@ The frequency, intensity, locality, and duration of contacts is important but he
 * PM parts million 2.5 air pollution, population expoled to levels exceeding WHO guideline value (% of total)
 * Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population)
 
+
+
+* How long does someone with COVID-19 typically stay on a ventilator? Some people may need to be on a ventilator for a few hours, while others may require one, two, or three weeks. If a person needs to be on a ventilator for a longer period of time, a tracheostomy may be required. During this procedure, a surgeon makes a hole in the front of the neck and inserts a tube into the trachea.
+
+* N95 masks can be rotated every 3–4 days, heated for 60 min, steamed or boiled for 5 min, and then air-dried. These methods retain 92.4–98.5% filtering efficiency (FE). Using soap and water or medical grade alcohol significantly decreases the FE of the masks (54% and 67%, respectively).
+
+* Can a person become re-infected with COVID-19 within 3 months of recovery?
+Review of currently available evidence suggests that most individuals do not become re-infected within 3 months of resolution of SARS-CoV-2 infection.
+
+* 14 day self-quarantine.  You should still self-quarantine for 14 days since your last exposure. It can take up to 14 days after exposure to the virus for a person to develop COVID-19 symptoms. A negative result before end of the 14-day quarantine period does not rule out possible infection. By self-quarantining for 14 days, you lower the chance of possibly exposing others to COVID-19.
+
+* Contact Tracing Apps. Contact tracing is an effective disease control strategy that involves identifying cases and their contacts then working with them to interrupt disease transmission. This includes asking cases to isolate and contacts to quarantine at home voluntarily. Contact tracing is a key strategy to prevent the further spread of COVID-19.
+
+* Incubation Time Period- Typically, a person develops symptoms 5 days after being infected, but symptoms can appear as early as 2 days after infection or as late as 14 days after infection, and the time range can vary.
+
+* It typically takes a few weeks for the body to build immunity after vaccination. That means it's possible a person could be infected with the virus that causes COVID-19 just before or just after vaccination and get sick. This is because the vaccine has not had enough time to provide protection.
+
+* Number of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
+
+* Vaccinations
+  * Tracking COVID-19 vaccination rates:https://ourworldindata.org/covid-vaccinations
+  * Vaccine development: vaccines approved for use and in clinical trials
+  * Vacine canidates, trial deadlines, vacine diswtrubution, vacine implementation 
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_govresponse_vs_cases.png)
 
@@ -299,92 +329,8 @@ where N is the number of tweets in the testing dataset, pi the predicted number 
 ## Model Evaluation Results
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_six_countries.png)
-
-## Innovation
-Teams who submit and use additional data, intervention plans (such as
-vaccination policies and treatments), or otherwise find innovative ways to extend the scopeof the challenge will be ranked highly;
-
-* How long does someone with COVID-19 typically stay on a ventilator? Some people may need to be on a ventilator for a few hours, while others may require one, two, or three weeks. If a person needs to be on a ventilator for a longer period of time, a tracheostomy may be required. During this procedure, a surgeon makes a hole in the front of the neck and inserts a tube into the trachea.
-
-* N95 masks can be rotated every 3–4 days, heated for 60 min, steamed or boiled for 5 min, and then air-dried. These methods retain 92.4–98.5% filtering efficiency (FE). Using soap and water or medical grade alcohol significantly decreases the FE of the masks (54% and 67%, respectively).
-
-* Can a person become re-infected with COVID-19 within 3 months of recovery?
-Review of currently available evidence suggests that most individuals do not become re-infected within 3 months of resolution of SARS-CoV-2 infection.
-
-* 14 day self-quarantine.  You should still self-quarantine for 14 days since your last exposure. It can take up to 14 days after exposure to the virus for a person to develop COVID-19 symptoms. A negative result before end of the 14-day quarantine period does not rule out possible infection. By self-quarantining for 14 days, you lower the chance of possibly exposing others to COVID-19.
-
-* Contact Tracing Apps. Contact tracing is an effective disease control strategy that involves identifying cases and their contacts then working with them to interrupt disease transmission. This includes asking cases to isolate and contacts to quarantine at home voluntarily. Contact tracing is a key strategy to prevent the further spread of COVID-19.
-
-* Incubation Time Period- Typically, a person develops symptoms 5 days after being infected, but symptoms can appear as early as 2 days after infection or as late as 14 days after infection, and the time range can vary.
-
-* It typically takes a few weeks for the body to build immunity after vaccination. That means it's possible a person could be infected with the virus that causes COVID-19 just before or just after vaccination and get sick. This is because the vaccine has not had enough time to provide protection.
-
-* Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking care for someone who has or may have COVID-19.
-
-* Number of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
-
-* Early vs Late stage covid19 trials 
-
-* Vaccinations
-  * Tracking COVID-19 vaccination rates:https://ourworldindata.org/covid-vaccinations
-  * Vaccine development: vaccines approved for use and in clinical trials
-  * Vacine canidates, trial deadlines, vacine diswtrubution, vacine implementation 
 ---
 
-## Generality
-Teams will first be evaluated on how well their models perform across all
-regions. Subsequently, teams will be awarded bonus points for how well their models do in
-specialty regions;
-
-All regions score == ________
-Specialty region score (bonus) == _________
-
----
-## Collaborative contributions
-Teams that take an open-source approach to the data or
-models that they use, and who contribute data and models to the shared success of all
-teams will be ranked highly;
-
-- Data and model is free, assiesbsle, and on open source platform github
--Interested in the shared sucess of all teams 
-
-The Challenge’s open platform will enable increased and higher-quality data,
-accurate predictions, stronger regional intervention plans, and continual improvement as new
-interventions such as vaccinations and treatments become available. It will provide a platform for
-shared human and machine creativity and problem-solving, and ultimately a tool for future
-humanitarian crises.
-
-Join us in building a collaborative AI for Good ecosystem that fosters innovative, evidence-based
-decision-making to combat COVID-19 and future emergencies.
-
----
-## Consistency
-Approaches that stay within an acceptable range of accuracy in the short
-and long term, and that perform as expected in any scenario analyses run by the Judging
-Panel, are preferred;
-
-Error range margin short term: 
-Error range margin long term:
-
-Scernerio Analysis:
-scenerio1:
-scenerio2:
-scenerio3:
-
----
-## Speed and resource use
-Model that are faster and more efficient in their approach are preferred;
-
----
-## Addressing the challenge
-Teams must avoid taking shortcuts or finding loopholes to
-improve their quantitative performance at the expense of real-world performance.
-Additionally, teams may be awarded bonus points for predicting additional, relevant public
-health metrics such as required hospital beds and ventilators
-
-Bonus points for predicting additional health metrics
-- predict # of hospital beds [points]
-- predict # ventilators [points]
 ----
 
 #### Explanation
@@ -566,6 +512,7 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 ---
 
 ## References 
+* Exponential growth and epidemics https://www.youtube.com/watch?v=Kas0tIxDvrg&feature=emb_title&ab_channel=3Blue1Brown
 * Evolutionary Surrogate-assisted Prescription https://www.youtube.com/watch?v=w-QzHIArrFg&ab_channel=USCISI
 * Modeling COVID-19 scenarios for the United States https://www.nature.com/articles/s41591-020-1132-9
 * Amazon's AWS COVID-19 Knowledge Graph (CKG) and CORD-19 ranking and recommendation system https://www.amazon.science/blog/using-knowledge-graphs-to-streamline-covid-19-research
