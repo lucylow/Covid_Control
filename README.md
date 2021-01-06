@@ -1,11 +1,13 @@
 # Covid Control
-Pandemic Response Challenge. Machine learning model to predict the future number of Covid19 Cases with LSTM and RL. Innovation in the fight against the pandemic. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to flatten the curve. Development of a data-driven AI systems to predict COVID-19 infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement to minimize harm when reopening their economies.
+Pandemic Response Challenge. Covid Control is a machine learning model free and assessible that predicts the future number of Covid19 Daily Cases (7-day moving average). Quantifying Non-Pharmaceutical Interventions (NPIs) using LSTM and Reinforcement Learning.
 
-Data and model is free, assessible, and code avaliable on open source platform Github allowing for increased and higher quality data,
+Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to help flatten the curve. Development of a data-driven AI systems to predict infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement. Intervention plans can result in reducing infection cases, minimizing negative economic impacts, and better outcomes when countries reopen their economies and societies.
+
+It is open sourced on platform Github allowing for increased and higher quality data,
 accurate predictions, stronger regional intervention plans, and continual improvement as new
 interventions such as vaccinations and treatments become available. 
 
-Join us in building a collaborative AI that fosters innovative, evidence-based
+Covid Control is a collaborative model that fosters innovative, evidence-based
 decision-making to combat COVID-19 and future emergencies.
 
 <div>
@@ -25,19 +27,17 @@ decision-making to combat COVID-19 and future emergencies.
 
 ## Motivation: Covid19 Pandemic Response 
 
-3Blue1Brown's "Exponential growth and epidemics" Covid19 video
+3Blue1Brown's "Exponential growth and epidemics" Covid19 video:
 
   <a href="https://www.youtube-nocookie.com/embed/Kas0tIxDvrg
 " target="_blank"><img src="http://img.youtube.com/vi/Kas0tIxDvrg/0.jpg" 
 alt="Video" width="480" height="360" border="10" /></a>
 
-This pandemic requires access to localized, data-driven planning systems combined with cutting
-edge artificial intelligence tools to help decision-makers develop and implement intervention plans that reduce infection cases, minimize negative economic impacts, and reopen their economies and societies.
+Who is considered high risk for Covid19? Older adults and people who have severe underlying medical conditions like obesity, diabetes, or heart or lung disease are at higher risk for developing more serious complications when they have COVID-19.
+Vulnerable groups may include the unemployed, working poor, unhoused individuals, children,
+the elderly, people with disabilities, ethnic minorities, and other marginalized groups.
 
-
-Steering today’s $3.6-trillion healthcare economy in a bold new direction means rethinking business models and building new systems of engagement. Cognizant can help. We’re collaborating with healthcare’s leaders to enable a new model of health and improve people’s lives. Count on us to help you convert data into actionable insights, achieve higher levels of automation and efficiency, innovate new products and services, modernize infrastructure … and deliver better outcomes at sustainable cost.
-
-The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
+Healthcare is a $3.6-trillion economy in a bold new direction means rethinking business models and building new systems of engagement collaborating with healthcare’s leaders to enable a new model of health and improve people’s lives.  The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
 
 
 ------
@@ -46,18 +46,18 @@ The pandemic is driving consumers toward digital healthcare channels. Healthcare
 
 The goal is to develop a machine learning model to predict the future number of Covid Cases worldwide:
 
-**PHASE1 Predictor: LSTM Predictor Model**
+**Part1 Predictor: LSTM Long Short-Term Memory Predictor Model**
 
-  * Phase 1 Predictor Development Estimate future numbers of daily COVID-19 cases with the greatest accuracy develop and submit predictor models that estimate the number of future cases for a given region(s)—considering the local intervention plans in effect based on live Oxford data—over a given time. 
+  * Estimates future numbers of daily COVID-19 cases with the greatest accuracy using LSTM Long Short-Term Memory and developed a predictor model that estimates the number of future cases for a given region considering the local intervention plans
   * Quantifying Non-Pharmaceutical Interventions (NPIs) using LSTM layers
-    * Examples of NPIs include measures such as lockdowns, social distancing, and the mandatory use of face masks and careful hand hygiene whereas vaccine or antiviral are not NPIs.
+    * Examples of NPIs include lockdowns, social distancing, and the mandatory use of face masks and careful hand hygiene
+    * Vaccine or antiviral are not NPIs.
 
 
 
-**PHASE2 Prescriptor: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)**
+**Part2 Prescriptor: RL Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)**
 
   * Produce the best prescription models for Intervention Plans. Implementation of the paper "From Prediction to Prescription: Evolutionary Optimization of Non-Pharmaceutical Interventions in the COVID-19 Pandemic".
-  * An interactive demo illustrating the basic concepts of the competition, such as the predictor and prescriptor models and their interaction and performance
 
 ---
 
@@ -71,11 +71,26 @@ Based on knowledge of the populations and the epidemic, and the data so far abou
   * Learning to predict
   * Using the predictor as a surrogate for the real world to prescribe actions that lead to desirable outcomes.
 
-* Evolutionary Surrogate-Assisted Prescription (ESP). 
+* Evolutionary Surrogate-Assisted Prescription (ESP)
   * Surrogate is for example, a random forest or a neural network trained with gradient descent
   * Neural network that is evolved to maximize the predictions of the surrogate model. 
   * The evolutionary algorithms process generations of variable combinations very quickly. 
   * The least-useful-candidates are discarded and new ones are generated from variants of the most-useful-candidates through recombination and mutation.
+
+Explainable Artificial Intelligence (XAI)
+* https://en.wikipedia.org/wiki/Explainable_artificial_intelligence
+https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09d1
+* Explainable AI (XAI) is the class of systems that provide visibility into how an AI system makes decisions and predictions and executes its actions. XAI explains the rationale for the decision-making process, surfaces the strengths and weaknesses of the process, and provides a sense of how the system will behave in the future.
+
+* It contrasts with the concept of the "black box" in machine learning where even their designers cannot explain why the AI arrived at a specific decision. The term "glass box" has also been used to systems that monitor the inputs and outputs of a system, with the purpose of verifying the system's adherence to ethical and socio-legal values and, therefore, producing value-based explanations.
+
+* Inherently Interpretable Models vs. Black-Box Deep Learning Models
+  * The technical challenge of explaining AI decisions is sometimes known as the interpretability problem where the interpretable models (which were very small linear models or logical models in these studies) performed just as well as the more complicated (black box) machine learning models
+
+  * No matter whether we used a deep neural network or classical statistical techniques for linear models, we found that there was less than a 1% difference in accuracy between the methods, which is within the margin of error caused by random sampling of the data. 
+
+  * Accuracy–interpretability tradeoff is revealed to be a fallacy such that more interpretable models often become more accurate.
+
 
 ---
 
@@ -153,6 +168,10 @@ Review of currently available evidence suggests that most individuals do not bec
 
 * Number of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
 
+* two-week delay between the time a person is
+infected and the time the case is detected. A similar delay can therefore be expected between the
+time an NPI is put in places and its effect on the number of cases.
+
 * Vaccinations
   * Tracking COVID-19 vaccination rates:https://ourworldindata.org/covid-vaccinations
   * Vaccine development: vaccines approved for use and in clinical trials
@@ -165,21 +184,14 @@ Review of currently available evidence suggests that most individuals do not bec
 
 ## Phase1 : Predictor Model Design LSTM (NPI-LSTM) Predictor
 
-* Keras representation of the learnable predictor model 
-* The previous 21 days of Rn−t are fed into the context input; the previous 21 days of stringency values for the eight NPIs are fed into the action input. 
-* The Lambda layer combines the context branch h and the action branch g  to produce a prediction Rˆn. 
-* The effects of social distancing and endogenous growth rate of the pandemic are processed in separate pathways, making it possible to ensure that stringency has a monotonic effect, resulting in more regular predictions.
-
-* LSTM example 'data' directory
-
 * An LSTM neural network model  is trained with publicly available data on infections and NPIs in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
-
-* Even with current limited data, the predictions are surprisingly accurate and well-behaved. This result suggests that the data-driven machine learning approach is potentially a powerful new tool for epidemiological modeling. This is the first main contribution of the paper to extend the models from prediction to prescription.
 
 * Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
 in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and stringency of NPIs (representing economic impact). 
 
- There are eight kinds of NPIs used to train the Predictor model. Each ranging in stringency from 0 (no measures) to 2, 3, or 4 (full measures). 
+* Keras representation of the learnable predictor model with LSTM example 'data' directory
+
+Eight NPIs were used to train the Predictor model. Values range from 0 (no measures) to 2, 3, or 4 (full measures). 
 
 * Schools closing
 * Workplace closing
@@ -190,36 +202,35 @@ in a multi-objective setting to minimize the number of COVID-19 cases, as well a
 * Restrictions on internal movements travel between regions/cities
 * International travel controls
 
+* School and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. 
 
-It is also important to note that there is roughly a two-week delay between the time a person is
-infected and the time the case is detected. A similar delay can therefore be expected between the
-time an NPI is put in places and its effect on the number of cases.
+* The previous 21 days are fed into the context input; the previous 21 days of stringency values for the eight NPIs are fed into the action input. 
+* The Lambda layer combines the context branch h and the action branch g to produce prediction Rˆn. 
+* The effects of social distancing and endogenous growth rate of the pandemic are processed in separate pathways, making it possible to ensure that stringency has a monotonic effect, resulting in more regular predictions.
 
-School and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. Second, partial or alternating NPIs may be effective. Prescriptors repeatedly turn certain NPIs on and off over time, for example, schools opening and closing on a weekly basis seems to imply the need for restricting schools to be opened fewer days per week. This is a creative and surprising solution, given the limited variability of NPIs that is available to the Prescriptors.
 
 
 ----------
 
 ## Phase 2: Effective Reinforcement Learning through Evolutionary Surrogate-Assisted Prescription (ESP)
 
-Implementation of the paper https://arxiv.org/pdf/2002.05368.pdf
+* Reinforcement learning (RL) where models makes sequential decision-making tasks with weight parameters. This is used in Decision optimization in real-world problems
 
+* Surrogate technique that combines evolutionary search with surrogate modeling. Implementation of the paper https://arxiv.org/pdf/2002.05368.pdf
+  * Evolve a decision strategy that optimizes the outcomes
+  * Example surrogate == a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model.
+   * Majority of evaluations are done on the surrogate
+   * ESP is more sample efficient, has lower variance, and lower regret than standard RL approaches
 
-* ESP is a continuous black-box optimization process for adaptive decision-making where the predictor (Pd) takes a decision as its input, and predicts the outcomes of that decision. A decision consists of a context and actions to be taken in that context
+* ESP is a continuous black-box optimization process for adaptive decision-making where the predictor takes a decision as its input, and predicts the outcomes of that decision. A decision consists of a context and actions to be taken in that context as shown below in the diagram:
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.37%20AM.png)
-* Technique that combines evolutionary search with surrogate modeling 
 
 * Use historical data available on decision making in organizations, consisting of the decision problem, what decisions were made, and how desirable the outcomes were
 * In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such thatthe number of cases and cost that would result in the next two weeks is optimized. 
-* Learn a surrogate model
-  * Evolve a decision strategy that optimizes the outcomes
-  * Example surrogate == a random forest or a neural network trained with gradient descent, and the strategy is a neural network that is evolved to maximize the predictions of the surrogate model.
-   * Majority of evaluations are done on the surrogate, ESP is more sample efficient, has lower variance, and lower regret than standard RL approaches
-* Sequential decision-making tasks
-* Reinforcement learning (RL)
-* Decision optimization in real-world problems
-* Weight parameters 
+
+   
+
 
 
 -------
@@ -288,7 +299,7 @@ averaged. The same three sets of weights are used to evaluate all prescriptors. 
 stringency will be averaged over the 180-day period to obtain the final objective values (i.e., cases and stringency) for the prescriptor for each region.
 
 
-Results with both the base case (with equal weights) and the general case (with random weights)will be presented to the judges as the outcome of the first quantitative evaluation.
+Results with both the base case (with equal weights) and the general case (with random weights) were presented to the judges as the outcome of the first quantitative evaluation.
 
 
 
@@ -300,10 +311,13 @@ Results with both the base case (with equal weights) and the general case (with 
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.56%20AM.png)
 
-An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method (Section 5.3) to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
+An important aspect of any decision system is to make it trustworthy, i.e. estimate confidence in its decisions and predictions, allow users to utilize their expert knowledge and explore alternatives, and explain the decision recommendations. The first step was already taken in this study by applying the RIO uncertainty estimation method  to the predictions. This approach may be improved in the future by grouping the countries according to original predictor performance, then training a dedicated RIO model for each group. In this way, each RIO model focuses on learning the predictive uncertainty of countries with similar patterns, so that the estimated confidence intervals
 become more reliable. As a further step, the estimated uncertainty can be used by the Prescriptor to make safer decisions.
 
 The historical cases are not explicitly an input to the predictor. The predictor can save and access the historical case data up to the starting point of the evaluation in the evaluation sandbox work folder. It can then use its own predictions in lieu of actual cases for the active evaluation period. In this manner, its predictions can be based on parallel time series of case history and intervention plan history up to the current point in time.
+
+![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_six_countries.png)
+
 
 Three types of tests:
 * Tests on historic data to see the performance of the model
@@ -318,122 +332,10 @@ situations than encountered in live testing
 minimal stringency predictions, and predictions exceeding population size)
 
 
-Mean Absolute Error
-  * the students that rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum Mean Absolute Error (MAE)
-  * The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations.
-  * MAE=1N∑t=1N|pi−ai|
-where N is the number of tweets in the testing dataset, pi the predicted number of retweets for tweeti and ai the actual number of retweets for the same tweet
+Mean Absolute Error (MAE):
 
-
----
-## Model Evaluation Results
-
-![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_six_countries.png)
----
-
-----
-
-#### Explanation
-Submissions should include a narrative description of how the model works,
-the data it uses, and its sources as well as any relevant points related to these themes.
-Furthermore, models that emphasize interpretability by being able to explain why the model
-is predicting what it does (i.e. glass-box models) will be ranked highly.
-
-How the model works
-
-
-Machine learning is frequently referred to as a black box—data goes in, decisions come out, but the processes between input and output are opaque.
-
-Explainable artificial intelligence 
-https://en.wikipedia.org/wiki/Explainable_artificial_intelligence
-https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09d1
-
-- solution can be understood by humans
--It contrasts with the concept of the "black box" in machine learning where even their designers cannot explain why the AI arrived at a specific decision.
-- The technical challenge of explaining AI decisions is sometimes known as the interpretability problem
-- optimize behavior to satisfy a mathematically-specified goal system chosen by the system designers, such as the command "maximize accuracy of assessing how positive film reviews are in the test dataset".
-- Explainable Machine Learning Challenge, a prestigious competition organized collaboratively between Google, the Fair Isaac Corporation (FICO), and academics at Berkeley, Oxford, Imperial, UC Irvine, and MIT. 
-
-the term "glass box" has also been used to systems that monitor the inputs and outputs of a system, with the purpose of verifying the system's adherence to ethical and socio-legal values and, therefore, producing value-based explanations.
-
-SIMPLE IS BETTER?
-
-Inherently interpretable models vs. black-box deep-learning models
-
-
-Explainable AI (XAI) is the class of systems that provide visibility into how an AI system makes decisions and predictions and executes its actions. XAI explains the rationale for the decision-making process, surfaces the strengths and weaknesses of the process, and provides a sense of how the system will behave in the future.
-
-
- the interpretable models (which were very small linear models or logical models in these studies) performed just as well as the more complicated (black box) machine learning models (Zeng et al., 2016). 
- 
-  No matter whether we used a deep neural network or classical statistical techniques for linear models, we found that there was less than a 1% difference in accuracy between the methods, which is within the margin of error caused by random sampling of the data. 
-  
-  Further, when scientists understand what they are doing when they build models, they can produce AI systems that are better able to serve the humans who rely upon them. In these cases, the so-called accuracy–interpretability tradeoff is revealed to be a fallacy: more interpretable models often become more (and not less) accurate.
-  
-  The result is Covid-Control AI that says things like “I’m moving left to stay behind the blue truck” every time it moves. 
-  
-  (in which they show that people’s ability to understand an interactive or static visualization depends on their education levels.) Think of a cancer-diagnosing AI, . You’d want the explanation it gives to an oncologist to be very different from the explanation it gives to the patient.
-
-----
-
-## Actionability and usability
-Models that are usable in a real world setting, that provide interactivity and actionability
-
-Website is LIVE at _________________
-Dashboard for UI/UX 
-
-
-Interactive Demo 
-
-To help understand the mechanisms and possibilities of ESP models, an interactive demo of the
-current state of the approach to NPI optimization is available at https://evolution.ml/esp/npi
-
-
-This demo will change as the models improve and new functionality is added
-
-The user can select a country by clicking on the map, and a Prescriptor from the Pareto front by clicking on the slider between Cases and NPIs. At the very left, the Presciptors prefer to minimize cases and therefore usually recommend establishing nearly all possible NPIs. At the very right, the Prescriptors prefer to minimize NPIs and therefore usually recommend lifting nearly all of them—usually resulting in an explosion of cases. The most interesting Prescriptors are therefore somewhere in the middle-left of this range. 
-
-With more and better data and further development, the demo may eventually develop into a tool that can be used to augment human decision making in the pandemic.
-
-
-
-
-
-
-
-
-
-
-
-
-----
-
-## Inclusivity and fairness:
-The degree to which the data, model, and approaches consider particularly vulnerable groups in designing and implementing their solution will be evaluated. Teams may also be judged on documented evidence of the diversity of perspectives they sought input from during the development of their solution; 
-
-Vulnerable groups may include the unemployed, working poor, unhoused individuals, children,
-the elderly, people with disabilities, ethnic minorities, and other marginalized groups.
-
-- Who is considered high risk for Covid19? We do know that older adults and people who have severe underlying medical conditions like obesity, diabetes, or heart or lung disease are at higher risk for developing more serious complications when they have COVID-19.
-
----
-
-## Transparency and trust:
-The extent to which their solution enables and facilitates
-user-facing transparency, including the ease with which a layperson can access and
-understand information related to how the solution functions, what data is collected and
-stored, and how that data may be used will be considered.
-
-
- Making AI trustworthy through instance-level and model-level explanations
- 
- Marketing professionals and customers who use an AI
- system can be skeptical of the system if they are unclear about the motives and reasonableness of the system. Their trust in the AI system can operate at two different levels—the prediction or action and the model. Research on how different XAI approaches can influence users’ trust at each of these two levels in different application domains can contribute to our understanding on how explanation capabilities can influence the trust in AI applications. Studies along these lines can assess how consumers’ trust in an AI-based ad targeting system can be developed by XAI which surfaces as to why specific ads are targeted to a consumer and the features underlying the ad-targeting model. Work along these lines can also assess how feedback from consumers on the reasonableness of explanations can be used to improve ad targeting and reduce the likelihood of the ads being seen as clickbait.
-
-
-Achieving AI fairness
-XAI techniques can be used to reveal whether attributes such as race or gender, or socio-economic and locational variables that proxy for them, are directly or indirectly used in black-box models so the models are biased against certain groups. Research on fairness in marketing AI can generate insights on how XAI can be integrated with the development and deployment of AI systems to prevent and detect algorithmic bias in applications from recommendation systems to reputation scoring to targeting promotions and advertisements.
-
+  * The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations
+  * If you rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum MAE
 
 
 -------
@@ -444,12 +346,10 @@ XAI techniques can be used to reveal whether attributes such as race or gender, 
 Pharmaceutical interventions such as treatments and
 vaccines will take time to develop, so the focus has been on implementing non-pharmaceutical
 interventions, i.e. NPIs. The goal is to ”flatten the curve,” i.e. limit the spread, gain time, and
-prevent hospitals from being overwhelmed until a vaccine can be developed [14, 15].
+prevent hospitals from being overwhelmed until a vaccine can be developed.
 
 
-Current clinical management of COVID-19 includes infection prevention and control measures and supportive care, including supplemental oxygen and mechanical ventilatory support when indicated. The U.S. Food and Drug Administration (FDA) has approved one drug, remdesivir (Veklury), for the treatment of COVID-19 in certain situations.
-
-Right now, CDC recommends COVID-19 vaccine be offered to healthcare personnel and residents of long-term care facilities.
+Current clinical management of COVID-19 includes infection prevention and control measures and supportive care, including supplemental oxygen and mechanical ventilatory support when indicated. The U.S. Food and Drug Administration (FDA) has approved one drug, remdesivir (Veklury), for the treatment of COVID-19 in certain situations. CDC recommends COVID-19 vaccine be offered to healthcare personnel and residents of long-term care facilities.
 
 There is currently a limited supply of COVID-19 vaccine in the United States, but supply will increase in the weeks and months to come.
 
@@ -467,7 +367,7 @@ Coronavirus Treatment Acceleration Program (CTAP)
 Combination of multiple single agent treatments
 
 
-Dec 15 2020 is an updated list of 22 of the most-talked-about treatments for the coronavirus.
+List of 22 of the most-talked-about treatments for the coronavirus.
 https://www.nytimes.com/interactive/2020/science/coronavirus-drugs-treatments.html
 
 
@@ -491,21 +391,14 @@ As COVID-19 creates further economic uncertainty and loss, maximizing returns, m
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_indices_vs_time.png)
 
 
-
--------
-
-##  Conclusion 
-
 The impact of the coronavirus (COVID-19) is being felt by all businesses around the world. Leaders are navigating a broad range of interrelated issues that span from keeping their employees and customer safe, shoring-up cash and liquidity, reorienting operations and navigating complicated government support programs.
 
-To help you understand the implications of COVID-19 and, more importantly, best position your business to be resilient in the future, review the latest thinking and insights from our professionals from around the world.
+To help understand the implications of COVID-19 and, more importantly, best position your business to be resilient in the future, review the latest thinking and insights from our professionals from around the world.
 
 AI and humans need to work together. Cooperation between agents, in this case algorithms and humans, depends on trust. If humans are to accept algorithmic prescriptions, they need to trust them.  The second quantitative evaluation addresses an important and novel aspect of the
 competition: it is a community effort. Team contributions are brought together into a common
 population, and a modern machine learning discovery method is used to find synergies and
 compatible innovations to achieve better performance than would otherwise be possible.
-
-This is the submission for Team Covid Control for the XPRIZE Pandemic Response Challenge. AI prediction model to estimate daily COVID-19 cases with astronomically high accuracy and prescriptive models for Intervention Plans that minimize infection cases and economic costs.
 
 
 
@@ -522,7 +415,7 @@ This is the submission for Team Covid Control for the XPRIZE Pandemic Response C
 * Addressing the business challenges presented by the coronavirus. https://home.kpmg/xx/en/home/insights/2020/03/the-business-implications-of-coronavirus.html
 * Preparing first responders, healthcare providers, and health systems
  https://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.htmlhttps://www.cdc.gov/coronavirus/2019-ncov/cdcresponse/index.html
-* scientific information about the 2019 novel Coronavirus https://www.ncbi.nlm.nih.gov/research/coronavirus/
+* Scientific information about the 2019 novel Coronavirus https://www.ncbi.nlm.nih.gov/research/coronavirus/
 * Novel Coronavirus Outbreak https://novel-coronavirus.onlinelibrary.wiley.com/
 * Coronavirus (COVID-19) Research Highlights https://www.springernature.com/gp/researchers/campaigns/coronavirus
 * Evolutionary AI: Go Beyond Prediction with LEAF https://www.cognizant.com/aicom/documents/cognizant-sentient-leaf-offering-overview.pdf
