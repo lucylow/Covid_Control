@@ -1,15 +1,5 @@
 # Covid Control
-Pandemic Response Challenge. Covid Control is a machine learning model free and assessible that predicts the future number of Covid19 Daily Cases (7-day moving average). Quantifying Non-Pharmaceutical Interventions (NPIs) using LSTM and Reinforcement Learning.
-
-Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to help flatten the curve. Development of a data-driven AI systems to predict infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement. Intervention plans can result in reducing infection cases, minimizing negative economic impacts, and better outcomes when countries reopen their economies and societies.
-
-It is open sourced on platform Github allowing for increased and higher quality data,
-accurate predictions, stronger regional intervention plans, and continual improvement as new
-interventions such as vaccinations and treatments become available. 
-
-Covid Control is a collaborative model that fosters innovative, evidence-based
-decision-making to combat COVID-19 and future emergencies.
-
+Covid Control is a machine learning model free and assessible that predicts the future number of Covid19 Daily Cases (7-day moving average). Quantifying Non-Pharmaceutical Interventions (NPIs) using LSTM and Reinforcement Learning. Using machine learning to save lives in humanity's unprecedented global health emergy Novel Coronavirus (COVID-19) to help flatten the curve. Development of a data-driven AI systems to predict infection rates and prescribe Intervention Plans (IPs) that regional governments, communities, and organizations can implement. Intervention plans can result in reducing infection cases, minimizing negative economic impacts, and better outcomes when countries reopen their economies and societies.
 <div>
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
@@ -98,9 +88,6 @@ https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09
 
 * The Oxford Covid-19 Government Response Tracker (OxCGRT) collects publicly available information on 19 indicators of government response and includes statistics on the number of reported Covid-19 cases and deaths in each country. There are 11 indicators of government response, such as school closings, travel bans, or other measures. For a full description of the data and how they are collected, see https://www.bsg.ox.ac.uk/research/publications/variation-government-responses-covid-19 
 
-
-* Only a subset of the NPIs will be used: those that have a direct impact on the spread of the virus (i.e. on the daily new cases number). Oxford uses them in its "Containment and health index". See https://github.com/OxCGRT/covid-policy-tracker/blob/master/documentation/index_methodology.md for the list. Basically C1 to C8, H1, H2, H3 and H6.
-
 * These can range from huge amounts of missing data (that are not missing at random), or unmeasured confounding, to systematic errors in the dataset (e.g., incorrect coding of drug treatments), to data collection issues that cause the distribution of data to be different than what we originally thought.
  
 * One such common issue with black box models in medical settings is data leakage, where some information about the label y sneaks into the variables x in a way that you might not suspect by looking at the titles and descriptions of the variables: sometimes you think you are predicting something in the future but you are only detecting something that happened in the past. In predicting medical outcomes, the machine might pick up on information within doctors’ notes that reveal the patients’ outcome before it is officially recorded and hence erroneously claim these as successful predictions.
@@ -184,29 +171,24 @@ time an NPI is put in places and its effect on the number of cases.
 
 ## Phase1 : Predictor Model Design LSTM (NPI-LSTM) Predictor
 
-* An LSTM neural network model  is trained with publicly available data on infections and NPIs in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range.
-
-* Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
+* An LSTM neural network model  is trained with publicly available data on infections and NPIs in a number of countries and applied to predicting how the pandemic will unfold in them in the future. The predictions are cascaded one day at a time and constrained to a meaningful range. Using the data-driven LSTM model as the Predictor, a Prescriptor is evolved
 in a multi-objective setting to minimize the number of COVID-19 cases, as well as the number and stringency of NPIs (representing economic impact). 
 
 * Keras representation of the learnable predictor model with LSTM example 'data' directory
+  * The previous 21 days are fed into the context input; the previous 21 days of stringency values for the eight NPIs are fed into the action input. 
+  * The Lambda layer combines the context branch h and the action branch g to produce prediction Rˆn. 
+  * The effects of social distancing and endogenous growth rate of the pandemic are processed in separate pathways, making it possible to ensure that stringency has a monotonic effect, resulting in more regular predictions.
 
-Eight NPIs were used to train the Predictor model. Values range from 0 (no measures) to 2, 3, or 4 (full measures). 
+Eight NPIs were used to train the Predictor model. Values range from 0 for no measures to 2, 3, or 4 for full measures:
 
-* Schools closing
-* Workplace closing
+* Schools closing [important]
+* Workplace closing [important]
 * Cancel public events
 * Restrictions on gatherings
 * Close public transport
 * Stay at home requirements 
 * Restrictions on internal movements travel between regions/cities
 * International travel controls
-
-* School and workplace closings turn out to be the two most important NPIs in the simulations: they have the largest and most reliable effects on the number of cases compared to e.g. restrictions on gatherings and travel. 
-
-* The previous 21 days are fed into the context input; the previous 21 days of stringency values for the eight NPIs are fed into the action input. 
-* The Lambda layer combines the context branch h and the action branch g to produce prediction Rˆn. 
-* The effects of social distancing and endogenous growth rate of the pandemic are processed in separate pathways, making it possible to ensure that stringency has a monotonic effect, resulting in more regular predictions.
 
 
 
@@ -227,7 +209,7 @@ Eight NPIs were used to train the Predictor model. Values range from 0 (no measu
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/Screen%20Shot%202020-12-22%20at%204.12.37%20AM.png)
 
 * Use historical data available on decision making in organizations, consisting of the decision problem, what decisions were made, and how desirable the outcomes were
-* In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such thatthe number of cases and cost that would result in the next two weeks is optimized. 
+* In the NPI optimization task, ESP is built to prescribe the NPIs for the current day such that the number of cases and cost that would result in the next two weeks is optimized. 
 
    
 
@@ -272,9 +254,7 @@ The ESP algorithm then operates as an outer loop that constructs the Predictor a
 4. Collect the new data and add to the training set;
 5. Repeat.
 
-The data from submissions will be ranked in each region according to the cumulative error in the 7-day moving average for the number of cases per 100,000 people.
-
-Two overall performance measures will be formed:
+The data from submissions will be ranked in each region according to the cumulative error in the 7-day moving average for the number of cases per 100,000 people. Two overall performance measures will be formed:
 * Mean ranking of teams across all regions
 * Mean ranking of teams across the specialty regions, if selected
 
@@ -296,10 +276,7 @@ Stringency Index formula, with the specified weights for the region.
 
 The weights for each region are drawn from a uniform distribution within [0..1] and normalized to sum up to one. The process is repeated three times with different weights and the results are
 averaged. The same three sets of weights are used to evaluate all prescriptors. Additionally, a case where all weights are equal is used as a separate base-case evaluation. The predictions and
-stringency will be averaged over the 180-day period to obtain the final objective values (i.e., cases and stringency) for the prescriptor for each region.
-
-
-Results with both the base case (with equal weights) and the general case (with random weights) were presented to the judges as the outcome of the first quantitative evaluation.
+stringency will be averaged over the 180-day period to obtain the final objective values (i.e., cases and stringency) for the prescriptor for each region. Results with both the base case (with equal weights) and the general case (with random weights) were presented to the judges as the outcome of the first quantitative evaluation.
 
 
 
@@ -343,17 +320,6 @@ Mean Absolute Error (MAE):
 
 ## Conclusion 
 
-Pharmaceutical interventions such as treatments and
-vaccines will take time to develop, so the focus has been on implementing non-pharmaceutical
-interventions, i.e. NPIs. The goal is to ”flatten the curve,” i.e. limit the spread, gain time, and
-prevent hospitals from being overwhelmed until a vaccine can be developed.
-
-
-Current clinical management of COVID-19 includes infection prevention and control measures and supportive care, including supplemental oxygen and mechanical ventilatory support when indicated. The U.S. Food and Drug Administration (FDA) has approved one drug, remdesivir (Veklury), for the treatment of COVID-19 in certain situations. CDC recommends COVID-19 vaccine be offered to healthcare personnel and residents of long-term care facilities.
-
-There is currently a limited supply of COVID-19 vaccine in the United States, but supply will increase in the weeks and months to come.
-
-
 Coronavirus Treatment Acceleration Program (CTAP)
 590+ drug development programs 
 390+ trials reviewed by FDA 
@@ -365,7 +331,6 @@ Coronavirus Treatment Acceleration Program (CTAP)
 - Gene therapy products seek to modify or manipulate the expression of a gene or to alter the biological properties of living cells for therapeutic use.
 
 Combination of multiple single agent treatments
-
 
 List of 22 of the most-talked-about treatments for the coronavirus.
 https://www.nytimes.com/interactive/2020/science/coronavirus-drugs-treatments.html
