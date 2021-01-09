@@ -100,6 +100,9 @@ https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09
 
 The frequency, intensity, locality, and duration of contacts is important but here are other factors that can have a measurable impact on the spread of the virus that I did not have time to implement in the model:
 
+![](https://github.com/lucylow/Covid_Control/blob/main/images/architect.png)
+
+
 * Number of hospital beds per 1000 people for each country: https://www.kaggle.com/hamzael1/hospital-beds-by-country or https://www.kaggle.com/ikiulian/global-hospital-beds-capacity-for-covid19
   * Number of ICU beds per county/state: https://www.kaggle.com/jaimeblasco/icu-beds-by-county-in-the-us
 * Visualization https://www.kaggle.com/ikiulian/simple-global-countries-visualization
