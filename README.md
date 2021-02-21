@@ -23,17 +23,6 @@ Covid Control is a machine learning model free and assessible that predicts the 
 " target="_blank"><img src="http://img.youtube.com/vi/Kas0tIxDvrg/0.jpg" 
 alt="Video" width="480" height="360" border="10" /></a>
 
-Who is considered high risk for Covid19? Older adults and people who have severe underlying medical conditions like obesity, diabetes, or heart or lung disease are at higher risk for developing more serious complications when they have COVID-19.
-Vulnerable groups may include the unemployed, working poor, unhoused individuals, children,
-the elderly, people with disabilities, ethnic minorities, and other marginalized groups.
-
-Healthcare is a $3.6-trillion economy in a bold new direction means rethinking business models and building new systems of engagement collaborating with healthcare’s leaders to enable a new model of health and improve people’s lives.  The pandemic is driving consumers toward digital healthcare channels. Healthcare organizations must ensure their current offerings meet this demand while simultaneously building new digital capabilities to serve members and patients long term in a profoundly reshaped industry.
-
-
-------
-
-## Machine Learning Solution 
-
 The goal is to develop a machine learning model to predict the future number of Covid Cases worldwide:
 
 **Part1 Predictor: LSTM Long Short-Term Memory Predictor Model**
@@ -68,8 +57,6 @@ Based on knowledge of the populations and the epidemic, and the data so far abou
   * The least-useful-candidates are discarded and new ones are generated from variants of the most-useful-candidates through recombination and mutation.
 
 Explainable Artificial Intelligence (XAI)
-* https://en.wikipedia.org/wiki/Explainable_artificial_intelligence
-https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09d1
 * Explainable AI (XAI) is the class of systems that provide visibility into how an AI system makes decisions and predictions and executes its actions. XAI explains the rationale for the decision-making process, surfaces the strengths and weaknesses of the process, and provides a sense of how the system will behave in the future.
 
 * It contrasts with the concept of the "black box" in machine learning where even their designers cannot explain why the AI arrived at a specific decision. The term "glass box" has also been used to systems that monitor the inputs and outputs of a system, with the purpose of verifying the system's adherence to ethical and socio-legal values and, therefore, producing value-based explanations.
@@ -90,15 +77,13 @@ https://medium.com/@alkali.app/glass-box-models-a-gentle-introduction-2f39589c09
 
 * These can range from huge amounts of missing data (that are not missing at random), or unmeasured confounding, to systematic errors in the dataset (e.g., incorrect coding of drug treatments), to data collection issues that cause the distribution of data to be different than what we originally thought.
  
-* One such common issue with black box models in medical settings is data leakage, where some information about the label y sneaks into the variables x in a way that you might not suspect by looking at the titles and descriptions of the variables: sometimes you think you are predicting something in the future but you are only detecting something that happened in the past. In predicting medical outcomes, the machine might pick up on information within doctors’ notes that reveal the patients’ outcome before it is officially recorded and hence erroneously claim these as successful predictions.
-
 --------
 
 
 
-## Optional Data Parameters that Affect Covid19
+## Data Parameters that Affect Covid19
 
-The frequency, intensity, locality, and duration of contacts is important but here are other factors that can have a measurable impact on the spread of the virus that I did not have time to implement in the model:
+Other factors that can have a measurable impact on the spread of the virus that I did not have time to implement in the model:
 
 ![](https://github.com/lucylow/Covid_Control/blob/main/images/architect.png)
 
@@ -152,17 +137,17 @@ Review of currently available evidence suggests that most individuals do not bec
 
 * Contact Tracing Apps. Contact tracing is an effective disease control strategy that involves identifying cases and their contacts then working with them to interrupt disease transmission. This includes asking cases to isolate and contacts to quarantine at home voluntarily. Contact tracing is a key strategy to prevent the further spread of COVID-19.
 
-* Incubation Time Period- Typically, a person develops symptoms 5 days after being infected, but symptoms can appear as early as 2 days after infection or as late as 14 days after infection, and the time range can vary.
+* Incubation Time Period matters where a person develops symptoms 5 days after being infected, but symptoms can appear as early as 2 days after infection or as late as 14 days after infection, and the time range can vary.
 
 * It typically takes a few weeks for the body to build immunity after vaccination. That means it's possible a person could be infected with the virus that causes COVID-19 just before or just after vaccination and get sick. This is because the vaccine has not had enough time to provide protection.
 
-* Number of Critical Covid cases: In critical COVID-19 -- about 5% of total cases -- the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
+* Number of Critical Covid cases where in critical covid cases (~5% of total cases) the infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
 
-* two-week delay between the time a person is
+* Two-week delay between the time a person is
 infected and the time the case is detected. A similar delay can therefore be expected between the
 time an NPI is put in places and its effect on the number of cases.
 
-* Vaccinations
+* Vaccination Data
   * Tracking COVID-19 vaccination rates:https://ourworldindata.org/covid-vaccinations
   * Vaccine development: vaccines approved for use and in clinical trials
   * Vacine canidates, trial deadlines, vacine diswtrubution, vacine implementation 
@@ -316,59 +301,6 @@ Mean Absolute Error (MAE):
 
   * The evaluation metric for this competition is Mean Absolute Error (MAE). The MAE metric takes the differences in all of the predicted and actual prices, adds them up and then divides them by the number of observations
   * If you rank higher will have a lower score on the metric, which means they incurred fewer errors you should aim for the minimum MAE
-
-
--------
-
-
-## Conclusion 
-
-Coronavirus Treatment Acceleration Program (CTAP)
-590+ drug development programs 
-390+ trials reviewed by FDA 
-
-- Antiviral drugs keep viruses from multiplying and are used to treat many viral infections (such as HIV, Herpes, Hepatitis C, and influenza).  
-- Immunomodulators are aimed at tamping down the body’s own immune reaction to the virus, in cases where the body’s reaction basically goes overboard and starts attacking the patient’s own organs.
-- Neutralizing antibody therapies may help individuals fight the virus and include manufactured antibodies, animal-sourced antibody therapies, and blood-derived products such as convalescent plasma and hyperimmune globulin, which contain antibodies taken from people who have previously had COVID-19.
-- Cell therapy products include cellular immunotherapies and other types of both autologous and allogeneic cells, such as stem cells, and related products.
-- Gene therapy products seek to modify or manipulate the expression of a gene or to alter the biological properties of living cells for therapeutic use.
-
-Combination of multiple single agent treatments
-
-List of 22 of the most-talked-about treatments for the coronavirus.
-https://www.nytimes.com/interactive/2020/science/coronavirus-drugs-treatments.html
-
-
-Government Measures to Combat COVID19 Trying to flatten the curve!
-* The COVID19 Government Measures Dataset puts together all the measures implemented by governments worldwide in response to the Coronavirus pandemic.  https://www.kaggle.com/barun2104/government-measures-to-combat-covid19
-* Data collection includes secondary data review. The researched information available falls into five categories:
-  * Social distancing (reduced resturant capacity)
-  * Movement restrictions
-  * Public health measures (mandatory masks)
-  * Social and economic measures
-  * Lockdowns
-  
-![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_worldmap_schools.png)
-
-
-Businesses are spending more than US$300B dealing with regulatory change and increasing amounts of time and effort are devoted to control, risk and compliance functions. With constant changes in regulation threatening to hamper growth and innovation, leaders are using automation to transform their operations, processes and even business models to drive resilience and agility.
-
-
-As COVID-19 creates further economic uncertainty and loss, maximizing returns, managing risk and ensuring the continued health of your business demands a deep understanding of changing market conditions and government policy. Timely, in-depth political and economic scenario analysis for the outbreak and the potential path(s) to recovery for individual economies is increasingly critical to business planning and commercial decisions. 
-
-![](https://github.com/lucylow/Covid_Control/blob/main/images/OxCGRT_indices_vs_time.png)
-
-
-The impact of the coronavirus (COVID-19) is being felt by all businesses around the world. Leaders are navigating a broad range of interrelated issues that span from keeping their employees and customer safe, shoring-up cash and liquidity, reorienting operations and navigating complicated government support programs.
-
-To help understand the implications of COVID-19 and, more importantly, best position your business to be resilient in the future, review the latest thinking and insights from our professionals from around the world.
-
-AI and humans need to work together. Cooperation between agents, in this case algorithms and humans, depends on trust. If humans are to accept algorithmic prescriptions, they need to trust them.  The second quantitative evaluation addresses an important and novel aspect of the
-competition: it is a community effort. Team contributions are brought together into a common
-population, and a modern machine learning discovery method is used to find synergies and
-compatible innovations to achieve better performance than would otherwise be possible.
-
-
 
 ---
 
